@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lab Resources - CS684 Spring 2021</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="lustre_heptagon_installaton_instructions.html">Installation of Lustre and Heptagon</a></li><li class="chapter-item expanded "><a href="Resources.html" class="active">Lab Resources</a></li><li class="chapter-item "><a href="Lustre_resource.html">Lustre Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li><li class="chapter-item "><a href="CS684_Assignment-4.html">Assignment 4</a></li></ol></li><li class="chapter-item "><a href="iot.html">Internet of Things (IoT)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-http.html">HTTP Protocol</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-gas-sheet.html">Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-gmail-alert.html">Sending Gmail Alerts</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-req.html">Generating data and updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-get.html">Get Data from the Spreadsheet (Database)</a></li><li class="chapter-item "><a href="iot/learn-iot-grafana.html">Grafana: Data Visualization Tool</a></li></ol></li></ol></li><li class="chapter-item "><a href="project/toc.html">Project</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="project/description.html">Description</a></li><li class="chapter-item "><a href="project/sw_specifications.html">Software Specifications</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#resources" id="resources">Resources</a></h4></center>
+<hr />
+<p>This document consists of links of video tutorials needed to complete the labs. It also consists of few additional modules for deeper understanding. </p>
+<blockquote>
+<p><strong>Note:</strong> All the resources provided below are based on <a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V robot</a> which consists of <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560</a>  microcontroller. But for the lab sessions, we will be working on <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" target="_blank">ATmega328</a> controller <a href="https://www.farnell.com/datasheets/1682209.pdf" target="_blank">(Arduino Uno)</a> given that concepts remain same across both the controllers (belong to same family).</p>
+</blockquote>
+<blockquote>
+<p><strong>Reference Code Examples:</strong> <a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></p>
+</blockquote>
+<p>Additional Module: <a href="https://youtu.be/umw4HdT19Iw" target="_blank">Introduction to Firebird V Robot</a></p>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-1-bar-graph-leds-and-interrupt-switch-interfacingbdiv" id="div-alignjustify-classmainblab-1-bar-graph-leds-and-interrupt-switch-interfacingbdiv"> <div align="justify" class="main"><b>Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</b></div></a></h3>
+<hr>
+<p><strong>Module 1: I/O Interfacing</strong></p>
+<ul>
+<li>Understand the function of I/O ports and the associated registers.</li>
+<li>Interface I/O peripherals like Switch, Buzzer and Bar graph LEDs.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/R-q_tuvaT0c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Module 2: Masking</strong></p>
+<ul>
+<li>Understand the concept of Masking with the help of I/O interfacing.</li>
+<li>Need of using AND and OR operators with the help of few examples.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/wc_HYmRa0P0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Module: <a href="https://youtu.be/cS25PQrhvwg" target="_blank">LCD Interfacing</a></p>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-2-speed-control-using-8-bit-phase-correct-pwm-modebdiv" id="div-alignjustify-classmainblab-2-speed-control-using-8-bit-phase-correct-pwm-modebdiv"> <div align="justify" class="main"><b>Lab 2: Speed Control using 8 bit Phase Correct PWM Mode</b></div></a></h3>
+<hr>
+<p><strong>Module 3: Motor Interfacing</strong></p>
+<ul>
+<li>Direction control of DC motors present on Firebird V Robot.</li>
+<li>Understanding the use of L293D motor driver IC.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/6c2ui-k4zvI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Module 4: Pulse Width Modulation</strong></p>
+<ul>
+<li>Understanding Timers and associated registers.</li>
+<li>Speed control of the robot and brightness control of the LED.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/FRf34y8CbBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Modules: </p>
+<ul>
+<li>
+<p><a href="https://youtu.be/rqsa2JqvrWA" target="_blank">Interrupts</a><br></p>
+</li>
+<li>
+<p><a href="https://youtu.be/SQIE1Cr7mzk" target="_blank">Position Encoder Interrupt</a></p>
+</li>
+</ul>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-3-adc-interfacingbdiv" id="div-alignjustify-classmainblab-3-adc-interfacingbdiv"> <div align="justify" class="main"><b>Lab 3: ADC Interfacing</b></div></a></h3>
+<hr>
+<b>Module 5: ADC Interfacing</b>
+<ul>
+<li>Interface white line sensors and Proximity sensor.</li>
+<li>Understand ADC (Analog to Digital conversion) on controller.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/OAAqymUdAb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Module: <a href="https://youtu.be/RpYZUF-t3hE" target="_blank">Serial Communication</a></p>
+<!-- <hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-5-real-time-operating-systems-rtosbdiv" id="div-alignjustify-classmainblab-5-real-time-operating-systems-rtosbdiv"> <div align="justify" class="main"><b>Lab 5: Real-Time Operating Systems (RTOS)</b></div></a></h3>
+<hr>
+
+Following is the link to download the **zip file** of examples on concepts of RTOS implemented using **FreeRTOS API** built with **ESP32** module.
+
+<a href="./resources/lab5_rtos_examples.zip" target="_blank">RTOS Examples on ESP32</a>
+
+<br>
+
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbproject-search-and-rescuebdiv" id="div-alignjustify-classmainbproject-search-and-rescuebdiv"> <div align="justify" class="main"><b>Project: Search and Rescue</b></div></a></h3>
+<hr>
+<a href="./resources/CS684_Project_Task_1.pptx" target="_blank"> Task 1 PPT  </a> - Presented in class of <b><em>22nd March, 2021</em></b>
+ -->
+<p><strong>Firebird V related Resources:</strong></p>
+<ul>
+<li>
+<p><a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V Hardware and Software Manuals</a></p>
+</li>
+<li>
+<p><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560 Datasheet</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/drive/u/1/folders/1TPrljaSlRFnT5yZN1Gd8J9wUb6i-_Oh5" target="_blank">Color Sensor Interfacing on Firebird V</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/drive/u/1/folders/1vac3uNvSwOX17k1qqO0ARTgmKYEigYFd" target="_blank">Serial Communication between Firebird V and ESP 32</a></p>
+</li>
+</ul>
+<!-- **Simulation related Resources**
+
+- <a href="./resources/search_n_rescue_scene.ttt" target="_blank">CoppeliaSim Scene File: search_n_rescue.ttt</a>
+- <a href="./resources/search_n_rescue.zip" target="_blank">Eclipse Project Folder for Task 1</a>
+
+**IoT Related Resources**
+
+- <a href="./resources/MockRPC.zip" target="_blank">Mocking RPC</a> -->
+<br>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="lustre_heptagon_installaton_instructions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Lustre_resource.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="lustre_heptagon_installaton_instructions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Lustre_resource.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

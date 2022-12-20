@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Welcome - CS684 Spring 2021</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="lustre_heptagon_installaton_instructions.html">Installation of Lustre and Heptagon</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="Lustre_resource.html">Lustre Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li><li class="chapter-item "><a href="CS684_Assignment-4.html">Assignment 4</a></li></ol></li><li class="chapter-item "><a href="iot.html">Internet of Things (IoT)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-http.html">HTTP Protocol</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-gas-sheet.html">Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-gmail-alert.html">Sending Gmail Alerts</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-req.html">Generating data and updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-get.html">Get Data from the Spreadsheet (Database)</a></li><li class="chapter-item "><a href="iot/learn-iot-grafana.html">Grafana: Data Visualization Tool</a></li></ol></li></ol></li><li class="chapter-item "><a href="project/toc.html">Project</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="project/description.html">Description</a></li><li class="chapter-item "><a href="project/sw_specifications.html">Software Specifications</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <center>
+    <h1><a class="header" href="#welcome-to-cs684-embedded-systems-labs" id="welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
+    <h2><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya" id="instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
+</center>
+<hr />
+<h2><a class="header" href="#course-details" id="course-details">Course Details:</a></h2>
+<table>
+<tr>
+<td>
+<ul>
+<li>Lecture Slot: 9</li>
+<li>Lecture Venue: MS Teams</li>
+<li>Lecture Days: Monday and Thursday<br />
+(15:30 to 17:00)</li>
+<li>Instructor office hours: Please send an email<br />
+to fix up a time</li>
+</ul>
+</td>
+<td>
+<p>TAs:</p>
+<ol>
+<li>Rutuja Ekatpure</li>
+<li>Narjis Asad</li>
+<li>Suprabha Jadhav</li>
+<li>Kalind Karia</li>
+<li>Lohit Penubaku</li>
+<li>Isha Kamone</li>
+<li>Ruchi Sharma </li>
+</ol>
+</td>
+</tr>
+</table>
+<br>
+<hr />
+<h2><a class="header" href="#course-outline" id="course-outline">Course Outline:</a></h2>
+<br>
+<table>
+<tr>
+<th> Theory: </th>
+<th> Practical: </th>
+</tr>
+<tr>
+<td>
+<ul>
+<li>Introduction: Embedded Systems</li>
+<li>Applications (Digital Camera)</li>
+<li>Model Based Design
+<ul>
+<li>Introduction to FSM</li>
+<li>State Charts</li>
+</ul>
+</li>
+<li>Introduction to RTOS</li>
+<li>LUSTRE/Heptagon
+<ul>
+<li>Cyber Physical Systems</li>
+<li>Synchronous Dataflow Programming</li>
+<li>Higher Order Functions</li>
+<li>Uni-Mode Controllers </li>
+<li>Multi-Mode Controllers </li>
+<li>Finite State Automaton</li>
+<li>Concurrent Automata</li>
+</ul>
+</li>
+<li>Scheduling Theory </li>
+</ul>
+</td>
+<td>
+<p><b> Labs </b></p>
+<ul>
+<li>Software
+<ul>
+<li>IDE (Eclipse), SimulIDE, CoppeliaSim</li>
+</ul>
+</li>
+<li>Basic Peripherals:
+<ul>
+<li>Introduction to AVR Controller</li>
+<li>GPIO, Motor Interfacing, PWM and ADC</li>
+</ul>
+</li>
+<li>Adaptive Cruise Control - case study
+<ul>
+<li>using Embedded C programming </li>
+<li>using LUSTRE</li>
+</ul>
+</li>
+<li>RTOS<!-- - Basics of Real-time operating systems
+    - Practical example showing the effectiveness of RTOS -->
+<ul>
+<li>Practical example showing the effectiveness of RTOS --&gt;</li>
+</ul>
+</li>
+</ul>
+<p><b> IoT Workshop </b></p>
+<ul>
+<li>Introduction to IoT</li>
+<li>HTTP, MQTT, CoAP</li>
+<li>Google App Scripts</li>
+</ul>
+</td>
+</tr>
+</table>
+<br>
+<hr />
+<h2><a class="header" href="#grading-policy" id="grading-policy">Grading Policy:</a></h2>
+<ul>
+<li>Quizzes    : 10%</li>
+<li>Assignments: 15%</li>
+<li>Workshops  : 6%</li>
+<li>Labs       : 14%</li>
+<li>Project    : 35%</li>
+<li>Midsem     : 20%</li>
+</ul>
+<hr />
+<h2><a class="header" href="#lecture-schedule" id="lecture-schedule">Lecture Schedule:</a></h2>
+<table><thead><tr><th align="center">Date</th><th align="center">Lecture Topic</th><th align="center">Assignment</th></tr></thead><tbody>
+<tr><td align="center">Jan 03</td><td align="center">Course Prelude, Introduction</td><td align="center">-</td></tr>
+<tr><td align="center">Jan 06</td><td align="center">NRE Cost and Software Engineering Issues</td><td align="center">-</td></tr>
+<tr><td align="center">Jan 10</td><td align="center">Embedded Systems Applications (Digital Camera)</td><td align="center">-</td></tr>
+<tr><td align="center">Jan 13</td><td align="center">Model Based Design (Intro)</td><td align="center">-</td></tr>
+<tr><td align="center">Jan 17</td><td align="center">Model Based Design (FSM)</td><td align="center">FSM</td></tr>
+<tr><td align="center">Jan 20</td><td align="center">Statecharts &amp; Introduction to Realtime Systems</td><td align="center">Statecharts</td></tr>
+<tr><td align="center">Jan 24</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">Lustre/Heptagon 1</td></tr>
+<tr><td align="center">Jan 27</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">-</td></tr>
+<tr><td align="center">Jan 31</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">-</td></tr>
+<tr><td align="center">Feb 03</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">-</td></tr>
+<tr><td align="center">Feb 07</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">-</td></tr>
+<tr><td align="center">Feb 10</td><td align="center">Model-Based Design (LUSTRE)</td><td align="center">Lustre/Heptagon 2</td></tr>
+<tr><td align="center">Feb 14</td><td align="center">Tutorial on LUSTRE</td><td align="center">-</td></tr>
+<tr><td align="center">Feb 19 - 26</td><td align="center">Midsem  Examinations</td><td align="center">-</td></tr>
+<tr><td align="center">Feb 28</td><td align="center">IoT Workshop</td><td align="center">-</td></tr>
+<tr><td align="center">March 03</td><td align="center">IoT Workshop</td><td align="center">-</td></tr>
+<tr><td align="center">March 07</td><td align="center">Project Presentation(Initial)</td><td align="center">-</td></tr>
+<tr><td align="center">March 10</td><td align="center">IoT Workshop</td><td align="center">-</td></tr>
+<tr><td align="center">March 14</td><td align="center">IoT Workshop</td><td align="center">-</td></tr>
+<tr><td align="center">March 21</td><td align="center">Project Presentations (mid-term review)</td><td align="center">-</td></tr>
+<tr><td align="center">March 24</td><td align="center">Scheduling Theory</td><td align="center">-</td></tr>
+<tr><td align="center">March 28</td><td align="center">Scheduling Theory</td><td align="center">-</td></tr>
+<tr><td align="center">April 07</td><td align="center">Project Presentations (final)</td><td align="center">-</td></tr>
+</tbody></table>
+<br>
+<hr />
+<h2><a class="header" href="#lab-schedule" id="lab-schedule">Lab Schedule:</a></h2>
+<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th></tr></thead><tbody>
+<tr><td align="center">0</td><td align="center">Installation of Software</td></tr>
+<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td></tr>
+<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td></tr>
+<tr><td align="center">3</td><td align="center">ADC Interfacing</td></tr>
+<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td></tr>
+<tr><td align="center">5</td><td align="center">Introduction to RTOS</td></tr>
+<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td></tr>
+<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a rel="next" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

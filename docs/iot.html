@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Internet of Things (IoT) - CS684 Spring 2021</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="lustre_heptagon_installaton_instructions.html">Installation of Lustre and Heptagon</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="Lustre_resource.html">Lustre Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li><li class="chapter-item "><a href="CS684_Assignment-4.html">Assignment 4</a></li></ol></li><li class="chapter-item expanded "><a href="iot.html" class="active">Internet of Things (IoT)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-http.html">HTTP Protocol</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="iot/learn-iot-gas-sheet.html">Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-gmail-alert.html">Sending Gmail Alerts</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-req.html">Generating data and updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="iot/learn-iot-gas-get.html">Get Data from the Spreadsheet (Database)</a></li><li class="chapter-item "><a href="iot/learn-iot-grafana.html">Grafana: Data Visualization Tool</a></li></ol></li></ol></li><li class="chapter-item "><a href="project/toc.html">Project</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="project/description.html">Description</a></li><li class="chapter-item "><a href="project/sw_specifications.html">Software Specifications</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#internet-of-things-iot" id="internet-of-things-iot">Internet of Things (IoT)</a></h1>
+<p>The <strong>Internet of Things</strong> (IoT) is a network of interrelated devices which are connected to internet to transfer and receive data from one to the other. In general , IoT is inter connectivity of devices in which collecting and exchanging information through particularly embedded softwares and sensors takes place.</p>
+<ul>
+<li>IoT is a giant network of connected things and people that are embedded with sensors, software, and other technologies – all of which collect and share data about the way they are used and about the environment around them over the internet or on a wireless newtork.</li>
+</ul>
+<p align="center">
+<img src="./assets/a-quick-look-at-iot-the-internet-of-things-victor-minh-nguyen-iot-png-630_300.png" alt="IoT" style="zoom:100%;" />
+</p>
+<p>Image From <a href="https://europe.hughes.com/solutions/connectivity/internet-things">europe.hughes</a></p>
+<ul>
+<li>A smart home is an excellent example of IoT, where various home appliances such as Air Conditioner, Lights, Smoke detector, Security alarm, etc are interconnected to share data with the user via a mobile application, so that the user can get detailed insight about the status and working of these appliances.</li>
+</ul>
+<h2><a class="header" href="#thing-in-iot" id="thing-in-iot">&quot;Thing&quot; in IoT</a></h2>
+<p>A <em>&quot;thing&quot;</em> in IoT is the asset that you want to control or monitor or measure, that is, observe closely. In many IoT products, the <em>&quot;thing&quot;</em> gets fully incorporated into a smart device. It can be a person with a heart monitor implant, a refrigerator with cool features, an automobile that has built-in sensors to alert the driver when tire pressure is low or any other natural or man-made object that can be assigned an Internet Protocol (IP) address and is able to transfer data over a network.</p>
+<p align="center">
+<img src="assets/IoT_framework.png" alt="IoT_Framework" width="700" height="300" />
+</p>
+<h2><a class="header" href="#history" id="history">History</a></h2>
+<p>The main concept of a network of <a href="https://en.wikipedia.org/wiki/Smart_device"><em>smart devices</em></a> was discussed as early as 1982, with a modified Coca-Cola vending machine at Carnegie Mellon University becoming the first <a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a>- connected appliance,able to report its inventory and whether newly loaded drinks were cold or not. </p>
+<p>The term &quot;Internet of things&quot; was coined by <a href="https://en.wikipedia.org/wiki/Kevin_Ashton">Kevin Ashton</a> of Procter &amp; Gamble, later MIT's Auto-ID Center, in 1999, though he prefers the phrase &quot;Internet <em>for</em> things&quot;.</p>
+<blockquote>
+<p>“If we have computer that knew everything there was to know about things - using data they   gathered without any help from us - we would be able to track and count everything , and greatly reduce waste , loss and cost”                                                                             <em><strong>-Kevin Ashton</strong></em></p>
+</blockquote>
+<h2><a class="header" href="#how-iot-works" id="how-iot-works">How IoT Works?</a></h2>
+<p>IoT ecosystem is not limited to a particular field but has business applications in areas of home automation, vehicle automation, factory line automation, medical, retail, healthcare and more. IoT aims to take  the connectivity to another level by connecting multiple devices at a time to the internet thereby facilitating <em>man to machine</em> and <em>machine to machine</em> interactions.</p>
+<p align="center">
+<img src="assets/IoT_working.png" alt="IoT_working" style="zoom:50%;" />
+</p>
+A complete IoT system integrates four distinct components:
+<ul>
+<li><strong>Sensors/Devices</strong> : Sensors are the front end of the IoT devices. They collect meaningful data from their environment. A device can have a standalone sensor or consist of multiple sensors. Such Devices  embedded with sensors and other technologies are the '<strong>Things</strong>' in IoT.  Things collect data from the environment, compute and integrate seamlessly with the physical world.</li>
+<li><strong>Connectivity</strong> : Data collected via sensors is sent into cloud through a <strong>wireless network</strong> like cellular, satellite, Wi-Fi, Bluetooth, low-power wide-area networks (LPWAN), or connecting directly to the internet via ethernet . Choosing best connectivity depend upon the specific IoT application , but all of them accomplish the same task which is getting data into to the cloud.</li>
+<li><strong>Data processing</strong> : After the data gets into to the cloud, a software program performs processing on that data according to the given instructions in the program. Like it may be simple, as checking whether the temperature is in an acceptable range or not. Or it may be complex, such as identifying objects using computer vision.</li>
+<li><strong>A user interface</strong> : After processing the data, the information gathered is made useful to the user through a user interface like mobile application. It allow the user to proactively check the system. For example, a user might want to check the video feeds on various properties , so he can get the feeds on a mobile application or a web browser. However, it's not always a one-way communication. Depending on the IoT application, the user may also affect the system by performing an action. For example, the user might want to adjust the temperature in a cold storage , so he can use a mobile application to adjust the temperature.</li>
+</ul>
+<h2><a class="header" href="#iot-communication-protocols" id="iot-communication-protocols">IoT Communication Protocols</a></h2>
+<p><em>IoT communication</em> protocols are modes of communication that protect and ensure optimum security to the data being exchanged between connected devices. The IoT devices are typically connected to the Internet via an IP (Internet Protocol) network.</p>
+<p>However, devices such as Bluetooth and RFID allow IoT devices to connect locally. In these cases, there's a difference in <em>power, range, and memory</em> used. Connection through IP networks are comparatively complex, requires increased memory and power from the IoT devices while the range is not a problem. On the other hand, non-IP networks demand comparatively less power and memory but have a range limitation. </p>
+<p>The IoT communication protocols or technologies are concerned, a mix of both IP and non-IP networks can be considered depending on usage. </p>
+<h3><a class="header" href="#how-does-the-communication-happen-via-internet-" id="how-does-the-communication-happen-via-internet-">How does the communication happen via Internet ?</a></h3>
+<p>IoT uses various <strong>IoT Protocols</strong>  which are nothing but the set of rules that allows the electronic devices to communicate with each other. These rules includes which type of data is to be transmitted, the commands used to send &amp; receive the data and how the data transfers are confirmed. The Internet Protocol is a method for the delivery of packets of data between hosts on a network (most notably, the Internet) and for uniquely identifying hosts on a network using what is known as an IP address.</p>
+<h3><a class="header" href="#iot-protocols" id="iot-protocols">IoT Protocols</a></h3>
+<p>IoT Protocols are broadly classified into two categories as follows :</p>
+<ul>
+<li>
+<p><strong>IoT Network Protocols</strong> : IoT network protocols are used to connect devices over the network. These  are the set of communication protocols typically used over the Internet. Following are the various IoT Network protocols:</p>
+<blockquote>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP (Hypertext Transfer Protocol)</a></li>
+<li><a href="https://www.link-labs.com/blog/what-is-lorawan">LoRaWan (Long Range Wide Area Network)</a></li>
+<li><a href="https://www.lifewire.com/what-is-bluetooth-2377412">Bluetooth</a></li>
+<li><a href="https://www.digi.com/solutions/by-technology/zigbee-wireless-standard">Zigbee</a></li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>IoT Data Protocols</strong> : IoT data protocols are used to connect low power IoT devices. These protocols provide point-to-point communication with the hardware at the user side without any Internet connection.</p>
+<blockquote>
+<ul>
+<li><a href="https://radiocrafts.com/technologies/coap-constrained-application-protocol/">CoAP (Constrained Application Protocol)</a></li>
+<li><a href="https://www.hivemq.com/mqtt-protocol/">MQTT (Message Queue Telemetry Transport)</a></li>
+<li><a href="https://jstobigdata.com/rabbitmq/elements-of-amqp/">AMQP(Advanced Message Queuing Protocol)</a></li>
+<li><a href="https://internetofthingsagenda.techtarget.com/definition/machine-to-machine-M2M">Machine-to-Machine (M2M) Communication Protocol</a></li>
+<li><a href="https://www.geeksforgeeks.org/xmpp-protocol/">XMPP (Extensible Messaging and Presence Protocol)</a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3><a class="header" href="#references" id="references">References</a></h3>
+<ol>
+<li><a href="https://internetofthingsagenda.techtarget.com/definition/Internet-of-Things-IoT">IoT</a></li>
+<li><a href="https://medium.com/zeux/the-internet-of-things-iot-5-reasons-why-the-world-needs-it-125fe71195cc">Why IoT</a></li>
+<li><a href="https://www.digi.com/blog/post/the-4-stages-of-iot-architecture">IoT Architecture</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="CS684_Assignment-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="iot/learn-iot-http.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="CS684_Assignment-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="iot/learn-iot-http.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

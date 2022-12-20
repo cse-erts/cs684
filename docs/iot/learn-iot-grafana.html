@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Grafana: Data Visualization Tool - CS684 Spring 2021</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../lustre_heptagon_installaton_instructions.html">Installation of Lustre and Heptagon</a></li><li class="chapter-item "><a href="../Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="../Lustre_resource.html">Lustre Resources</a></li><li class="chapter-item "><a href="../CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="../CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="../CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="../CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="../CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="../CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="../CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="../CS684_Assignment-3.html">Assignment 3</a></li><li class="chapter-item "><a href="../CS684_Assignment-4.html">Assignment 4</a></li></ol></li><li class="chapter-item expanded "><a href="../iot.html">Internet of Things (IoT)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../iot/learn-iot-http.html">HTTP Protocol</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../iot/learn-iot-gas-sheet.html">Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-gmail-alert.html">Sending Gmail Alerts</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-req.html">Generating data and updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-get.html">Get Data from the Spreadsheet (Database)</a></li><li class="chapter-item expanded "><a href="../iot/learn-iot-grafana.html" class="active">Grafana: Data Visualization Tool</a></li></ol></li></ol></li><li class="chapter-item "><a href="../project/toc.html">Project</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../project/description.html">Description</a></li><li class="chapter-item "><a href="../project/sw_specifications.html">Software Specifications</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#grafana-data-visualization-tool" id="grafana-data-visualization-tool">Grafana: Data Visualization Tool</a></h1>
+<p>A part of the IoT solutions is analyzing all the data that is collected from sensors and actuators. Data in it's raw form is difficult to understand and also time consuming (imagine 10 million data points). Thus it becomes almost necessary to use techniques such as data visualization. Using data visualization, data becomes easy to understand and quick to explore and analyze. We will learn Grafana, a tool for analyzing time-series data.</p>
+<h2><a class="header" href="#install-grafana-on-debian-or-ubuntu" id="install-grafana-on-debian-or-ubuntu">Install Grafana on Debian or Ubuntu</a></h2>
+<p>Run the commands in the order given below in your terminal:</p>
+<pre><code class="language-bash">sudo apt-get install -y apt-transport-https
+sudo apt-get install -y software-properties-common wget
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+</code></pre>
+<pre><code class="language-bash">echo &quot;deb https://packages.grafana.com/oss/deb stable main&quot; | sudo tee -a /etc/apt/sources.list.d/grafana.list
+</code></pre>
+<pre><code class="language-sudoapt-getupdate">sudo apt-get update
+sudo apt-get install grafana
+</code></pre>
+<p>If you are not using Debian or Ubuntu, instructions for other operating systems can be found <a href="https://grafana.com/docs/grafana/latest/installation/">here</a> </p>
+<blockquote>
+<p><em><strong>Note:</strong> We are using OSS version of Grafana and not enterprise edition.</em></p>
+</blockquote>
+<hr>
+<h2><a class="header" href="#starting-grafana" id="starting-grafana">Starting Grafana</a></h2>
+<ul>
+<li>Here's how you would start Grafana on Debian / Ubuntu: </li>
+</ul>
+<p><code>sudo service grafana-server start</code></p>
+<ul>
+<li>
+<p>Then in your browser, go to http://localhost:3000.</p>
+</li>
+<li>
+<p>Enter username and password as <strong>admin</strong> and <strong>admin</strong> respectively.</p>
+</li>
+</ul>
+<h2><a class="header" href="#creating-a-dashboard" id="creating-a-dashboard">Creating a Dashboard</a></h2>
+<p>Visualization for a project is managed under a dashboard. Creating a
+dashboard has 5 major steps. You can repeat the steps to add more
+dashboards.</p>
+<ul>
+<li>Install any Plugins if required</li>
+<li>Add Datasource</li>
+<li>Create a new Dashboard</li>
+<li>Add Panel under Dashboard
+<ul>
+<li>Add Query to select data</li>
+<li>(Optional) Apply transforms</li>
+<li>Select a visualization</li>
+<li>(Optional) Customize options</li>
+</ul>
+</li>
+<li>Save and apply. That's it.</li>
+</ul>
+<h3><a class="header" href="#install-plugin" id="install-plugin">Install Plugin</a></h3>
+<ul>
+<li>Grafana doesn't have the functionality to visualize data from Google Spreadsheet.</li>
+<li>The plugin <strong>Google Sheets</strong> provides this functionality.</li>
+<li>Run the command shown below to install it
+<code>sudo grafana-cli plugins install grafana-googlesheets-datasource</code></li>
+</ul>
+<h3><a class="header" href="#add-datasource--creating-a-dashboard" id="add-datasource--creating-a-dashboard">Add Datasource &amp; Creating a Dashboard</a></h3>
+<p>Follow this video to Add Datasource &amp; Create a Dashboard (watch from 8:20)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/GnWZsHjM5To" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../iot/learn-iot-gas-get.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../project/toc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../iot/learn-iot-gas-get.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../project/toc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
