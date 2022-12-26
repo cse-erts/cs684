@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Grafana: Data Visualization Tool - CS684 Spring 2021</title>
+        <title>[4] Theme Rules - CS684 Spring 2022</title>
         
         
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../lustre_heptagon_installaton_instructions.html">Installation of Lustre and Heptagon</a></li><li class="chapter-item "><a href="../Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="../Lustre_resource.html">Lustre Resources</a></li><li class="chapter-item "><a href="../CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="../CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="../CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="../CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="../CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="../CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="../CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="../CS684_Assignment-3.html">Assignment 3</a></li><li class="chapter-item "><a href="../CS684_Assignment-4.html">Assignment 4</a></li></ol></li><li class="chapter-item expanded "><a href="../iot.html">Internet of Things (IoT)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../iot/learn-iot-http.html">HTTP Protocol</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../iot/learn-iot-gas-sheet.html">Updating Data into Google Spreadhseets</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-gmail-alert.html">Sending Gmail Alerts</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-req.html">Generating data and updating Google Sheets using HTTP requests</a></li><li class="chapter-item "><a href="../iot/learn-iot-gas-get.html">Get Data from the Spreadsheet (Database)</a></li><li class="chapter-item expanded "><a href="../iot/learn-iot-grafana.html" class="active">Grafana: Data Visualization Tool</a></li></ol></li></ol></li><li class="chapter-item "><a href="../project/toc.html">Project</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../project/description.html">Description</a></li><li class="chapter-item "><a href="../project/sw_specifications.html">Software Specifications</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../Resources.html">Resources</a></li><li class="chapter-item "><a href="../rulebook1/toc.html">Project-1 Search and Rescue Robot</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../rulebook1/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="../rulebook1/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="../rulebook1/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="../rulebook1/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="../rulebook1/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li><li class="chapter-item expanded "><a href="../rulebook2/toc.html">Project-2 Valet Parking Robot</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../rulebook2/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="../rulebook2/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="../rulebook2/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item expanded "><a href="../rulebook2/theme_rules.html" class="active">[4] Theme Rules</a></li><li class="chapter-item "><a href="../rulebook2/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -128,7 +128,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CS684 Spring 2021</h1>
+                    <h1 class="menu-title">CS684 Spring 2022</h1>
 
                     <div class="right-buttons">
                         
@@ -160,77 +160,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#grafana-data-visualization-tool" id="grafana-data-visualization-tool">Grafana: Data Visualization Tool</a></h1>
-<p>A part of the IoT solutions is analyzing all the data that is collected from sensors and actuators. Data in it's raw form is difficult to understand and also time consuming (imagine 10 million data points). Thus it becomes almost necessary to use techniques such as data visualization. Using data visualization, data becomes easy to understand and quick to explore and analyze. We will learn Grafana, a tool for analyzing time-series data.</p>
-<h2><a class="header" href="#install-grafana-on-debian-or-ubuntu" id="install-grafana-on-debian-or-ubuntu">Install Grafana on Debian or Ubuntu</a></h2>
-<p>Run the commands in the order given below in your terminal:</p>
-<pre><code class="language-bash">sudo apt-get install -y apt-transport-https
-sudo apt-get install -y software-properties-common wget
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-</code></pre>
-<pre><code class="language-bash">echo &quot;deb https://packages.grafana.com/oss/deb stable main&quot; | sudo tee -a /etc/apt/sources.list.d/grafana.list
-</code></pre>
-<pre><code class="language-sudoapt-getupdate">sudo apt-get update
-sudo apt-get install grafana
-</code></pre>
-<p>If you are not using Debian or Ubuntu, instructions for other operating systems can be found <a href="https://grafana.com/docs/grafana/latest/installation/">here</a> </p>
-<blockquote>
-<p><em><strong>Note:</strong> We are using OSS version of Grafana and not enterprise edition.</em></p>
-</blockquote>
-<hr>
-<h2><a class="header" href="#starting-grafana" id="starting-grafana">Starting Grafana</a></h2>
+                        <center><h2><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-4-theme-rules" id="rulebook-4-theme-rules">Rulebook: [4] Theme Rules</a></h3></center>
+<br/>
 <ul>
-<li>Here's how you would start Grafana on Debian / Ubuntu: </li>
+<li><a href="#final-run">Final Run</a></li>
+<li><a href="#repositioning-the-robot">Repositioning the Robot</a></li>
 </ul>
-<p><code>sudo service grafana-server start</code></p>
+<hr />
+<h2><a class="header" href="#final-run" id="final-run">Final Run</a></h2>
 <ul>
-<li>
-<p>Then in your browser, go to http://localhost:3000.</p>
-</li>
-<li>
-<p>Enter username and password as <strong>admin</strong> and <strong>admin</strong> respectively.</p>
-</li>
-</ul>
-<h2><a class="header" href="#creating-a-dashboard" id="creating-a-dashboard">Creating a Dashboard</a></h2>
-<p>Visualization for a project is managed under a dashboard. Creating a
-dashboard has 5 major steps. You can repeat the steps to add more
-dashboards.</p>
+<li>The maximum time allotted to complete the task is 10 minutes.</li>
+<li>A maximum of two repositions (explained below) is allowed for each team.</li>
+<li>Once the robot is switched on, human intervention is NOT allowed.</li>
+<li>Robot has to follow the black line
+for traversal. </li>
+<li>For the final demonstration, the Arena Configuration will NOT be given to any of the teams.The robot must navigate through a randomly setup arena and autonomously detect the dummy cars without any prior knowledge of the arena configuration.<br />
+<strong>Note:</strong> You MUST have a generic solution that
+can handle any setup, in real-time.</li>
+<li>A run ends and the timer is stopped when:
 <ul>
-<li>Install any Plugins if required</li>
-<li>Add Datasource</li>
-<li>Create a new Dashboard</li>
-<li>Add Panel under Dashboard
-<ul>
-<li>Add Query to select data</li>
-<li>(Optional) Apply transforms</li>
-<li>Select a visualization</li>
-<li>(Optional) Customize options</li>
+<li>The Robot parks itself or</li>
+<li>If the maximum time limit for completing the task is reached or</li>
+<li>If the team needs repositioning but has used all repositioning options.
+<br></li>
 </ul>
 </li>
-<li>Save and apply. That's it.</li>
 </ul>
-<h3><a class="header" href="#install-plugin" id="install-plugin">Install Plugin</a></h3>
-<ul>
-<li>Grafana doesn't have the functionality to visualize data from Google Spreadsheet.</li>
-<li>The plugin <strong>Google Sheets</strong> provides this functionality.</li>
-<li>Run the command shown below to install it
-<code>sudo grafana-cli plugins install grafana-googlesheets-datasource</code></li>
-</ul>
-<h3><a class="header" href="#add-datasource--creating-a-dashboard" id="add-datasource--creating-a-dashboard">Add Datasource &amp; Creating a Dashboard</a></h3>
-<p>Follow this video to Add Datasource &amp; Create a Dashboard (watch from 8:20)</p>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/GnWZsHjM5To" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr />
+<h2><a class="header" href="#repositioning-the-robot" id="repositioning-the-robot">Repositioning the Robot</a></h2>
+<p>Suppose while traversing the arena, the robot strays off the black line, team member can place the robot on the line by dragging (not lifting) the robot back to the line. This is termed as a Reposition.
+Note that the timer used for measuring the task completion time in the competition will be continuously running during a Reposition and robot will not be switched off.</p>
+<br>
+<hr />
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../iot/learn-iot-gas-get.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../rulebook2/sw_specifications.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../project/toc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rulebook2/judging_and_scoring_system.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -242,13 +217,13 @@ dashboards.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../iot/learn-iot-gas-get.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../rulebook2/sw_specifications.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../project/toc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rulebook2/judging_and_scoring_system.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
