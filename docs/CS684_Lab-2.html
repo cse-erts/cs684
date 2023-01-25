@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Assignment 1 - CS684 Spring 2022</title>
+        <title>Lab 2 - CS684 Spring 2022</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Assignment-1.html" class="active">Assignment 1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item expanded "><a href="CS684_Lab-2.html" class="active">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,78 +140,99 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="assignment-1-reactive-kernel"><a class="header" href="#assignment-1-reactive-kernel">Assignment 1: Reactive Kernel </a></h4></center>
+<center><h4 id="lab-2-draw-statechart-for-line-following"><a class="header" href="#lab-2-draw-statechart-for-line-following">Lab 2: Draw Statechart for Line following</a></h4></center>
+<hr />
+<h4 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h4>
+<ul>
+<li>
+<p>Tool to be used:  Yakindu Statechart Tool</p>
+</li>
+<li>
+<p>Tutorial for Statechart: </p>
+<ul>
+<li><a href="https://www.itemis.com/en/products/itemis-create/documentation/tutorials/tutorial_five-minutes_tutorial?hsLang=de" target="_blank">Five-minutes tutorial</a></li>
+<li><a href="https://www.itemis.com/en/yakindu/state-machine/documentation/tutorials/video-tutorials/" target="_blank">Video Tutorials</a></li>
+<li><a href="https://www.itemis.com/en/products/itemis-create/documentation/user-guide/overview_what_are_state_machines" target="_blank">User Guide</a></li>
+</ul>
+</li>
+<li>
+<p>Getting started for Lab-2:
+<a href="https://www.youtube.com/watch?v=qn2cCRzz8pc" target="_blank">Yakindu Statechart</a></p>
+</li>
+</ul>
+<hr />
 <h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
 <ul>
-<li>Download <a href="./resources/Assignment/ReacK.zip">ReacK.zip</a>. Unzip it.</li>
-<li>The extracted folder ReacK contains reactive kernel code written in C by hand (by-hand folder) and synthesized to C from a high-level language (Heptagon, by-hept folder).</li>
-<li>by-hand has C code implemented for Minimum (min) and Minimum of Average (min_avg) which follows the structure of a reactive kernel. That is, it consists of a C file with step and reset functions forming the compute part and the main file (the entry point) that reads inputs from the console (sense), calls functions from the compute part and prints on the console (or actuate).</li>
-<li>by-hept implements Heptagon code for the same problems, which synthesizes to C code.</li>
-<li>Minimum takes an input x and finds minimum of the x’s seen so far.</li>
-<li>Minimum of Average takes inputs x and y and finds minimum of the average at each instance (x+y)/2 seen so far.</li>
-</ul>
-<h4 id="compiling-and-running"><a class="header" href="#compiling-and-running">Compiling and Running:</a></h4>
-<ul>
-<li>For min</li>
-</ul>
-<pre><code class="language-code">cd &lt;/path/to/Reack&gt;/by-hand/min
-gcc -c min.c
-gcc -c main.c
-gcc -o min main.o min.o
-./min
-</code></pre>
-<ul>
-<li>After running enter an integer value for x. The output should be the minimum of x entered since the start of the program. </li>
-<li>Repeat steps 1 and 2 for minimum of average.</li>
-</ul>
-<h4 id="exercise"><a class="header" href="#exercise">Exercise:</a></h4>
-<ul>
-<li>Inspect and analyze the C codes, both written by hand and synthesized.</li>
-<li>Follow the same structure of C code to write a reactive kernel for finding:
-<ul>
-<li>Mean</li>
-<li>Variance</li>
-</ul>
-</li>
-<li>At each step, input is a single integer x. <a href="./resources/mean-var.pdf">Mean and Variance</a> has to be found for a sequence of x’s seen so far.</li>
-</ul>
-<blockquote>
-<p>Hint: You need to remember the number of steps, mean and mean of x^2, and update it at each step.</p>
-</blockquote>
-<h4 id="expected-output"><a class="header" href="#expected-output">Expected Output:</a></h4>
-<ul>
 <li>
-<p><strong>Mean</strong> <br>
-<img src="./images/mean_op.gif" alt="" /></p>
+<p>You have to build a statechart for Line Following. </p>
 </li>
 <li>
-<p><strong>Variance</strong> <br>
-<img src="./images/var_op.gif" alt="" /></p>
+<p>Inputs: </p>
+<ul>
+<li><strong>5</strong> White Line Sensors.</li>
+<li>Each Sensor value ranges between: 0 to 1024.</li>
+<li>On white surface, sensor values are low and for black surface, sensor values are high.</li>
+</ul>
+</li>
+<li>
+<p>Outputs: </p>
+<ul>
+<li><strong>3</strong> for controlling the motion of the Robot (1 for Direction and 2 for Motor's velocities).</li>
+<li>Direction output is binary: 0 means backward and 1 means forward.</li>
+<li>Motor velocity ranges between 0 to 100.</li>
+</ul>
+</li>
+<li>
+<p>Using the above information, draw statechart for Line following of the robot. Consider a black line on white surface.</p>
+</li>
+<li>
+<p>Use PID controller for line following.</p>
 </li>
 </ul>
 <blockquote>
-<p>Note: Your output should be exactly same as expected output including variables name as it will be autoevaluated.</p>
+<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step.</p>
 </blockquote>
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h4>
+<hr />
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
 <ul>
-<li>Create a folder named <strong><code>&lt;RollNo&gt;_Assignment_1</code></strong>.</li>
-<li>Copy and paste <strong>mean</strong> &amp; <strong>variance</strong> folder inside the newly created folder.</li>
-<li><strong>mean</strong> folder should contain 3 files : <code>mean.c</code>, <code>mean.h</code> &amp; <code>main.c</code>.</li>
-<li><strong>variance</strong> folder should contain 3 files : <code>var.c</code>, <code>var.h</code> &amp; <code>main.c</code>. </li>
-<li>Compress the folder in a <strong><code>.tar.gz</code></strong> file and submit it on moodle.</li>
+<li>For Lab-2 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
+<li>Folder should contain following:
+<ol>
+<li><strong><code>.ysc</code></strong> file: source file of Yakindu</li>
+<li><strong><code>Readme.txt file</code></strong> file: </li>
+</ol>
+<ul>
+<li>Containing information about the startergy used, assumptions made and description about the statechart, inputs used for simulation and outputs obtained in a tabular form. </li>
+<li>Also add youtube link of the video - shoot the screen recording of the simulation of statechart in Yakindu for atleast 20 steps with different input combinations.</li>
 </ul>
+<ol start="3">
+<li><strong><code>Contribution.txt </code></strong> file: stating detailed contribution of each member</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <strong><code>&lt;GroupName&gt;_Lab_2.tar.gz</code></strong></li>
+<li>Upload the file on Moodle
 <blockquote>
-<p>Note: Make sure you have removed all the print statements from the file except the lines wihich prints mean and variance. Else your submission will not be evaluated.</p>
+<p>Note: Make sure</p>
+<ul>
+<li>that <strong><code>.ysc</code></strong> file is simulatable on Yakindu.</li>
+<li>to add GroupName in your file name </li>
+</ul>
 </blockquote>
+</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Assignments.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -219,10 +240,13 @@ gcc -o min main.o min.o
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Assignments.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
