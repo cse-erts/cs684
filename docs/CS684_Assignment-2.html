@@ -142,6 +142,7 @@
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
 <center><h4 id="assignment-2-lustreheptagon"><a class="header" href="#assignment-2-lustreheptagon">Assignment 2: Lustre/Heptagon </a></h4></center>
 <hr />
+<p><strong>Note :</strong> Assignment 2 contains theory questions as well as coding questions. For theory questions, submit your answer in the text file and for coding questions, submit code files (.lus or .ept). Before submitting, refer to the Submission Instructions.</p>
 <h4 id="problem-statements"><a class="header" href="#problem-statements">PROBLEM STATEMENTS</a></h4>
 <p><strong><code>Q1.</code></strong></p>
 <p>Complete the following table giving values of expressions in column 1 for the first 6 cycles. The values of integer flows for the first 5 cycles are given in rows, labelled P and Q.</p>
@@ -155,6 +156,12 @@
 <tr><td style="text-align: center">P fby Q</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
 </tbody></table>
 </div>
+<p><strong>Answer format:</strong> Create <code>q1</code> text file. Without using a space, list the values of the expressions for 5 cycles in comma-separated format. Make sure to write each expression's value for the five cycles on a separate line.
+For ex. </p>
+<pre><code>1,1,1,1,1,1
+2,2,2,2,2,2
+3,3,3,3,3,3
+</code></pre>
 <p><strong><code>Q2.</code></strong> </p>
 <p>Consider the following Lustre nodes:</p>
 <pre><code class="language-code">node foo(P: int) returns (Q, R: int)
@@ -173,6 +180,11 @@ let
 tel
 </code></pre>
 <p>Is this program causally correct? What is the order in which values of variables Q,R,W,Y,Z are calculated in each cycle?</p>
+<p><strong>Answer format:</strong> Create <code>q2</code> text file. Write the answer of the both the question in comma separated format without using a space. 
+For ex.</p>
+<pre><code>no,yes
+Q,R,W,Y,Z
+</code></pre>
 <p><strong><code>Q3.</code></strong> </p>
 <p>Write following lustre codes:</p>
 <p><code>3.1:</code> Define a Lustre node returning the following sequence of values.   <code>(Code required)</code> <br />
@@ -191,6 +203,7 @@ tel
 <blockquote>
 <p>(Hint: First count for how many previous cycles req has been true continuously.)</p>
 </blockquote>
+<p><strong>Answer format:</strong> For question 3.1 &amp; 3.2, submit .lus file.</p>
 <p><strong><code>Q4.</code></strong> </p>
 <p>Answer with respect to Heptagon code:</p>
 <p><code>4.1:</code> Please describe in English the output produced by the following Heptagon node. </p>
@@ -206,6 +219,7 @@ tel
 ...
 </code></pre>
 <p>The node should check for mutual exclusion of ack[i] and ack[j]. That is ok is true provided expression ack[i] and ack[j] is false for all i, j pairs with i not= j.</p>
+<p><strong>Answer format:</strong> Create <code>q41 &amp; q42</code> text files. No specific format for these questions. These question will be manually evaluated. And for question 4.3, submit .ept file.</p>
 <p><strong><code>Q5.</code></strong> </p>
 <p>Study the following Heptagon code for ripple adder.</p>
 <pre><code class="language-code">node mxor(x, y: bool) returns (c: bool)
@@ -227,8 +241,9 @@ tel
 <p>A sample code file with the above code simulating a 4-bit adder is given: <a href="https://drive.google.com/file/d/1N2xKjaIJKYc6iZbB7ErPer2Gkit6nfLI/view" target="_blank">Download File</a>.</p>
 <p><code>5.1:</code> Manually compute the output at 0th cycle of rippleadd for  constants a=[0,1,1,0,1,1,1,0] and b=[1,1,0,1,0,1,1,1] given as input to rippleadd&lt;&lt;8&gt;&gt;(a,b). </p>
 <p><code>5.2:</code> Using this node rippleadd, define a node counter which counts in binary modulo 64. (It should output unsigned 8 bit binary numbers corresponding to the decimal numbers 0, 1, 2, ..., 63, 0, 1, 2,.... in successive cycles).    <code>(Code required)</code></p>
+<p><strong>Answer format:</strong> For question 5.1, create <code>q51</code> text file. Write the answer the question in comma separated format without using a space &amp; for question 5.2, submit .ept file.</p>
 <p><strong><code>Q6.</code></strong> </p>
-<p><strong>(Synchronous Bus Arbiter)</strong> An arbiter arbitrates between multiple requests coming at each cycle and gives acknowledgement to at most one of them. Consider the arbiter circuit below.     <code>(Code required)</code></p>
+<p><code>6.1:</code> <strong>(Synchronous Bus Arbiter)</strong> An arbiter arbitrates between multiple requests coming at each cycle and gives acknowledgement to at most one of them. Consider the arbiter circuit below.     <code>(Code required)</code></p>
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/2020/q6.png"></center>
 <p>Each <strong>red box</strong> (denoting a cell) in the left hand side figure is expanded to the <strong>cell</strong> circuit given in the right hand side figure.</p>
 <p>Using Heptagon, model each cell as a </p>
@@ -241,12 +256,11 @@ tel
 <p>Hint: See the implementation of rippleadd given in the previous question. Extra credit will be given if you can program this as an n cell arbiter with parameter n.</p>
 </blockquote>
 <p>Define a suitable display node to show the output. Simulate the arbiter using the tool Heptagon and check its functioning. Submit a screenshot of sample output using the sim2chro display.</p>
-<p>Which of the following properties does this arbiter have?</p>
-<ul>
-<li>Mutual exclusion of ack[i], ack[j] for i not= j.</li>
-<li>No spurious ack, i.e. ack[i] =&gt; req[i] </li>
-<li>No lost cycles, i.e. in any cycle, if there is at least 1 true request, the arbiter should have at least one true ack.</li>
-</ul>
+<p><code>6.2:</code> Which of the following properties does this arbiter have?</p>
+<p>a. Mutual exclusion of ack[i], ack[j] for i not= j.<br />
+b. No spurious ack, i.e. ack[i] =&gt; req[i] <br />
+c. No lost cycles, i.e. in any cycle, if there is at least 1 true request, the arbiter should have at least one true ack.</p>
+<p><strong>Answer format:</strong> For question 6.1, submit .ept file. For question 6.2, create <code>q62</code> text file. Write the options in comma separated format without using a space. </p>
 <p><strong><code>Q7.</code></strong> </p>
 <p>A monitor node for a property S takes as input a set of flows to observe (e.g. p, q: bool). It outputs a single boolean flow ok. The idea is that at every clock cycle, ok is true if the property S holds for the past sequence of inputs (including the current cycle). For example:
 Property S: “p is continuously true in the past” has the monitor node</p>
@@ -260,9 +274,50 @@ tel
 <code>7.2:</code> Give a monitor for the following property: “p is continuously true in the past AND q has occured at least once in the past.”     <code>(Code required)</code> <br />
 <code>7.3:</code> Give a monitor node for the following property: Assume that a, b, c are boolean flows. “Everytime a occurs, c will remain continuously true from then on until a b occurs”. Specify additional assumptions that you make in your design (E.g. what happens if a and b occur simultaneously).     <code>(Code required)</code> <br />
 <code>7.4:</code> Give a monitor node for the following property: Assume that req and ack are boolean flows. “If req has been true for the last 3 cycles (including the current cycle) then ack must be true in the current cycle.”     <code>(Code required)</code></p>
+<p><strong>Answer format:</strong> For question 7.1, create <code>q71</code> text file. Write the answer the question in comma separated format without using a space &amp; for question 7.2, 7.3 &amp; 7.4, submit .ept file.</p>
 <blockquote>
 <p>Clarification: req and ack are both input boolean flows. ok is the output flow. ok is true if the property is observed/followed.</p>
 </blockquote>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
+<ul>
+<li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment2</code></strong>.</li>
+<li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below: </li>
+</ul>
+<pre><code>&lt;RollNo&gt;_assignment2
+│  
+└─── q1 (text file)
+│  
+└─── q2 (text file)
+│
+└─── q3
+│   │   q31.lus
+│   │   q32.lus
+│
+└─── q4
+│   │   q41 (text file)
+│   │   q42 (text file)
+│   │   q43.ept
+│
+└─── q5
+│   │   q51 (text file)
+│   │   q52.ept
+│   
+└─── q6
+│   │   q61.ept
+│   │   q62 (text file)
+│   
+└─── q7
+    │   q71 (text file)
+    │   q72.ept
+    │   q73.ept
+    │   q74.ept
+
+</code></pre>
+<p><strong>Note :</strong> : Folder name and file name should be same as mentioned in the above structure.</p>
+<ul>
+<li>Compress the folder in a <strong><code>.tar.gz</code></strong> file and submit it on moodle.</li>
+</ul>
+<p><strong>Note :</strong> <u><a href="https://drive.google.com/file/d/1_lxQMNIfY5MIFqtWuikWsWwxdqrR__WE/view?usp=share_link" target="_blank">Download this </a></u> Python file for checking the folder structure. The instructions for running the file are given in comments.</p>
 <hr />
 
                     </main>
