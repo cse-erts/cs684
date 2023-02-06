@@ -4,23 +4,35 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Assignment 2 - CS684 Spring 2022</title>
+        
+        
 
 
         <!-- Custom HTML head -->
         
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
         <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
         <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -28,19 +40,22 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        
 
+        
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script>
+        <script type="text/javascript">
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -56,7 +71,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
+        <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -68,7 +83,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
+        <script type="text/javascript">
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -89,7 +104,8 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -99,27 +115,31 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
+                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
+                        
                     </div>
 
                     <h1 class="menu-title">CS684 Spring 2022</h1>
 
                     <div class="right-buttons">
-
+                        
+                        
                     </div>
                 </div>
 
+                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -127,9 +147,10 @@
                         </ul>
                     </div>
                 </div>
+                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -139,24 +160,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="assignment-2-lustreheptagon"><a class="header" href="#assignment-2-lustreheptagon">Assignment 2: Lustre/Heptagon </a></h4></center>
+                        <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#assignment-2-lustreheptagon" id="assignment-2-lustreheptagon">Assignment 2: Lustre/Heptagon </a></h4></center>
 <hr />
 <p><strong>Note :</strong> Assignment 2 contains theory questions as well as coding questions. For theory questions, submit your answer in the text file and for coding questions, submit code files (.lus or .ept). Before submitting, refer to the Submission Instructions.</p>
-<h4 id="problem-statements"><a class="header" href="#problem-statements">PROBLEM STATEMENTS</a></h4>
+<h4><a class="header" href="#problem-statements" id="problem-statements">PROBLEM STATEMENTS</a></h4>
 <p><strong><code>Q1.</code></strong></p>
 <p>Complete the following table giving values of expressions in column 1 for the first 6 cycles. The values of integer flows for the first 5 cycles are given in rows, labelled P and Q.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Expression\Cycle</th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">5</th></tr></thead><tbody>
-<tr><td style="text-align: center">P</td><td style="text-align: center">2</td><td style="text-align: center">7</td><td style="text-align: center">5</td><td style="text-align: center">1</td><td style="text-align: center">3</td><td style="text-align: center">-</td></tr>
-<tr><td style="text-align: center">Q</td><td style="text-align: center">0</td><td style="text-align: center">13</td><td style="text-align: center">6</td><td style="text-align: center">5</td><td style="text-align: center">2</td><td style="text-align: center">-</td></tr>
-<tr><td style="text-align: center">pre(P)</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">Q + 1</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">P -&gt; Q</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">P -&gt; (pre(Q)+1)</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">P fby Q</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<table><thead><tr><th align="center">Expression\Cycle</th><th align="left">0</th><th align="left">1</th><th align="left">2</th><th align="left">3</th><th align="left">4</th><th align="left">5</th></tr></thead><tbody>
+<tr><td align="center">P</td><td align="left">2</td><td align="left">7</td><td align="left">5</td><td align="left">1</td><td align="left">3</td><td align="left">-</td></tr>
+<tr><td align="center">Q</td><td align="left">0</td><td align="left">13</td><td align="left">6</td><td align="left">5</td><td align="left">2</td><td align="left">-</td></tr>
+<tr><td align="center">pre(P)</td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td></tr>
+<tr><td align="center">Q + 1</td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td></tr>
+<tr><td align="center">P -&gt; Q</td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td></tr>
+<tr><td align="center">P -&gt; (pre(Q)+1)</td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td></tr>
+<tr><td align="center">P fby Q</td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td><td align="left"></td></tr>
 </tbody></table>
-</div>
-<p><strong>Answer format:</strong> Create <code>q1</code> text file. Without using a space, list the values of the expressions for 5 cycles in comma-separated format. Make sure to write each expression's value for the five cycles on a separate line.
+<p><strong>Answer format:</strong> Create <code>q1</code> text file. Without using a space, list the values of the expressions for 6 cycles in comma-separated format. Make sure to write each expression's value for the six cycles on a separate line.
 For ex. </p>
 <pre><code>1,1,1,1,1,1
 2,2,2,2,2,2
@@ -187,7 +207,7 @@ Q,R,W,Y,Z
 </code></pre>
 <p><strong><code>Q3.</code></strong> </p>
 <p>Write following lustre codes:</p>
-<p><code>3.1:</code> Define a Lustre node returning the following sequence of values.   <code>(Code required)</code> <br />
+<p><code>3.1:</code> Define a Lustre node returning the following sequence of values.   <code>(Code required)</code><br />
 1, 4, 13, 40, 121, ... </p>
 <blockquote>
 <p>(Hint: Consider how the difference of two successive terms grows.)</p>
@@ -241,7 +261,7 @@ tel
 <p>A sample code file with the above code simulating a 4-bit adder is given: <a href="https://drive.google.com/file/d/1N2xKjaIJKYc6iZbB7ErPer2Gkit6nfLI/view" target="_blank">Download File</a>.</p>
 <p><code>5.1:</code> Manually compute the output at 0th cycle of rippleadd for  constants a=[0,1,1,0,1,1,1,0] and b=[1,1,0,1,0,1,1,1] given as input to rippleadd&lt;&lt;8&gt;&gt;(a,b). </p>
 <p><code>5.2:</code> Using this node rippleadd, define a node counter which counts in binary modulo 64. (It should output unsigned 8 bit binary numbers corresponding to the decimal numbers 0, 1, 2, ..., 63, 0, 1, 2,.... in successive cycles).    <code>(Code required)</code></p>
-<p><strong>Answer format:</strong> For question 5.1, create <code>q51</code> text file. Write the answer the question in comma separated format without using a space &amp; for question 5.2, submit .ept file.</p>
+<p><strong>Answer format:</strong> For question 5.1, create <code>q51</code> text file. Write the answer of the question in comma separated format without using a space (write both values in a single line) &amp; for question 5.2, submit .ept file.</p>
 <p><strong><code>Q6.</code></strong> </p>
 <p><code>6.1:</code> <strong>(Synchronous Bus Arbiter)</strong> An arbiter arbitrates between multiple requests coming at each cycle and gives acknowledgement to at most one of them. Consider the arbiter circuit below.     <code>(Code required)</code></p>
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/2020/q6.png"></center>
@@ -258,7 +278,7 @@ tel
 <p>Define a suitable display node to show the output. Simulate the arbiter using the tool Heptagon and check its functioning. Submit a screenshot of sample output using the sim2chro display.</p>
 <p><code>6.2:</code> Which of the following properties does this arbiter have?</p>
 <p>a. Mutual exclusion of ack[i], ack[j] for i not= j.<br />
-b. No spurious ack, i.e. ack[i] =&gt; req[i] <br />
+b. No spurious ack, i.e. ack[i] =&gt; req[i]<br />
 c. No lost cycles, i.e. in any cycle, if there is at least 1 true request, the arbiter should have at least one true ack.</p>
 <p><strong>Answer format:</strong> For question 6.1, submit .ept file. For question 6.2, create <code>q62</code> text file. Write the options in comma separated format without using a space. </p>
 <p><strong><code>Q7.</code></strong> </p>
@@ -270,15 +290,15 @@ let
 tel
 </code></pre>
 <p>Answer the following</p>
-<p><code>7.1:</code> Give the output of the above <strong>smonitor</strong> node for the input flow p = true true true false true false  true true <br />
-<code>7.2:</code> Give a monitor for the following property: “p is continuously true in the past AND q has occured at least once in the past.”     <code>(Code required)</code> <br />
-<code>7.3:</code> Give a monitor node for the following property: Assume that a, b, c are boolean flows. “Everytime a occurs, c will remain continuously true from then on until a b occurs”. Specify additional assumptions that you make in your design (E.g. what happens if a and b occur simultaneously).     <code>(Code required)</code> <br />
+<p><code>7.1:</code> Give the output of the above <strong>smonitor</strong> node for the input flow p = true true true false true false  true true<br />
+<code>7.2:</code> Give a monitor for the following property: “p is continuously true in the past AND q has occured at least once in the past.”     <code>(Code required)</code><br />
+<code>7.3:</code> Give a monitor node for the following property: Assume that a, b, c are boolean flows. “Everytime a occurs, c will remain continuously true from then on until a b occurs”. Specify additional assumptions that you make in your design (E.g. what happens if a and b occur simultaneously).     <code>(Code required)</code><br />
 <code>7.4:</code> Give a monitor node for the following property: Assume that req and ack are boolean flows. “If req has been true for the last 3 cycles (including the current cycle) then ack must be true in the current cycle.”     <code>(Code required)</code></p>
 <p><strong>Answer format:</strong> For question 7.1, create <code>q71</code> text file. Write the answer the question in comma separated format without using a space &amp; for question 7.2, 7.3 &amp; 7.4, submit .ept file.</p>
 <blockquote>
 <p>Clarification: req and ack are both input boolean flows. ok is the output flow. ok is true if the property is observed/followed.</p>
 </blockquote>
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
+<h4><a class="header" href="#submission-instructions" id="submission-instructions">Submission Instructions</a></h4>
 <ul>
 <li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment2</code></strong>.</li>
 <li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below: </li>
@@ -304,6 +324,7 @@ tel
 │   
 └─── q6
 │   │   q61.ept
+|   |   q61_op.jpg
 │   │   q62 (text file)
 │   
 └─── q7
@@ -324,10 +345,13 @@ tel
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                        
                             <a rel="prev" href="CS684_Assignment-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+                        
 
+                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -335,32 +359,45 @@ tel
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
                     <a rel="prev" href="CS684_Assignment-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+                
 
+                
             </nav>
 
         </div>
 
+        
 
+        
 
+        
 
-        <script>
+        
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+        
 
+        
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+        
 
+        
 
     </body>
 </html>
