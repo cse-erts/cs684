@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Assignment 3 - CS684 Spring 2022</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item expanded "><a href="CS684_Assignment-3.html" class="active">Assignment 3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2022</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4 id="assignment-3-lustreheptagon"><a class="header" href="#assignment-3-lustreheptagon">Assignment 3: Lustre/Heptagon </a></h4></center>
+<hr />
+<h4 id="problem-statements"><a class="header" href="#problem-statements">PROBLEM STATEMENTS</a></h4>
+<p><strong><code>Q1.</code></strong></p>
+<p>Consider the following node display discussed in class.</p>
+<pre><code class="language-code">node display(updown:bool) returns (o,q:int)
+var
+    last z: int = 20;
+    y:int;
+let
+  q = z;
+  switch updown
+  | true  do  y = 100 -&gt; pre(y)+1; 
+                         z = (last z) + 1;
+                         o=y + z
+  | false do  y = 10  -&gt; pre(y)-1;
+                         z = (last z) - 1;
+                         o=y + z
+  end
+tel
+</code></pre>
+<p>What will be the values of output flows o and q for the input flow</p>
+<ul>
+<li>updown =  0 0 1 1 1 0 1 0 0  1 1 1</li>
+</ul>
+<p><strong>Answer format:</strong> Create <code>q1</code> text file. Without using a space, list the output values of o in 1st line and q in 2nd line in comma-separated format. </p>
+<p><strong><code>Q2.</code></strong> </p>
+<p>Consider the following node which is a variant of the node discussed  in the class. The change is that the transitions are of then type here instead of the continue type as shown in class. Hence the behaviour of the automaton differs. </p>
+<p>Complete the table below giving the output of this node for the first  11 cycles in a table. Also give the start state (ST) and then next state (NS) for each of these cycles. </p>
+<pre><code class="language-code">node myautomaton() returns (y:int; stup:bool; v:int)
+var last x:int = 2;
+let
+    y = x; 
+    automaton
+        state Up
+                 var w:int; 
+                 do x = (last x) + 1; stup = true;
+                    w = 0 -&gt; pre(w)+1; v=w;
+        until  x &gt;= 5 then Down
+        state Down
+            var w:int;
+            do x = (last x) - 1;  stup = false;
+            w = 50 -&gt; pre(w)-2; v=w;
+        until x &lt;= 3 then Up
+    end
+tel
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Flow Cycle</th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">5</th><th style="text-align: center">6</th><th style="text-align: center">7</th><th style="text-align: center">8</th><th style="text-align: center">9</th><th style="text-align: center">10</th></tr></thead><tbody>
+<tr><td style="text-align: center">ST State</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">Y</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">v</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">stup</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">NS State</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+</tbody></table>
+</div>
+<p><strong>Answer format:</strong> Create <code>q2</code> text file. Without using a space, list the values for 11 cycles in comma-separated format. Make sure to write each expression's value for 11 cycles on a separate line.</p>
+<p><strong><code>Q3.</code></strong> </p>
+<p>Consider the node myautomaton given below. Try to understand its structure. How many
+distinct modes does it have? Explain how you came up with this number.</p>
+<pre><code class="language-code">node myautomaton(i1: bool; i2: bool; i3: bool; i4: bool)
+    returns (o1: bool; o2: bool; o3: bool; o4: bool)
+let
+    automaton
+        state State1
+            do o1 = false; o2 = false; o3 = false; o4 = false
+            until i1 then State3
+            unless i2 then State2
+        state State2
+            var last end1: bool = false; last end2: bool = false;
+            do o1 = false; o2 = false; o3 = false; o4 = false;
+            automaton
+                state State1_1
+                    do until i3 then State2_1
+                state State 2_1
+                    do end1 = false;
+                state State3_1
+                    do end1 = true;
+            end;
+            automaton
+                state State1_2
+                    do unless i4 then State2_2
+                state State 2_2
+                    do end1 = false;
+                state State3_2
+                    do end2 = true
+            end
+            until end1 &amp; end2 then State1
+            unless i1 then State4
+                | i2 then State2
+        state State2
+            var l1: bool;
+            do o1 = false; o2 = false; o3 = false; o4 = l1; l1 = true;
+            until i4 then State4
+        state State4
+            var l2: bool;
+            do o1 = false; o2 = false; o3 = l2; o4 = false; l2 = true;
+            until i4 then State1
+        end
+tel
+</code></pre>
+<p><strong>Answer format:</strong> Create <code>q3</code> text file. Mention number of modes in 1st line and explanation in 2nd line.</p>
+<p><strong><code>Q4.</code></strong> </p>
+<p>Consider the following controller for farm road crossing. Try to understand its working. Try to simulate it using Heptagon simulator.</p>
+<p><em>A farm road (or side road) crosses a main road. Traffic light controller must turn on or off the lights maingreen, mainred, sidegreen, sidered. An input “carwait” is true if a car is waiting on the farm road.  Input “second” is the timer input which becomes true for one clock cycle every one second. Thus the count of “second” gives how much time has elapsed.</em></p>
+<pre><code class="language-code">node traffic(carwait,second:bool) 
+      returns (maingreen, mainred,sidegreen,sidered:bool)
+var timegreen:int;
+let
+  automaton
+    state Maingreen
+       do  timegreen = 5 -&gt; if (((pre(timegreen)) &gt; 0) and second) then 
+                                    pre(timegreen)-1  else pre(timegreen);
+       
+           maingreen = true; mainred = false;
+           sidegreen = false; sidered = true;
+       until ((timegreen &lt;= 0) and carwait) then Sidegreen
+    state Sidegreen
+       do
+           timegreen = 2 -&gt;
+                if (((pre(timegreen)) &gt; 0) and second) then pre(timegreen)-1
+                           else pre(timegreen);
+           maingreen = false; mainred = true;
+           sidegreen = true; sidered = false;
+       until ((timegreen &lt;=0)  or not carwait) then Maingreen
+  end
+tel
+</code></pre>
+<ol>
+<li>
+<p>What are some of the requirements  over the traffic node? For example, one simple requirement is that at most one of maingreen and sidegreen can be true in any clock cycle. List as many requirements as you think are appropriate.</p>
+</li>
+<li>
+<p>Modify the above controller by  adding  outputs “mainyellow and sideyellow&quot;. The light must remain yellow for 10 seconds before turning red. </p>
+</li>
+</ol>
+<p><strong>Answer format:</strong> Create <code>q41</code> text file and mention different requirements in separate lines. And for question 4.2, submit <code>q42.ept</code> file.</p>
+<p><strong><code>Q5.</code></strong> </p>
+<p>Model a Gas Burner Controller as a Heptagon node     <code>(Code required)</code></p>
+<p><code>node controller(flame: bool; sec: bool) returns (gas: bool; spark: bool)</code></p>
+<p>to meet the following requirements. Preferably Use the automaton construct. </p>
+<p><em>“Controller keeps gas on/off using the output gas and strikes a flame using the output spark. It can detect whether flame is on/off using input flame. Flow sec is a second beacon. It is true at each clock cycle where one second has elapsed since the previous such value. Flame will not occur unless the gas has accumulated for at least 15 seconds. Not every spark results in flame. Flame also occasionally goes off due to wind. Making a spark after Gas has leaked for more than 60 seconds causes an explosion.  Hence, after a leakage longer than 60 seconds, the Gas must be turned off and allowed to dissipate for 120 seconds to reach a safe state.  The controller should try to keep the flame on as much as possible.”</em></p>
+<p>Please explain your design. Simulate your code using the Heptagon simulator for various sample inputs and submit the output produced.</p>
+<p><strong>Answer format:</strong> Submit <code>q5.ept</code>. Explain your design in comments in code file.</p>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
+<ul>
+<li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment3</code></strong>.</li>
+<li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below: </li>
+</ul>
+<pre><code>&lt;RollNo&gt;_assignment3
+│  
+└─── q1 (text file)
+│  
+└─── q2 (text file)
+│  
+└─── q3 (text file)
+│
+└─── q4
+│   │   q41 (text file)
+│   │   q42.ept
+|  
+└─── q5.ept
+
+</code></pre>
+<p><strong>Note :</strong> Folder name and file name should be same as mentioned in the above structure.</p>
+<ul>
+<li>Compress the folder in a <strong><code>.tar.gz</code></strong> file and submit it on moodle.</li>
+</ul>
+<p><strong>Note :</strong> <u><a href="https://drive.google.com/file/d/1mr622W2x2-jfUqkkbFZKDCb0AcKT4o96/view?usp=share_link" target="_blank">Download this </a></u> Python file for checking the folder structure. The instructions for running the file are given in comments.</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="CS684_Assignment-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="CS684_Assignment-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
