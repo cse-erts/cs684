@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item expanded "><a href="CS684_Assignment-3.html" class="active">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item expanded "><a href="CS684_Assignment-3.html" class="active">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -197,7 +197,32 @@ tel
 </tbody></table>
 </div>
 <p><strong>Answer format:</strong> Create <code>q2</code> text file. Without using a space, list the values for 11 cycles in comma-separated format. Make sure to write each expression's value for 11 cycles on a separate line.</p>
-<p><strong><code>Q3.</code></strong> </p>
+<p><strong><code>Q3.</code></strong></p>
+<p>Consider the following node. Complete the table below giving the output of this node for the first  10 cycles in the table. Also give the start state (ST), active state (AS) and then next state (NS) for each of these cycles.</p>
+<pre><code class="language-code">node myautomaton(c: bool) returns (o: int; stup:bool)
+ let
+    automaton
+      state Up
+         do o = 60 -&gt; pre(o)+2; stup = true;
+      unless c then Down
+      state Down
+         do o = 150 -&gt; pre(o)-2; stup = true;
+      until c then Up
+    end
+ tel
+
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Flow Cycle</th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">5</th><th style="text-align: center">6</th><th style="text-align: center">7</th><th style="text-align: center">8</th><th style="text-align: center">9</th></tr></thead><tbody>
+<tr><td style="text-align: center">ST</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">AS</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">c</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">o</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">stup</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">NS</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+</tbody></table>
+</div>
+<p><strong>Answer format:</strong> Create <code>q3</code> text file. Without using a space, list the values for 10 cycles in comma-separated format. Make sure to write each expression's value for 10 cycles on a separate line.</p>
+<p><strong><code>Q4.</code></strong> </p>
 <p>Consider the node myautomaton given below. Try to understand its structure. How many
 distinct modes does it have? Explain how you came up with this number.</p>
 <pre><code class="language-code">node myautomaton(i1: bool; i2: bool; i3: bool; i4: bool)
@@ -241,8 +266,8 @@ let
         end
 tel
 </code></pre>
-<p><strong>Answer format:</strong> Create <code>q3</code> text file. Mention number of modes in 1st line and explanation in 2nd line.</p>
-<p><strong><code>Q4.</code></strong> </p>
+<p><strong>Answer format:</strong> Create <code>q4</code> text file. Mention number of modes in 1st line and explanation in 2nd line.</p>
+<p><strong><code>Q5.</code></strong> </p>
 <p>Consider the following controller for farm road crossing. Try to understand its working. Try to simulate it using Heptagon simulator.</p>
 <p><em>A farm road (or side road) crosses a main road. Traffic light controller must turn on or off the lights maingreen, mainred, sidegreen, sidered. An input “carwait” is true if a car is waiting on the farm road.  Input “second” is the timer input which becomes true for one clock cycle every one second. Thus the count of “second” gives how much time has elapsed.</em></p>
 <pre><code class="language-code">node traffic(carwait,second:bool) 
@@ -251,7 +276,7 @@ var timegreen:int;
 let
   automaton
     state Maingreen
-       do  timegreen = 5 -&gt; if (((pre(timegreen)) &gt; 0) and second) then 
+       do  timegreen = 180 -&gt; if (((pre(timegreen)) &gt; 0) and second) then 
                                     pre(timegreen)-1  else pre(timegreen);
        
            maingreen = true; mainred = false;
@@ -259,31 +284,31 @@ let
        until ((timegreen &lt;= 0) and carwait) then Sidegreen
     state Sidegreen
        do
-           timegreen = 2 -&gt;
+           timegreen = 60 -&gt;
                 if (((pre(timegreen)) &gt; 0) and second) then pre(timegreen)-1
                            else pre(timegreen);
            maingreen = false; mainred = true;
            sidegreen = true; sidered = false;
-       until ((timegreen &lt;=0)  or not carwait) then Maingreen
+       until ((timegreen &lt;=0)  and not carwait) then Maingreen
   end
 tel
 </code></pre>
 <ol>
 <li>
-<p>What are some of the requirements  over the traffic node? For example, one simple requirement is that at most one of maingreen and sidegreen can be true in any clock cycle. List as many requirements as you think are appropriate.</p>
+<p>Modify the above controller by  adding  outputs “mainyellow and sideyellow. The aim is that traffic light must remain yellow for 10 seconds before turning red. </p>
 </li>
 <li>
-<p>Modify the above controller by  adding  outputs “mainyellow and sideyellow&quot;. The light must remain yellow for 10 seconds before turning red. </p>
+<p>What are some of the requirements  over the traffic node? For example, one simple requirement is that at most one of maingreen and sidegreen can be true in any clock cycle. List as many requirements (written in English)  as you think are appropriate for the modified controller you have designed in part (1). </p>
 </li>
 </ol>
-<p><strong>Answer format:</strong> Create <code>q41</code> text file and mention different requirements in separate lines. And for question 4.2, submit <code>q42.ept</code> file.</p>
-<p><strong><code>Q5.</code></strong> </p>
+<p><strong>Answer format:</strong> For question 5.1, submit <code>q51.ept</code> file. And for question 5.2, create <code>q52</code> text file and mention different requirements in separate lines. </p>
+<p><strong><code>Q6.</code></strong> </p>
 <p>Model a Gas Burner Controller as a Heptagon node     <code>(Code required)</code></p>
 <p><code>node controller(flame: bool; sec: bool) returns (gas: bool; spark: bool)</code></p>
 <p>to meet the following requirements. Preferably Use the automaton construct. </p>
 <p><em>“Controller keeps gas on/off using the output gas and strikes a flame using the output spark. It can detect whether flame is on/off using input flame. Flow sec is a second beacon. It is true at each clock cycle where one second has elapsed since the previous such value. Flame will not occur unless the gas has accumulated for at least 15 seconds. Not every spark results in flame. Flame also occasionally goes off due to wind. Making a spark after Gas has leaked for more than 60 seconds causes an explosion.  Hence, after a leakage longer than 60 seconds, the Gas must be turned off and allowed to dissipate for 120 seconds to reach a safe state.  The controller should try to keep the flame on as much as possible.”</em></p>
 <p>Please explain your design. Simulate your code using the Heptagon simulator for various sample inputs and submit the output produced.</p>
-<p><strong>Answer format:</strong> Submit <code>q5.ept</code>. Explain your design in comments in code file.</p>
+<p><strong>Answer format:</strong> Submit <code>q6.ept</code>. Explain your design in comments in code file.</p>
 <h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
 <ul>
 <li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment3</code></strong>.</li>
@@ -296,19 +321,25 @@ tel
 └─── q2 (text file)
 │  
 └─── q3 (text file)
+│  
+└─── q4 (text file)
 │
-└─── q4
-│   │   q41 (text file)
-│   │   q42.ept
+└─── q5
+│   │   q51.ept 
+│   │   q52 (text file)
 |  
-└─── q5.ept
+└─── q6.ept
 
 </code></pre>
-<p><strong>Note :</strong> Folder name and file name should be same as mentioned in the above structure.</p>
+<blockquote>
+<p>Note: Folder name and file name should be same as mentioned in the above structure.</p>
+</blockquote>
 <ul>
 <li>Compress the folder in a <strong><code>.tar.gz</code></strong> file and submit it on moodle.</li>
 </ul>
-<p><strong>Note :</strong> <u><a href="https://drive.google.com/file/d/1mr622W2x2-jfUqkkbFZKDCb0AcKT4o96/view?usp=share_link" target="_blank">Download this </a></u> Python file for checking the folder structure. The instructions for running the file are given in comments.</p>
+<blockquote>
+<p>Note:  <u><a href="https://drive.google.com/file/d/1mr622W2x2-jfUqkkbFZKDCb0AcKT4o96/view?usp=share_link" target="_blank">Download this </a></u> Python file for checking the folder structure. The instructions for running the file are given in comments.</p>
+</blockquote>
 <hr />
 
                     </main>

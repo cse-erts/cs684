@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Assignments - CS684 Spring 2022</title>
+        <title>Valet Parking - CS684 Spring 2022</title>
 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html" class="active">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3_VP.html" class="active">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,25 +141,66 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="assignments"><a class="header" href="#assignments">Assignments </a></h4></center>
-<hr />
-<h2 id="assignment-scheduletentative"><a class="header" href="#assignment-scheduletentative">Assignment Schedule:[Tentative]</a></h2>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Sr. No</th><th style="text-align: center">Lab</th><th style="text-align: center">Release Date</th><th style="text-align: center">End Date</th></tr></thead><tbody>
-<tr><td style="text-align: center">1</td><td style="text-align: center">Handwritten Kernel in C [Individual]</td><td style="text-align: center">Thursday, January 12, 2023</td><td style="text-align: center">Thursday January 19, 2023</td></tr>
-<tr><td style="text-align: center">2</td><td style="text-align: center">Lustre/Heptagon [Individual]</td><td style="text-align: center">Thursday, February 02, 2023</td><td style="text-align: center">Thursday, February 09, 2023</td></tr>
-<tr><td style="text-align: center">3</td><td style="text-align: center">Lustre/Heptagon [Individual]</td><td style="text-align: center">Thursday, February 09, 2023</td><td style="text-align: center">Thursday, February 16, 2023</td></tr>
-<tr><td style="text-align: center">4</td><td style="text-align: center">FreeRTOS/scheduling theory [Individual]</td><td style="text-align: center">Thursday, March 16, 2023</td><td style="text-align: center">Thursday, March 30, 2023</td></tr>
+<center><h4 id="lab-3-lustreheptagon-implementation-of-valet-parking"><a class="header" href="#lab-3-lustreheptagon-implementation-of-valet-parking">Lab 3: Lustre/Heptagon implementation of Valet Parking</center></a></h4>
+<hr>
+<h3 id="aim"><a class="header" href="#aim">Aim:</a></h3>
+<p>In this lab, the robot should reach to destination by using <code>Line Following</code> and <code>Obstacle following</code> algorithm if any static obstacle has been detected by the robot along the path. Hence an algorithm has to be developed for <code>Line Following</code> and <code>Obstacle following</code> in Heptagon.</p>
+<div align='center'>
+<p><img src="./images/obstacle_following.png" alt="img" /></p>
+</div>
+<p>a. <strong>Line following:</strong> The arena provided to you is made up of curved and straight paths for the robot. To traverse the arena, the robot has to do line following depending on its position. Hence an algorithm has to be developed for Line following in Heptagon. <br></p>
+<p>b. <strong>Obstacle following:</strong> While robot is following white line path, any static obstacle can be present on the white line (straight path) of the arena. If the robot detects an obstacle along the path, then it has to cross the obstacle using obstacle following algorithm and come back to the white line as shown in the image above. The rest of the traversal will continue without obstacles. The algorithm for obstacle following should be developed in Heptagon.</p>
+<h3 id="algorithm"><a class="header" href="#algorithm">Algorithm</a></h3>
+<ul>
+<li>Use PID controller for Line following.</li>
+<li>White Line following has to be done using the white line sensors provided. 5 sensors will be provided and the team can decide the position of the sensors.</li>
+<li>Each sensor value ranges between: 0 to 1023.</li>
+<li>For example, if you have chosen the threshold value for the sensor as 400, if a sensor value is less than 400 then that particular sensor is not on the white line and if the value of the particular sensor is greater than threshold then that sensor is on the black surface.</li>
+<li>So depending upon the value of the particular sensor, robot has to decide whether it is on the white line or it is deviated from the white line. </li>
+<li>To adjust the position of the robot if it deviated from the white line use PID. The same cases as given in Lab 1 (FSM) applies here as well but rather than binary values, now you have to consider values between 0 to 1023. </li>
+<li>Likewise, team has to assume different scenarios or test cases which may come across while robot is traversing the arena.</li>
+<li>While robot is following white line and obstacle is detected along the path, then robot has to switch to obstacle following algorithm till it finds the white line. Once it comes on the white line, it should switch to Line following algorithm as shown in the image above.</li>
+<li>So, inputs should be data of 5 white line sensors and IR proximity sensors. </li>
+<li>Obstacles can be of any shape and size. It can extend outside the line.</li>
+<li>For Line following, 5 white line sensors will be provided and for Obstacle following 5 IR proximity sensors will be provided. Team has to mandatory use 5 white line sensors but team can decide number and position of IR sensors to be used.</li>
+<li>The values IR sensors proximity vary between 0 and 1023.</li>
+<li>You are free to make assumptions regarding readings of both sensors at different instances. For Line following, we have discussed some assumptions scenarios above. For obstacle following, if the value of the front IR sensor is less than the left and right IR sensor then the obstacle is at the front and then robot has to decide from which direction it should follow the obstacle till it comes back to the white line. </li>
+</ul>
+<h3 id="input--output-format"><a class="header" href="#input--output-format">Input &amp; Output format:</a></h3>
+<ol>
+<li>5 inputs of white line sensors and &quot;n&quot; inputs of IR proximity sensors are required.</li>
+</ol>
+<blockquote>
+<p>Note: &quot;n&quot; is the number of IR proximity sensors teams are using, team can decide number and position of IR sensors to be used.</p>
+</blockquote>
+<ol start="2">
+<li>From the final node, 3 outputs are required: 2 velocity values (of left and right motors) and direction.
+<ul>
+<li>Directions list:</li>
+</ul>
+</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Direction</th><th style="text-align: center">Representation</th></tr></thead><tbody>
+<tr><td style="text-align: center">Stop</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">Forward</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">Left</td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center">Right</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center">Backward</td><td style="text-align: center">4</td></tr>
 </tbody></table>
 </div>
+<ol start="3">
+<li>Velocities can range between 0 and 100</li>
+</ol>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-3_VP.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-3_SR.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignment-1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -169,11 +210,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-3_VP.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-3_SR.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignment-1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
