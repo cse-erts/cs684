@@ -226,45 +226,49 @@ tel
 <p>Consider the node myautomaton given below. Try to understand its structure. How many
 distinct modes does it have? Explain how you came up with this number.</p>
 <pre><code class="language-code">node myautomaton(i1: bool; i2: bool; i3: bool; i4: bool)
-    returns (o1: bool; o2: bool; o3: bool; o4: bool)
+returns (o1: bool; o2: bool; o3: bool; o4: bool)
 let
+automaton
+  state State1
+    do o1 = false; o2 = false; o3 = false; o4 = false
+    until i1 then State3
+    unless i2 then State2
+
+  state State3
+    var last end1: bool = false; last end2: bool = false;
+    do o1 = false; o2 = false; o3 = false; o4 = false;
     automaton
-        state State1
-            do o1 = false; o2 = false; o3 = false; o4 = false
-            until i1 then State3
-            unless i2 then State2
-        state State2
-            var last end1: bool = false; last end2: bool = false;
-            do o1 = false; o2 = false; o3 = false; o4 = false;
-            automaton
-                state State1_1
-                    do until i3 then State2_1
-                state State 2_1
-                    do end1 = false;
-                state State3_1
-                    do end1 = true;
-            end;
-            automaton
-                state State1_2
-                    do unless i4 then State2_2
-                state State 2_2
-                    do end1 = false;
-                state State3_2
-                    do end2 = true
-            end
-            until end1 &amp; end2 then State1
-            unless i1 then State4
-                | i2 then State2
-        state State2
-            var l1: bool;
-            do o1 = false; o2 = false; o3 = false; o4 = l1; l1 = true;
-            until i4 then State4
-        state State4
-            var l2: bool;
-            do o1 = false; o2 = false; o3 = l2; o4 = false; l2 = true;
-            until i4 then State1
-        end
+       state State1_1
+          do until i3 then State2_1
+       state State 2_1
+          do end1 = false;
+       state State3_1
+          do end1 = true;
+    end;
+   automaton
+      state State1_2
+          do unless i4 then State2_2
+      state State 2_2
+         do end1 = false;
+      state State3_2
+         do end2 = true
+   end
+until end1 &amp; end2 then State1
+unless i1 then State4
+         | i2 then State2
+
+state State2
+  var l1: bool;
+  do o1 = false; o2 = false; o3 = false; o4 = l1; l1 = true;
+  until i4 then State4
+
+state State4
+  var l2: bool;
+  do o1 = false; o2 = false; o3 = l2; o4 = false; l2 = true;
+  until i4 then State1
+end
 tel
+
 </code></pre>
 <p><strong>Answer format:</strong> Create <code>q4</code> text file. Mention number of modes in 1st line and explanation in 2nd line.</p>
 <p><strong><code>Q5.</code></strong> </p>
