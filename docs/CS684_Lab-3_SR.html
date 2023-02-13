@@ -175,8 +175,8 @@
 <li>5 inputs of white line sensors are required.</li>
 <li>From the final node, 4 outputs are required: plot_mid_node, path, direction, (vel_left, vel_right) : int arrays
 <ol>
-<li><strong>plot_mid_node:</strong> This should be an array containing information about the plots visited and the mid_node from which each plot is scanned. For example, if plot 1 is scanned from mid_node numbered 2, then the pair will be represented as <strong>'12'</strong>. Hence the maximum size of this array will be 9.</li>
-<li><strong>path:</strong> This array contains the path covered by the robot, i.e the nodes through which the robot passes. (numbered 1 to 16)</li>
+<li><strong>plot_mid_node:</strong> This should represent information about the plots visited and the mid_node from which each plot is scanned. For example, if plot 1 is scanned from mid_node numbered 2, then the pair will be represented as <strong>'12'</strong>.</li>
+<li><strong>path:</strong> This should represent the node detected by the robot, i.e the nodes through which the robot passes. (numbered 1 to 16)</li>
 <li><strong>direction:</strong> This should contain the direction followed by the robot at each node. Refer to below table for representation of different directions.</li>
 <li><strong>(vel_left, vel_right):</strong> This represents the velocities of the left and right motors for a particular input combination of 5 white line sensors.</li>
 </ol>
@@ -193,10 +193,10 @@
 <h3 id="example"><a class="header" href="#example">Example</a></h3>
 <ul>
 <li>
-<p>Consider the case where the robot travels straight from node 1 to 3 scanning the plots 1 and 2 and takes a left turn. The ouput format for plot_mod_node, path and direction will be: <br></p>
+<p>Consider the case where the robot travels straight from node 1 to 3 scanning the plots 2 and 3 and takes a left turn. The ouput format for plot_mid_node, path and direction will be: <br></p>
 <ol>
-<li>plot_mid_node = [11,21]</li>
-<li>path = [1,2,3]</li>
+<li>plot_mid_node = [11,....,21...]</li>
+<li>path = [2,....3]</li>
 <li>direction = [3,1,1,2] </li>
 </ol>
 </li>
@@ -205,7 +205,7 @@
 You have to provide sample inputs and outputs in tabular form. Assume that while the robot is moving straight from node 2 to 3, it deviates from the black line towards left. If the second sensor from left is now on the line (instead of middle sensor which should be the ideal case while travelling on the line), it has to take a slight turn to the right for bringing the robot back on line. Hence the motor velocities have to be modified accordingly.</p>
 </li>
 <li>
-<p>The velocities can be represented using 0 or 1 where giving 0 stops that particular motor.</p>
+<p>The velocities can be represented using values between 0 and 100 where giving 0 stops that particular motor.</p>
 </li>
 <li>
 <p>We will be testing your code using different input combinations for the sensors. The testcases you must consider should include,</p>
