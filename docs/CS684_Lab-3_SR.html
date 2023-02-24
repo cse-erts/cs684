@@ -165,7 +165,7 @@
 <li>Use PID controller for Line following.</li>
 <li>Black line following has to be done using the white line sensors provided. 5 sensors will be provided and the team can decide the position of the sensors.</li>
 <li>Each sensor value ranges between: 0 to 1023.</li>
-<li>For example, if you have chosen the threshold value for the sensor as 400, if a sensor value is less than 400 then that particular sensor is not on the black line and if the value of the particular sensor is greater than threshold then that sensor is on the white surface.</li>
+<li>For example, if you have chosen the threshold value for the sensor as 400, if a sensor value is less than 400 then that particular sensor is not on the black line and if the value of the particular sensor is greater than threshold then that sensor is on the black surface.</li>
 <li>So depending upon the number of sensors on black line and white surface, robot have to decide whether it is on black line or node or mid_node. The same cases as given in Lab 1 (FSM) applies here as well but rather than binary values, now you have to consider values between 0 to 1023. </li>
 <li>Hence the input to the Heptagon node will be the values from these 5 sensors. If only middle sensor is on the line then follow the black line, if it is a node (depending on the number of sensors on black) then keep a track of it to reach to next destination node and if it has detected a mid_node (depending on the number of sensors on black) then scan the plot and keep track of the plot visited using path planning algorithm.</li>
 <li>Likewise, team has to assume different scenarios or test cases which may come across while robot is traversing the arena.</li>
@@ -173,7 +173,7 @@
 <h3 id="input--output-format"><a class="header" href="#input--output-format">Input &amp; Output format:</a></h3>
 <ol>
 <li>5 inputs of white line sensors are required.</li>
-<li>From the final node, 4 outputs are required: plot_mid_node, path, direction, (vel_left, vel_right) : int arrays
+<li>From the final node, 4 outputs are required: plot_mid_node, path, direction, (vel_left, vel_right) : int
 <ol>
 <li><strong>plot_mid_node:</strong> This should represent information about the plots visited and the mid_node from which each plot is scanned. For example, if plot 1 is scanned from mid_node numbered 2, then the pair will be represented as <strong>'12'</strong>.</li>
 <li><strong>path:</strong> This should represent the node detected by the robot, i.e the nodes through which the robot passes. (numbered 1 to 16)</li>
@@ -216,10 +216,10 @@ You have to provide sample inputs and outputs in tabular form. Assume that while
 </ol>
 </li>
 <li>
-<p>Now consider the case stated in the above example of the robot deviating to the left. A sample input for this case can be considered as [x,y,x,x,x] where y represents the analog sensor value below threshold which is on the line and x represents the analog sensors value above threshold which are on white background. The outout for this particular case will then be (1,0) since right turn has to be taken for correcting the path.</p>
+<p>Now consider the case stated in the above example of the robot deviating to the left. A sample input for this case can be considered as [x,y,x,x,x] where y represents the analog sensor value below threshold which is on the line and x represents the analog sensors value above threshold which are on white background. The output for this particular case will then be (1,0) since right turn has to be taken for correcting the path.</p>
 </li>
 <li>
-<p>Each element in the array <strong>direction</strong> corresponds to the direction (numbered 0 to 4) taken at the node present in the <strong>path</strong> array.</p>
+<p>Each element in the <strong>direction</strong> corresponds to the direction (numbered 0 to 4) taken at the node present in the <strong>path</strong>.</p>
 </li>
 </ul>
 <hr />
