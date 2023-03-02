@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 3 - CS684 Spring 2022</title>
+        <title>Search &amp; Rescue - CS684 Spring 2022</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-4_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-4_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Lab-4.html">Lab 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-4_SR.html" class="active">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-4_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,42 +140,77 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-3-lustreheptagon-implementation-of-problem-statement"><a class="header" href="#lab-3-lustreheptagon-implementation-of-problem-statement">Lab 3: Lustre/Heptagon implementation of Problem Statement</center></a></h4>
+<center><h4 id="lab-4-device-drivers-for-io-motor-pwm-and-interrupts"><a class="header" href="#lab-4-device-drivers-for-io-motor-pwm-and-interrupts">Lab 4: Device Drivers for IO, Motor, PWM and Interrupts</center></a></h4>
+<hr>
+<h3 id="aim"><a class="header" href="#aim">Aim</a></h3>
+<p>In this lab, you will be interfacing the color sensors and motors to the AlphaBot. Speed of the motors are controlled based on the color detected by the color sensors. </p>
 <hr />
-<p>In this lab, you have to do partial Lustre/Heptagon implementation of the project you have chosen.</p>
-<ul>
-<li>For <strong>Search and Rescue project</strong>, <code>Line Following</code> using PID controller and <code>Path Planning</code> is to be implemented.</li>
-<li>For <strong>Valet Parking project</strong>, <code>Line Following</code> using PID controller and <code>Object Following</code> is to be implemented.</li>
-</ul>
-<h2 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h2>
-<ul>
-<li>For Lab-3 submission you have to upload a .tar.gz file.</li>
-<li>Folder should contain following:
+<h3 id="description"><a class="header" href="#description">Description:</a></h3>
+<p>Interface the color sensors to the Bot. Depending on the color detected by the Sensor, speed of the AlphaBot should vary according to following table.</p>
+<div class="table-wrapper"><table><thead><tr><th>Color</th><th>Speed of both motors</th></tr></thead><tbody>
+<tr><td>Red</td><td>0</td></tr>
+<tr><td>Green</td><td>250</td></tr>
+<tr><td>Blue</td><td>125</td></tr>
+<tr><td>No Color</td><td>Previous value</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h3 id="interfacing"><a class="header" href="#interfacing">Interfacing:</a></h3>
 <ol>
-<li><code>.ept</code> file: Heptagon code file</li>
-<li><code>Readme.txt</code> file file:
-<ul>
-<li>Containing information about the assumptions made (number of sensors,etc.) and description about the conditions or the scenarios if considered, inputs used for simulation and outputs obtained in a tabular form.</li>
-<li>Also add youtube link of the video - shoot the screen recording of the simulation of algorithm for atleast 20 steps with different input combinations.</li>
-</ul>
-</li>
-<li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
+<li>Motors: On AlphBot, motors are connected to following pins:</li>
 </ol>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Motor Driver Pin</th><th>Arduino Pin</th><th>Port Pin</th></tr></thead><tbody>
+<tr><td>Direction-Left Motor</td><td>IN1</td><td>A0</td><td>PC0</td></tr>
+<tr><td>Direction-Left Motor</td><td>IN2</td><td>A1</td><td>PC1</td></tr>
+<tr><td>Direction-Right Motor</td><td>IN3</td><td>A2</td><td>PC2</td></tr>
+<tr><td>Direction-Right Motor</td><td>IN4</td><td>A4</td><td>PC3</td></tr>
+<tr><td>Enable-Left Motor</td><td>ENA</td><td>D5</td><td>PD5 (OC0B)</td></tr>
+<tr><td>Enable-Right Motor</td><td>ENB</td><td>D6</td><td>PD6 (OC0A)</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>
+<p>For direction - use Forward</p>
 </li>
-<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_3.tar.gz</code></li>
-<li>Upload the file on Moodle</li>
-<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
+<li>
+<p>For PWM - use 8 bit Fast PWM</p>
+</li>
+</ul>
+<ol start="2">
+<li>Color Sensor: You need to connect color sensors to the AlphaBot. You can connect the sensors to the shield pins provided on top PCB of the AlphaBot.</li>
+</ol>
+<p>For details about the color sensor, go through this tutorial - <a href="https://docs.google.com/presentation/d/1xbVXL9EWrrTPz7b2KZoYyDzjVESThgdjw9-Mn2dc4AY/edit?usp=sharing">Color Sesnor Interfacing</a></p>
+<h3 id="programming-instructions"><a class="header" href="#programming-instructions">Programming Instructions:</a></h3>
+<ol>
+<li>Motor interfacing and PWM initialisation code should be in Embedded C.</li>
+<li>Color sensor Interfacing code should be in Embedded C.</li>
+<li>Write the logic about velocity control of the motors based on sensor values in Statechart or Heptagon.</li>
+<li>Values received from color sensor should be given to the Statechart or Heptagon.</li>
+<li>Velocity values are output of Statechart or Heptagon</li>
+</ol>
+<blockquote>
+<p>Note: Do not use Arduino functions for motor and color sensors. For debugging, you can use serial functions of arduino library. Interfacing codes need to be written using Embedded C only. Use masking wherever required.</p>
+</blockquote>
+<blockquote>
+<p>Note: No marks will be given for Arduino codes. Marks will be deducted if masking is not used properly.</p>
+</blockquote>
+<h3 id="video-instructions"><a class="header" href="#video-instructions">Video Instructions:</a></h3>
+<ul>
+<li>Put the AlphaBot on the platform. Make sure that both wheels are not touching the ground hence robot will be at stationary position.</li>
+<li>Mount the color sensor on the AlphaBot keeping in mind Arena used for the Project. </li>
+<li>Turn on the robot. Initially robot should move in forward direction with 255 velocity.</li>
+<li>Keep different color chart papers in front of color sensor one by one and show the changes in velocities of the motors.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Lab-3_SR.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Lab-4_VP.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -185,11 +220,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Lab-3_SR.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Lab-4_VP.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

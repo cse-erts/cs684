@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 3 - CS684 Spring 2022</title>
+        <title>Lab 4 - CS684 Spring 2022</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-4_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-4_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-3_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-3_VP.html">Valet Parking</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Lab-4.html" class="active">Lab 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-4_SR.html">Search & Rescue</a></li><li class="chapter-item "><a href="CS684_Lab-4_VP.html">Valet Parking</a></li></ol></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,42 +140,73 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-3-lustreheptagon-implementation-of-problem-statement"><a class="header" href="#lab-3-lustreheptagon-implementation-of-problem-statement">Lab 3: Lustre/Heptagon implementation of Problem Statement</center></a></h4>
+<center><h4 id="lab-4-device-drivers-for-io-motor-pwm-and-interrupts"><a class="header" href="#lab-4-device-drivers-for-io-motor-pwm-and-interrupts">Lab 4: Device Drivers for IO, Motor, PWM and Interrupts </a></h4></center>
 <hr />
-<p>In this lab, you have to do partial Lustre/Heptagon implementation of the project you have chosen.</p>
+<p>In this lab, you have to write the device drivers of the project you have chosen.</p>
 <ul>
-<li>For <strong>Search and Rescue project</strong>, <code>Line Following</code> using PID controller and <code>Path Planning</code> is to be implemented.</li>
-<li>For <strong>Valet Parking project</strong>, <code>Line Following</code> using PID controller and <code>Object Following</code> is to be implemented.</li>
+<li>For <a href="./CS684_Lab-4_SR.html"><strong>Search and Rescue project</strong></a>, <code>Color Sensor Interfacing</code> and <code>Pwm control using Sensor</code> is to be implemented.</li>
+<li>For <a href="./CS684_Lab-4_VP.html"><strong>Valet Parking project</strong></a>, <code>IR Proximity Sensor Interfacing</code> and <code>Object Following</code> is to be implemented.</li>
 </ul>
 <h2 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h2>
 <ul>
-<li>For Lab-3 submission you have to upload a .tar.gz file.</li>
-<li>Folder should contain following:
+<li>
+<p>For Lab-4 submission you have to upload a .tar.gz file.</p>
+</li>
+<li>
+<p>Folder should contain following:</p>
 <ol>
-<li><code>.ept</code> file: Heptagon code file</li>
-<li><code>Readme.txt</code> file file:
+<li>You can implement the logic using either Statechart or Heptagon.</li>
+</ol>
+<p><strong>For Statechart:</strong> </p>
 <ul>
-<li>Containing information about the assumptions made (number of sensors,etc.) and description about the conditions or the scenarios if considered, inputs used for simulation and outputs obtained in a tabular form.</li>
-<li>Also add youtube link of the video - shoot the screen recording of the simulation of algorithm for atleast 20 steps with different input combinations.</li>
+<li><code>Statechart Project</code> folder: It should contain following
+<ul>
+<li><code>Logic.ysc</code> file: containing the statechart implementation of the logic.</li>
+<li><code>Logic.sgen</code> file: for generating the c code from statechart.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the statechart.</li>
+</ul>
+</li>
+</ul>
+<p><strong>For Heptagon:</strong></p>
+<ul>
+<li><code>Heptagon Project</code> folder: It should contain following
+<ul>
+<li><code>Logic.ept</code> file: ontaining the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><code>Readme.txt</code> file:
+<ul>
+<li>Containing information about the assumptions made (number of sensors,etc.) and description about the conditions or the scenarios if considered. </li>
+<li>Also add youtube link of the video - shoot the working of the robot based on the video instructions provided in respective project problem statement.</li>
 </ul>
 </li>
 <li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
 </ol>
 </li>
-<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_3.tar.gz</code></li>
-<li>Upload the file on Moodle</li>
-<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
+<li>
+<p>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_4.tar.gz</code>.</p>
+</li>
+<li>
+<p>Upload the file on Moodle.</p>
+</li>
+<li>
+<p>There should be only one submission per group. Member having highest roll no should do the submission.</p>
+</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-3_VP.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Lab-3_SR.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Lab-4_SR.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -185,11 +216,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-3_VP.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Lab-3_SR.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Lab-4_SR.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
