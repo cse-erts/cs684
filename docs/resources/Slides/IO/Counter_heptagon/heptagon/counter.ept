@@ -1,0 +1,58 @@
+node main(start: bool; tick: bool) returns (aout: bool; bout: bool; cout: bool)
+let
+    automaton
+        state Not_Counting
+            do aout  = false; bout  = false; cout = false
+        unless start then Counting
+
+        state Counting
+        var stop:bool;
+            do 
+            aout = false -> if tick then not pre(aout) else pre(aout);
+            (* aout = false -> (not pre(aout) and tick) or (pre(aout) and not tick); *)
+            (* bout = false -> if tick then (not pre(bout) and pre(aout) ) or ( pre(bout) and not pre(aout)) else pre(bout); *)
+            bout = false -> if (tick and pre(aout)) then not pre(bout) else pre(bout);
+            cout = false -> if (tick and (pre(aout) and pre(bout))) then not pre(cout) else pre(cout);
+            stop = false -> if tick then pre(aout and bout and cout) else pre(stop)
+        until stop then Not_Counting
+    end    
+tel
+
+node main2(start: bool; tick: bool) returns (aout: bool; bout: bool; cout: bool)
+let
+
+    automaton
+        state Not_Counting
+            do aout  = false; bout  = false; cout = false
+        unless start then Counting
+
+        state Counting 
+        var last lt1: bool = false; last lt2: bool = false; last stop: bool;
+        do
+            lt1 = false -> tick and pre(aout);
+            lt2 = false -> lt1 and pre(bout);
+            stop = false -> lt2 and pre(cout);
+            automaton -- S1  
+                state S10 do aout = false; unless tick then S11
+                state S11 do aout = true; unless tick then S10
+            end;
+            
+            automaton -- S2 
+                state S20 do bout = false; unless lt1 then S21
+                state S21 do bout = true; unless lt1 then S20
+            end;
+
+            automaton -- S3 
+                state S30 do cout = false; unless lt2 then S31
+                state S31 do cout = true; unless lt2 then S30       
+            end
+        until stop then Not_Counting
+    end    
+tel
+
+node display() returns (start: bool; tick: bool; aout: bool; bout: bool; cout: bool)
+let
+    start = false fby true fby false;
+    tick =  false fby false fby true;
+    (aout, bout, cout) = main(start, tick);
+tel
