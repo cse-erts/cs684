@@ -1,0 +1,11 @@
+node min(x:int) returns (y:int)
+let
+   y = x -> if (x < pre y) then x else (pre y) 
+tel
+
+node minsquare(x:int) returns (y:int)
+var z:int;
+let
+  z=min(x);
+  y=z*z;
+tel
