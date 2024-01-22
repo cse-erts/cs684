@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Resources - CS684 Spring 2023</title>
+        <title>Labs - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="Resources.html" class="active">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html" class="active">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -172,106 +172,43 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="resources"><a class="header" href="#resources">Resources</a></h4></center>
-<hr>
-<h3 id="fsm-and-statechart-resources"><a class="header" href="#fsm-and-statechart-resources"> <div align="justify" class="main"><b>FSM and Statechart Resources</b></div></a></h3>
-<hr>
-<p>Paper on Statecharts: <a href="https://www.wisdom.weizmann.ac.il/~harel/papers/Statecharts.pdf">Download</a></p>
-<p>FSM and Yakindu Statechart Tool: <a href="https://www.youtube.com/watch?v=4D6fCbC5-q0">Youtube Video</a></p>
-<hr>
-<h3 id="lustre-resources"><a class="header" href="#lustre-resources"> <div align="justify" class="main"><b>Lustre Resources</b></div></a></h3>
-<hr>
-<p>Tutorial on Lustre: <a href="./resources/lustre_tutorial.pdf">Download</a></p>
-<p>SCADE Industrial: <a href="./resources/SCADEinIndustry.pdf">Download</a></p>
-<hr>
-<h3 id="embedded-resources"><a class="header" href="#embedded-resources"> <div align="justify" class="main"><b>Embedded Resources</b></div></a></h3>
-<hr>
-<blockquote>
-<p><strong>Note:</strong> All the resources provided below are based on <a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V robot</a> which consists of <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560</a>  microcontroller. But for the lab sessions, we will be working on <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" target="_blank">ATmega328</a> controller <a href="https://www.farnell.com/datasheets/1682209.pdf" target="_blank">(Arduino Uno)</a> given that concepts remain same across both the controllers (belong to same family).</p>
-</blockquote>
-<blockquote>
-<p><strong>Alphabot Resources:</strong> <a href="https://www.waveshare.com/wiki/AlphaBot2" target="_blank">Alphabot Ar</a></p>
-</blockquote>
-<!-- >__Reference Code Examples:__ <a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a> -->
-<p>Additional Module: <a href="https://youtu.be/umw4HdT19Iw" target="_blank">Introduction to Firebird V Robot</a></p>
-<p><strong>Module 1: I/O Interfacing</strong></p>
+<center><h4 id="labs"><a class="header" href="#labs">Labs </a></h4></center>
+<hr />
 <ul>
-<li>Understand the function of I/O ports and the associated registers.</li>
-<li>Interface I/O peripherals like Switch, Buzzer and Bar graph LEDs.</li>
-</ul>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/R-q_tuvaT0c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><strong>Module 2: Masking</strong></p>
+<li>Software
 <ul>
-<li>Understand the concept of Masking with the help of I/O interfacing.</li>
-<li>Need of using AND and OR operators with the help of few examples.</li>
+<li>Qfsm, Lustre/Heptagon</li>
 </ul>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/wc_HYmRa0P0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>Additional Module: <a href="https://youtu.be/cS25PQrhvwg" target="_blank">LCD Interfacing</a></p>
-<p><strong>Module 3: Motor Interfacing</strong></p>
+</li>
+<li>Basic Peripherals:
 <ul>
-<li>Direction control of DC motors present on Firebird V Robot.</li>
-<li>Understanding the use of L293D motor driver IC.</li>
+<li>Introduction to AVR Controller</li>
+<li>GPIO, Motor Interfacing, PWM and ADC</li>
 </ul>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/6c2ui-k4zvI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><strong>Module 4: Pulse Width Modulation</strong></p>
+</li>
+<li>Adaptive Cruise Control - case study
 <ul>
-<li>Understanding Timers and associated registers.</li>
-<li>Speed control of the robot and brightness control of the LED.</li>
+<li>using Embedded C programming </li>
+<li>using LUSTRE</li>
 </ul>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/FRf34y8CbBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<!-- Additional Modules: 
-- <a href="https://youtu.be/rqsa2JqvrWA" target="_blank">Interrupts</a><br>
-- <a href="https://youtu.be/SQIE1Cr7mzk" target="_blank">Position Encoder Interrupt</a>
-
-<b>Module 5: ADC Interfacing</b>
-
-- Interface white line sensors and Proximity sensor.
-- Understand ADC (Analog to Digital conversion) on controller.
-
-<iframe width="710" height="315" src="https://www.youtube.com/embed/OAAqymUdAb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Additional Module: <a href="https://youtu.be/RpYZUF-t3hE" target="_blank">Serial Communication</a> -->
-<!-- <hr>
-<h3 id="lab-5-real-time-operating-systems-rtos"><a class="header" href="#lab-5-real-time-operating-systems-rtos"> <div align="justify" class="main"><b>Lab 5: Real-Time Operating Systems (RTOS)</b></div></a></h3>
-<hr>
-
-Following is the link to download the **zip file** of examples on concepts of RTOS implemented using **FreeRTOS API** built with **ESP32** module.
-
-<a href="./resources/lab5_rtos_examples.zip" target="_blank">RTOS Examples on ESP32</a>
-
-<br>
-
-<hr>
-<h3 id="project-search-and-rescue"><a class="header" href="#project-search-and-rescue"> <div align="justify" class="main"><b>Project: Search and Rescue</b></div></a></h3>
-<hr>
-<a href="./resources/CS684_Project_Task_1.pptx" target="_blank"> Task 1 PPT  </a> - Presented in class of <b><em>22nd March, 2021</em></b>
- -->
-<!-- **Firebird V related Resources:**
-
-- <a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V Hardware and Software Manuals</a>
-- <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560 Datasheet</a>
-- <a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a>
-- <a href="https://drive.google.com/drive/u/1/folders/1TPrljaSlRFnT5yZN1Gd8J9wUb6i-_Oh5" target="_blank">Color Sensor Interfacing on Firebird V</a>
-- <a href="https://drive.google.com/drive/u/1/folders/1vac3uNvSwOX17k1qqO0ARTgmKYEigYFd" target="_blank">Serial Communication between Firebird V and ESP 32</a> -->
-<!-- **Simulation related Resources**
-
-- <a href="./resources/search_n_rescue_scene.ttt" target="_blank">CoppeliaSim Scene File: search_n_rescue.ttt</a>
-- <a href="./resources/search_n_rescue.zip" target="_blank">Eclipse Project Folder for Task 1</a>
-
-**IoT Related Resources**
-
-- <a href="./resources/MockRPC.zip" target="_blank">Mocking RPC</a> -->
-<br>
+</li>
+</ul>
+<h2 id="lab-deatils"><a class="header" href="#lab-deatils">Lab Deatils:</a></h2>
+<ul>
+<li><strong>Lab 0</strong>:  Installation of Software</li>
+<li><strong>Lab 1</strong>:  Draw FSM for the Line Following Robot </li>
+<li>Upcoming...</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="Welcome.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="Installation_instructions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="CS684_Lab-1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -281,11 +218,11 @@ Following is the link to download the **zip file** of examples on concepts of RT
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="Welcome.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="Installation_instructions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="CS684_Lab-1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
