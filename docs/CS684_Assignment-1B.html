@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2023</title>
+        <title>Assignment 1B - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item expanded "><a href="CS684_Assignment-1B.html" class="active">Assignment 1B</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,127 +140,83 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-1-draw-fsm-for-line-following"><a class="header" href="#lab-1-draw-fsm-for-line-following">Lab 1: Draw FSM for Line Following </a></h4></center>
-<hr />
-<h5 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h5>
+<center><h4 id="assignment-1b-reactive-kernel"><a class="header" href="#assignment-1b-reactive-kernel">Assignment 1B: Reactive Kernel </a></h4></center>
+<h4 id="prerequisite"><a class="header" href="#prerequisite">Prerequisite:</a></h4>
+<ul>
+<li>Before starting this assignment, go through the resources provided on Reactive Kernel <a href="./Resources.html">Resources</a></li>
+<li>Inspect and analyze the C codes, both written by hand and synthesized.</li>
+</ul>
+<h4 id="exercise"><a class="header" href="#exercise">Exercise:</a></h4>
 <ul>
 <li>
-<p>Tool to be used:  <a href="https://appimage.github.io/Qfsm/#:~:text=Qfsm%20is%20available%20as%20an,run%20on%20most%20Linux%20distributions" target="_blank">Qfsm</a></p>
+<p>Download the <a href="./skeleton_files/Assignment-1B.tar.gz"><code>Assignment-1B.tar.gz</code></a> file. Extract the file using command <code>tar -xzvf Assignment-1B.tar.gz</code></p>
 </li>
 <li>
-<p>Tutorial for Qfsm: 
-<a href="https://qfsm.sourceforge.net/qfsm_doc/user/qfsm.html#ch:using_qfsm" target="_blank">Qfsm User Manual</a></p>
+<p>You will find following directory structure:
+<img src="./images/Folder_structure.png" alt="" /></p>
 </li>
 <li>
-<p>Getting started for Lab-1:
-<a href="https://training.ti.com/ti-rslk-module-7-lecture-video-part-2-finite-state-machine-line-tracker" target="_blank">Finite state machine - Line tracker</a></p>
-</li>
-</ul>
-<hr />
-<h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
-<ul>
-<li>
-<p>You have to build a FSM for Line Following. You are allowed to go for Moore or Mealy Machine.</p>
-</li>
-<li>
-<p>Objective is to move the robot from Start (<strong>S</strong>) to End (<strong>E</strong>) location. [Refer following diagram]</p>
-<center><img title="a title" alt="Alt text" src="./images/lab1_fsm_path.png" width=250 height=250></center>
-</li>
-</ul>
-<blockquote>
-<p>Note: The above image only gives an abstraction of some random path. It is just for reference. It will help you to build different states accurately.</p>
-</blockquote>
-<blockquote>
-<p>Hint: According to given path, whenever robot encounters an intersection, it should take a respective turn which will lead the robot to End location. (This assumption helps to reduce the number of states in FSM) </p>
-</blockquote>
-<ul>
-<li>Inputs for the FSM: <strong>5</strong> White Line Sensors.</li>
-<li>Outputs for the FSM: <strong>2</strong> for controlling the motion of the Robot based on its direction.</li>
-<li>Inputs should be taken as binary values while building the FSM in Qfsm.</li>
-<li>There can be N number of WLF Readings combinations that one can get. </li>
-<li>The following table shows few such cases:</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>WLF Readings</th><th>Images</th></tr></thead><tbody>
-<tr><td>11111</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_start_pos.png" width=200 height=160></td></tr>
-<tr><td>00100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_center_pos.png" width=200 height=160></td></tr>
-<tr><td>00010</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>01000</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_right_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>11100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_turn_pos.png" width=200 height=160></td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>Outputs: 
-<ul>
-<li>Both outputs are used for Direction of robot. </li>
-<li>Representation of bits for output: <code>0 for stop, 1 for forward and -1 for backward</code>.</li>
-</ul>
-<blockquote>
-<p>Here we are talking about a particular wheel.</p>
-</blockquote>
-<ul>
-<li>Following table shows the combination of both the wheels on Robot movement:</li>
-</ul>
-</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>Output Combinations</th><th>Action</th></tr></thead><tbody>
-<tr><td>0, 0</td><td>Stop</td></tr>
-<tr><td>1, 1</td><td>Forward</td></tr>
-<tr><td>-1, -1</td><td>Backward</td></tr>
-<tr><td>0, 1</td><td>Left adjust by 10 deg with Forward</td></tr>
-<tr><td>1, 0</td><td>Right adjust by 10 deg with Forward</td></tr>
-<tr><td>0, -1</td><td>Left adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 0</td><td>Right adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 1</td><td>Sharp Left by 10 deg</td></tr>
-<tr><td>1, -1</td><td>Sharp Right by 10 deg</td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>Consider the following scenario in which the robot is attempting to align itself by adjusting in the correct direction. This is how the robot will move for two consecutive 10 output combinations.</li>
-</ul>
-<center> <img title="a title" alt="Alt text" src="./images/lab1_fsm_left_adj.gif" width=200 height=200> </center>
-<ul>
-<li>Using the above information, draw FSM for Line following of the robot along with states added for describing the stratergy to move the robot from S to E locations.</li>
-</ul>
-<blockquote>
-<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step, distances regarding the paths given in the arena image.</p>
-</blockquote>
-<hr />
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
-<ul>
-<li>For Lab-1 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
-<li>Folder should contain following:
+<p>Write reactive kernel for finding:</p>
 <ol>
-<li><strong><code>.fsm</code></strong> file: source file of QFSM</li>
-<li><strong><code>.doc</code></strong> file: </li>
+<li>Mean</li>
+<li>Variance</li>
+<li>Moving Average filter</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>Mean:
+At each step, input is a single integer x. Mean has to be found for a sequence of x’s seen so far.
+Following is the expected output:
+<img src="./images/mean_op.gif" alt="" /> </li>
 </ol>
 <ul>
-<li>Containing information about the startergy used, assumptions made and description about the FSM, inputs used for simulation and outputs obtained in a tabular form. </li>
-<li>Also add youtube link of the video - shoot the screen recording of the simulation of FSM in QFSM for atleast 20 steps with different input combinations.</li>
+<li>For compiling and running the program follow these steps:</li>
 </ul>
-</li>
-<li>Compress the folder and rename it as <strong><code>&lt;RollNo&gt;_Lab_1.tar.gz</code></strong></li>
-<li>Upload the file on Moodle
+<pre><code class="language-code">cd &lt;/path/to/mean&gt;
+gcc -c mean.c
+gcc -c main.c
+gcc -o mean main.o mean.o
+./mean
+</code></pre>
+<ol start="2">
+<li>Variance:
+At each step, input is a single integer x. <a href="./resources/mean-var.pdf">Mean and Variance</a> has to be found for a sequence of x’s seen so far.</li>
+</ol>
 <blockquote>
-<p>Note: Make sure</p>
-<ul>
-<li>that <strong><code>.fsm</code></strong> file is simulatable on Qfsm</li>
-<li>to add RollNo in your file name </li>
-</ul>
+<p>Hint: You need to remember the number of steps, mean and mean of x^2, and update it at each step.
+Following is the expected output:</p>
 </blockquote>
-</li>
+<ul>
+<li><strong>Variance</strong> <br>
+<img src="./images/var_op.gif" alt="" /></li>
 </ul>
+<ol start="3">
+<li>Moving Average:
+At each step, input is a single integer x. Moving average has to be found for a sequence of x’s seen so far.
+<img src="./images/moving_avg.gif" alt="" /></li>
+</ol>
+<blockquote>
+<p>Note: Your output should be exactly same as expected output including variables name as it will be autoevaluated.</p>
+</blockquote>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h4>
+<ul>
+<li>Complete the necessary files given in the folder. </li>
+<li>Compress both the folders (<code>Assignment-1A and Assignment-1B</code>) in a <strong><code>.tar.gz</code></strong> file and provide the name as <strong><code>&lt;Roll_NO&gt;_Assignment_1.tar.gz</code></strong>.</li>
+<li>Submit it on moodle</li>
+</ul>
+<blockquote>
+<p>Note: Make sure you have removed all the print statements from the file except the lines wihich prints mean and variance. Else your submission will not be evaluated.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Labs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Assignment-1A.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -268,13 +224,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Labs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Assignment-1A.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

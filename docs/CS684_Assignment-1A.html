@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2023</title>
+        <title>Assignment 1A - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Assignment-1A.html" class="active">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,113 +140,52 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-1-draw-fsm-for-line-following"><a class="header" href="#lab-1-draw-fsm-for-line-following">Lab 1: Draw FSM for Line Following </a></h4></center>
-<hr />
-<h5 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h5>
+<center><h4 id="assignment-1a-statechart-implementation"><a class="header" href="#assignment-1a-statechart-implementation">Assignment 1A: Statechart Implementation </a></h4></center>
+<h4 id="exercise"><a class="header" href="#exercise">Exercise:</a></h4>
+<ul>
+<li>Draw a statechart for the elevator mechanism.</li>
+<li>While designing the statechart following specifications need to be considered:
+<ul>
+<li>The number of floors in building are 3.</li>
+<li>There are two lifts (side by side) to service the sequence of requests. (these lifts coordinate together in servicing requests)</li>
+<li>Safe opening and closing of door functionality should be added.</li>
+<li>Requests should be handled from inside of the elevators as well as from outside.</li>
+</ul>
+</li>
+</ul>
+<h4 id="software"><a class="header" href="#software">Software:</a></h4>
+<p>To model the above statechart, we recommend you use the Yakindu Statechart Editor. The link for this editor is here:</p>
+<p>Download page: <a href="https://www.itemis.com/en/yakindu/state-machine/download-options/">Yakindu Download Page</a>
+Documentation: <a href="https://www.itemis.com/en/yakindu/state-machine/documentation/">Yakindu Documentation</a></p>
+<p>OR</p>
+<p>You can use online statechart editor: <a href="https://stately.ai/">Stately</a></p>
+<h4 id="tutorial-for-statechart"><a class="header" href="#tutorial-for-statechart">Tutorial for Statechart:</a></h4>
 <ul>
 <li>
-<p>Tool to be used:  <a href="https://appimage.github.io/Qfsm/#:~:text=Qfsm%20is%20available%20as%20an,run%20on%20most%20Linux%20distributions" target="_blank">Qfsm</a></p>
+<p><a href="https://www.itemis.com/en/products/itemis-create/documentation/tutorials/tutorial_five-minutes_tutorial?hsLang=de" target="_blank">Five-minutes tutorial</a></p>
 </li>
 <li>
-<p>Tutorial for Qfsm: 
-<a href="https://qfsm.sourceforge.net/qfsm_doc/user/qfsm.html#ch:using_qfsm" target="_blank">Qfsm User Manual</a></p>
+<p><a href="https://www.itemis.com/en/yakindu/state-machine/documentation/tutorials/video-tutorials/" target="_blank">Video Tutorials</a></p>
 </li>
 <li>
-<p>Getting started for Lab-1:
-<a href="https://training.ti.com/ti-rslk-module-7-lecture-video-part-2-finite-state-machine-line-tracker" target="_blank">Finite state machine - Line tracker</a></p>
-</li>
-</ul>
-<hr />
-<h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
-<ul>
-<li>
-<p>You have to build a FSM for Line Following. You are allowed to go for Moore or Mealy Machine.</p>
+<p><a href="https://www.itemis.com/en/products/itemis-create/documentation/user-guide/overview_what_are_state_machines" target="_blank">User Guide</a></p>
 </li>
 <li>
-<p>Objective is to move the robot from Start (<strong>S</strong>) to End (<strong>E</strong>) location. [Refer following diagram]</p>
-<center><img title="a title" alt="Alt text" src="./images/lab1_fsm_path.png" width=250 height=250></center>
+<p>Getting started guide:
+<a href="https://www.youtube.com/watch?v=qn2cCRzz8pc" target="_blank">Yakindu Statechart</a></p>
 </li>
 </ul>
-<blockquote>
-<p>Note: The above image only gives an abstraction of some random path. It is just for reference. It will help you to build different states accurately.</p>
-</blockquote>
-<blockquote>
-<p>Hint: According to given path, whenever robot encounters an intersection, it should take a respective turn which will lead the robot to End location. (This assumption helps to reduce the number of states in FSM) </p>
-</blockquote>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h4>
+<p>Create a folder named <code>Assignment-1A</code>.</p>
+<p>Folder should contain following:</p>
 <ul>
-<li>Inputs for the FSM: <strong>5</strong> White Line Sensors.</li>
-<li>Outputs for the FSM: <strong>2</strong> for controlling the motion of the Robot based on its direction.</li>
-<li>Inputs should be taken as binary values while building the FSM in Qfsm.</li>
-<li>There can be N number of WLF Readings combinations that one can get. </li>
-<li>The following table shows few such cases:</li>
+<li><strong><code>.ysc</code></strong> file: source file of Yakindu.</li>
+<li><strong><code>Readme.txt</code></strong> file: 
+<ul>
+<li>Link of the statechart (in case you are using online statechart editor)</li>
+<li>Information about the startergy used, assumptions made and description about the statechart, inputs used for simulation and outputs obtained in a tabular form. </li>
+<li>Also add youtube link of the video - shoot the screen recording of the simulation of statechart in Yakindu for atleast 20 steps with different input combinations.</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>WLF Readings</th><th>Images</th></tr></thead><tbody>
-<tr><td>11111</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_start_pos.png" width=200 height=160></td></tr>
-<tr><td>00100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_center_pos.png" width=200 height=160></td></tr>
-<tr><td>00010</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>01000</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_right_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>11100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_turn_pos.png" width=200 height=160></td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>Outputs: 
-<ul>
-<li>Both outputs are used for Direction of robot. </li>
-<li>Representation of bits for output: <code>0 for stop, 1 for forward and -1 for backward</code>.</li>
-</ul>
-<blockquote>
-<p>Here we are talking about a particular wheel.</p>
-</blockquote>
-<ul>
-<li>Following table shows the combination of both the wheels on Robot movement:</li>
-</ul>
-</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>Output Combinations</th><th>Action</th></tr></thead><tbody>
-<tr><td>0, 0</td><td>Stop</td></tr>
-<tr><td>1, 1</td><td>Forward</td></tr>
-<tr><td>-1, -1</td><td>Backward</td></tr>
-<tr><td>0, 1</td><td>Left adjust by 10 deg with Forward</td></tr>
-<tr><td>1, 0</td><td>Right adjust by 10 deg with Forward</td></tr>
-<tr><td>0, -1</td><td>Left adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 0</td><td>Right adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 1</td><td>Sharp Left by 10 deg</td></tr>
-<tr><td>1, -1</td><td>Sharp Right by 10 deg</td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>Consider the following scenario in which the robot is attempting to align itself by adjusting in the correct direction. This is how the robot will move for two consecutive 10 output combinations.</li>
-</ul>
-<center> <img title="a title" alt="Alt text" src="./images/lab1_fsm_left_adj.gif" width=200 height=200> </center>
-<ul>
-<li>Using the above information, draw FSM for Line following of the robot along with states added for describing the stratergy to move the robot from S to E locations.</li>
-</ul>
-<blockquote>
-<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step, distances regarding the paths given in the arena image.</p>
-</blockquote>
-<hr />
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
-<ul>
-<li>For Lab-1 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
-<li>Folder should contain following:
-<ol>
-<li><strong><code>.fsm</code></strong> file: source file of QFSM</li>
-<li><strong><code>.doc</code></strong> file: </li>
-</ol>
-<ul>
-<li>Containing information about the startergy used, assumptions made and description about the FSM, inputs used for simulation and outputs obtained in a tabular form. </li>
-<li>Also add youtube link of the video - shoot the screen recording of the simulation of FSM in QFSM for atleast 20 steps with different input combinations.</li>
-</ul>
-</li>
-<li>Compress the folder and rename it as <strong><code>&lt;RollNo&gt;_Lab_1.tar.gz</code></strong></li>
-<li>Upload the file on Moodle
-<blockquote>
-<p>Note: Make sure</p>
-<ul>
-<li>that <strong><code>.fsm</code></strong> file is simulatable on Qfsm</li>
-<li>to add RollNo in your file name </li>
-</ul>
-</blockquote>
 </li>
 </ul>
 
@@ -254,11 +193,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Labs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Assignments.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignment-1B.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -268,11 +207,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Labs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Assignments.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignment-1B.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
