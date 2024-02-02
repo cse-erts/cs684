@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2023</title>
+        <title>Lab 2 - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item expanded "><a href="CS684_Lab-2.html" class="active">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -172,125 +172,148 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-1-draw-fsm-for-line-following"><a class="header" href="#lab-1-draw-fsm-for-line-following">Lab 1: Draw FSM for Line Following </a></h4></center>
-<hr />
-<h5 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h5>
-<ul>
-<li>
-<p>Tool to be used:  <a href="https://appimage.github.io/Qfsm/#:~:text=Qfsm%20is%20available%20as%20an,run%20on%20most%20Linux%20distributions" target="_blank">Qfsm</a></p>
-</li>
-<li>
-<p>Tutorial for Qfsm: 
-<a href="https://qfsm.sourceforge.net/qfsm_doc/user/qfsm.html#ch:using_qfsm" target="_blank">Qfsm User Manual</a></p>
-</li>
-<li>
-<p>Getting started for Lab-1:
-<a href="https://training.ti.com/ti-rslk-module-7-lecture-video-part-2-finite-state-machine-line-tracker" target="_blank">Finite state machine - Line tracker</a></p>
-</li>
-</ul>
+<center><h4 id="lab-2-heptagon-code-for-line-following"><a class="header" href="#lab-2-heptagon-code-for-line-following">Lab 2: Heptagon code for Line following</a></h4></center>
 <hr />
 <h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
 <ul>
 <li>
-<p>You have to build a FSM for Line Following. You are allowed to go for Moore or Mealy Machine.</p>
+<p>You have to write a heptagon code for Line Following. </p>
 </li>
 <li>
-<p>Objective is to move the robot from Start (<strong>S</strong>) to End (<strong>E</strong>) location. [Refer following diagram]</p>
-<center><img title="a title" alt="Alt text" src="./images/lab1_fsm_path.png" width=250 height=250></center>
+<p>Inputs: </p>
+<ul>
+<li>Values from <strong>5</strong> White Line Sensors.</li>
+<li>Each Sensor value ranges between: 0 to 1023.</li>
+<li>On white surface, sensor values are low and for black surface, sensor values are high.</li>
+</ul>
 </li>
-</ul>
-<blockquote>
-<p>Note: The above image only gives an abstraction of some random path. It is just for reference. It will help you to build different states accurately.</p>
-</blockquote>
-<blockquote>
-<p>Hint: According to given path, whenever robot encounters an intersection, it should take a respective turn which will lead the robot to End location. (This assumption helps to reduce the number of states in FSM) </p>
-</blockquote>
+<li>
+<p>Outputs: </p>
 <ul>
-<li>Inputs for the FSM: <strong>5</strong> White Line Sensors.</li>
-<li>Outputs for the FSM: <strong>2</strong> for controlling the motion of the Robot based on its direction.</li>
-<li>Inputs should be taken as binary values while building the FSM in Qfsm.</li>
-<li>There can be N number of WLF Readings combinations that one can get. </li>
-<li>The following table shows few such cases:</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>WLF Readings</th><th>Images</th></tr></thead><tbody>
-<tr><td>11111</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_start_pos.png" width=200 height=160></td></tr>
-<tr><td>00100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_center_pos.png" width=200 height=160></td></tr>
-<tr><td>00010</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>01000</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_right_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>11100</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_turn_pos.png" width=200 height=160></td></tr>
-</tbody></table>
-</div>
+<li><strong>3</strong> for controlling the motion of the Robot (1 for Direction and 2 for Motor's velocities).</li>
+<li>From the final heptagon node, 3 outputs are required: 2 velocity values (of left and right motors) and direction.
 <ul>
-<li>Outputs: 
-<ul>
-<li>Both outputs are used for Direction of robot. </li>
-<li>Representation of bits for output: <code>0 for stop, 1 for forward and -1 for backward</code>.</li>
-</ul>
-<blockquote>
-<p>Here we are talking about a particular wheel.</p>
-</blockquote>
-<ul>
-<li>Following table shows the combination of both the wheels on Robot movement:</li>
+<li>Directions list:</li>
 </ul>
 </li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>Output Combinations</th><th>Action</th></tr></thead><tbody>
-<tr><td>0, 0</td><td>Stop</td></tr>
-<tr><td>1, 1</td><td>Forward</td></tr>
-<tr><td>-1, -1</td><td>Backward</td></tr>
-<tr><td>0, 1</td><td>Left adjust by 10 deg with Forward</td></tr>
-<tr><td>1, 0</td><td>Right adjust by 10 deg with Forward</td></tr>
-<tr><td>0, -1</td><td>Left adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 0</td><td>Right adjust by 10 deg with Backward</td></tr>
-<tr><td>-1, 1</td><td>Sharp Left by 10 deg</td></tr>
-<tr><td>1, -1</td><td>Sharp Right by 10 deg</td></tr>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Direction</th><th style="text-align: center">Representation</th></tr></thead><tbody>
+<tr><td style="text-align: center">Stop</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">Forward</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">Left</td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center">Right</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center">Backward</td><td style="text-align: center">4</td></tr>
 </tbody></table>
 </div>
 <ul>
-<li>Consider the following scenario in which the robot is attempting to align itself by adjusting in the correct direction. This is how the robot will move for two consecutive 10 output combinations.</li>
+<li>
+<p>Motor velocity ranges between 0 to 100. It should not be negative or greater than 100.</p>
+</li>
+<li>
+<p>The heptagon node for line following must be defined according to the format given:</p>
+</li>
 </ul>
-<center> <img title="a title" alt="Alt text" src="./images/lab1_fsm_left_adj.gif" width=200 height=200> </center>
+<pre><code>node main(sen0, sen1, sen2, sen3, sen4: int) returns (v_l, v_r, dir: int)
+var sen: int^5;
+let
+	 sen = [sen0, sen1, sen2, sen3, sen4];
+tel
+</code></pre>
 <ul>
-<li>Using the above information, draw FSM for Line following of the robot along with states added for describing the stratergy to move the robot from S to E locations.</li>
+<li>Using the above information, write a heptagon for Line following of the robot. Consider a black line on white surface.</li>
+<li>Use PID controller for line following.</li>
 </ul>
 <blockquote>
-<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step, distances regarding the paths given in the arena image.</p>
+<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step etc.</p>
 </blockquote>
+<h4 id="algorithm"><a class="header" href="#algorithm">Algorithm</a></h4>
+<ul>
+<li>White Line following has to be done using the 5 white line sensors provided. </li>
+<li>Each sensor value ranges between: 0 to 1023.</li>
+<li>On white surface, sensor values are low and for black surface, sensor values are high.</li>
+<li>So depending upon the value of the particular sensor, robot has to decide whether it is on the black line or it is deviated from the line. </li>
+<li>To adjust the position of the robot if it deviated from the black line, use PID. The same cases as given in Lab 1 (FSM) applies here as well but rather than binary values, now you have to consider values between 0 to 1023. </li>
+<li>Likewise, team has to assume different scenarios or test cases which may come across while robot is traversing the arena.</li>
+<li>You are free to make assumptions regarding readings of sensors at different instances. </li>
+</ul>
+<hr />
+<h4 id="algorithms-for-line-following"><a class="header" href="#algorithms-for-line-following">Algorithms for Line Following</a></h4>
+<h5 id="1-bang-bang-controller"><a class="header" href="#1-bang-bang-controller">1. Bang-bang Controller</a></h5>
+<p>Here all the sensor values are converted to binary using thresholding and will be directly used to control the speed and direction of the motors. It uses an if-else ladder structure for logic implementation. The controller that was developed in Lab 1 uses the same logic. 
+This method is not reliable as numerous cases must be defined for a set of sensor values which will be difficult to implement.</p>
+<h5 id="2-pid-controller-with-binary-sensor-values"><a class="header" href="#2-pid-controller-with-binary-sensor-values">2. PID Controller with binary sensor values</a></h5>
+<p>PID controller is a feedback loop that utilises the error in the sensor values to correct the position of the robot. Here all the sensor values are converted to binary using thresholding and error value is calculated. This error value is used for controlling the spees and direction of the motor. </p>
+<h5 id="3-pid-controller-with-direct-sensor-values"><a class="header" href="#3-pid-controller-with-direct-sensor-values">3. PID Controller with direct sensor values</a></h5>
+<p>This is similar to method 2 but here no thresholding is used for sensor values while calculating error. The error calculation can be done using various methods like weighted average or using the sensor values as such. </p>
+<hr />
+<h4 id="how-does-pid-work"><a class="header" href="#how-does-pid-work">How does PID work?</a></h4>
+<p>The system calculates the ‘error’, or ‘deviation’ of the physical quantity from the set point, by measuring the current value of that physical quantity using a sensor(s). To get back to the set point, this ‘error’ should be minimized, and should ideally be made equal to zero. Also, this process should happen as quickly as possible. Ideally, there should be zero lag in the response of the system to the change in its set point.</p>
+<p>More information can be found in many books and websites, including here:</p>
+<p>http://en.wikipedia.org/wiki/PID_controller</p>
+<p>Implementing PID</p>
+<p>(i) Error Term (e):</p>
+<p>This is equal to the difference between the set point and the current value of the quantity being controlled.</p>
+<p>error = set_point – current_value (in our case is the error variable get from the position of Robot over the line</p>
+<p>(ii) Proportional Term (P):</p>
+<p>This term is proportional to the error.</p>
+<p>P = error</p>
+<p>This value is responsible for the magnitude of change required in the physical quantity to achieve the set point. The proportion term is what determines the control loop rise time or how quickly it will reach the set point.</p>
+<p>(iii) Integral Term (I):</p>
+<p>This term is the sum of all the previous error values.</p>
+<p>I = I + error</p>
+<p>This value is responsible for the quickness of response of the system to the change from the set point. The integral term is used the eliminate the steady state error required by the proportional term. Usually, small Robots doesn't use the integral term because we are not concerned about steady state error and it can complicate the &quot;loop tuning&quot;.</p>
+<p>(iv) Differential or Derivative Term (D):</p>
+<p>This term is the difference between the instantaneous error from the set point, and the error from the previous instant.</p>
+<p>D = error - previousError</p>
+<p>This value is responsible to slow down the rate of change of the physical quantity when it comes close to the set point. The derivative term is used to reduce the overshoot or how much the system should &quot;over correct&quot;.</p>
+<p>Equation:</p>
+<p>PIDvalue = (Kp<em>P) + (Ki</em>I) + (Kd*D)</p>
+<p>Where:</p>
+<p>Kp is the constant used to vary the magnitude of the change required to achieve the set point.
+Ki is the the constant used to vary the rate at which the change should be brought in the physical quantity to achieve the set point.
+Kd is the constant used to vary the stability of the system.</p>
+<p>Based on the above approach, the bellow function was implemented:</p>
+<pre><code>void calculatePID()
+{
+  P = error;
+  I = I + error;
+  D = error-previousError;
+  PIDvalue = (Kp*P) + (Ki*I) + (Kd*D);
+  previousError = error;
+}
+</code></pre>
 <hr />
 <h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
 <ul>
-<li>For Lab-1 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
+<li>For Lab-2 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
 <li>Folder should contain following:
 <ol>
-<li><strong><code>.fsm</code></strong> file: source file of QFSM</li>
-<li><strong><code>.doc</code></strong> file: </li>
+<li><code>.ept</code> file: Heptagon code file</li>
+<li><code>Readme.txt</code> file file:
+<ul>
+<li>Containing information about the assumptions made and description about the conditions or the scenarios if considered, inputs used for simulation and outputs obtained in a tabular form.</li>
+<li>Also add youtube link of the video - shoot the screen recording of the simulation of algorithm for atleast 20 steps with different input combinations.</li>
+</ul>
+</li>
+<li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
 </ol>
-<ul>
-<li>Containing information about the startergy used, assumptions made and description about the FSM, inputs used for simulation and outputs obtained in a tabular form. </li>
-<li>Also add youtube link of the video - shoot the screen recording of the simulation of FSM in QFSM for atleast 20 steps with different input combinations.</li>
-</ul>
 </li>
-<li>Compress the folder and rename it as <strong><code>&lt;RollNo&gt;_Lab_1.tar.gz</code></strong></li>
-<li>Upload the file on Moodle
-<blockquote>
-<p>Note: Make sure</p>
-<ul>
-<li>that <strong><code>.fsm</code></strong> file is simulatable on Qfsm</li>
-<li>to add RollNo in your file name </li>
-</ul>
-</blockquote>
-</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_2.tar.gz</code></li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Labs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="CS684_Lab-2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -300,11 +323,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Labs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="CS684_Lab-2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
