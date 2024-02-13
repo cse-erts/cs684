@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -89,11 +89,9 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item expanded "><a href="CS684_Lab-2.html" class="active">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item expanded "><a href="CS684_Lab-2.html" class="active">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -177,10 +175,10 @@
 <h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
 <ul>
 <li>
-<p>You have to write a heptagon code for Line Following.</p>
+<p>You have to write a heptagon code for Line Following. </p>
 </li>
 <li>
-<p>Inputs:</p>
+<p>Inputs: </p>
 <ul>
 <li>Values from <strong>5</strong> White Line Sensors.</li>
 <li>Each Sensor value ranges between: 0 to 1023.</li>
@@ -188,7 +186,7 @@
 </ul>
 </li>
 <li>
-<p>Outputs:</p>
+<p>Outputs: </p>
 <ul>
 <li><strong>3</strong> for controlling the motion of the Robot (1 for Direction and 2 for Motor's velocities).</li>
 <li>From the final heptagon node, 3 outputs are required: 2 velocity values (of left and right motors) and direction.
@@ -230,23 +228,23 @@ tel
 </blockquote>
 <h4 id="algorithm"><a class="header" href="#algorithm">Algorithm</a></h4>
 <ul>
-<li>White Line following has to be done using the 5 white line sensors provided.</li>
+<li>White Line following has to be done using the 5 white line sensors provided. </li>
 <li>Each sensor value ranges between: 0 to 1023.</li>
 <li>On white surface, sensor values are low and for black surface, sensor values are high.</li>
-<li>So depending upon the value of the particular sensor, robot has to decide whether it is on the black line or it is deviated from the line.</li>
-<li>To adjust the position of the robot if it deviated from the black line, use PID. The same cases as given in Lab 1 (FSM) applies here as well but rather than binary values, now you have to consider values between 0 to 1023.</li>
+<li>So depending upon the value of the particular sensor, robot has to decide whether it is on the black line or it is deviated from the line. </li>
+<li>To adjust the position of the robot if it deviated from the black line, use PID. The same cases as given in Lab 1 (FSM) applies here as well but rather than binary values, now you have to consider values between 0 to 1023. </li>
 <li>Likewise, team has to assume different scenarios or test cases which may come across while robot is traversing the arena.</li>
-<li>You are free to make assumptions regarding readings of sensors at different instances.</li>
+<li>You are free to make assumptions regarding readings of sensors at different instances. </li>
 </ul>
 <hr />
 <h4 id="algorithms-for-line-following"><a class="header" href="#algorithms-for-line-following">Algorithms for Line Following</a></h4>
 <h5 id="1-bang-bang-controller"><a class="header" href="#1-bang-bang-controller">1. Bang-bang Controller</a></h5>
-<p>Here all the sensor values are converted to binary using thresholding and will be directly used to control the speed and direction of the motors. It uses an if-else ladder structure for logic implementation. The controller that was developed in Lab 1 uses the same logic.
+<p>Here all the sensor values are converted to binary using thresholding and will be directly used to control the speed and direction of the motors. It uses an if-else ladder structure for logic implementation. The controller that was developed in Lab 1 uses the same logic. 
 This method is not reliable as numerous cases must be defined for a set of sensor values which will be difficult to implement.</p>
 <h5 id="2-pid-controller-with-binary-sensor-values"><a class="header" href="#2-pid-controller-with-binary-sensor-values">2. PID Controller with binary sensor values</a></h5>
-<p>PID controller is a feedback loop that utilises the error in the sensor values to correct the position of the robot. Here all the sensor values are converted to binary using thresholding and error value is calculated. This error value is used for controlling the spees and direction of the motor.</p>
+<p>PID controller is a feedback loop that utilises the error in the sensor values to correct the position of the robot. Here all the sensor values are converted to binary using thresholding and error value is calculated. This error value is used for controlling the spees and direction of the motor. </p>
 <h5 id="3-pid-controller-with-direct-sensor-values"><a class="header" href="#3-pid-controller-with-direct-sensor-values">3. PID Controller with direct sensor values</a></h5>
-<p>This is similar to method 2 but here no thresholding is used for sensor values while calculating error. The error calculation can be done using various methods like weighted average or using the sensor values as such.</p>
+<p>This is similar to method 2 but here no thresholding is used for sensor values while calculating error. The error calculation can be done using various methods like weighted average or using the sensor values as such. </p>
 <hr />
 <h4 id="how-does-pid-work"><a class="header" href="#how-does-pid-work">How does PID work?</a></h4>
 <p>The system calculates the ‘error’, or ‘deviation’ of the physical quantity from the set point, by measuring the current value of that physical quantity using a sensor(s). To get back to the set point, this ‘error’ should be minimized, and should ideally be made equal to zero. Also, this process should happen as quickly as possible. Ideally, there should be zero lag in the response of the system to the change in its set point.</p>
@@ -263,11 +261,11 @@ This method is not reliable as numerous cases must be defined for a set of senso
 <p>(iii) Integral Term (I):</p>
 <p>This term is the sum of all the previous error values.</p>
 <p>I = I + error</p>
-<p>This value is responsible for the quickness of response of the system to the change from the set point. The integral term is used the eliminate the steady state error required by the proportional term. Usually, small Robots doesn't use the integral term because we are not concerned about steady state error and it can complicate the "loop tuning".</p>
+<p>This value is responsible for the quickness of response of the system to the change from the set point. The integral term is used the eliminate the steady state error required by the proportional term. Usually, small Robots doesn't use the integral term because we are not concerned about steady state error and it can complicate the &quot;loop tuning&quot;.</p>
 <p>(iv) Differential or Derivative Term (D):</p>
 <p>This term is the difference between the instantaneous error from the set point, and the error from the previous instant.</p>
 <p>D = error - previousError</p>
-<p>This value is responsible to slow down the rate of change of the physical quantity when it comes close to the set point. The derivative term is used to reduce the overshoot or how much the system should "over correct".</p>
+<p>This value is responsible to slow down the rate of change of the physical quantity when it comes close to the set point. The derivative term is used to reduce the overshoot or how much the system should &quot;over correct&quot;.</p>
 <p>Equation:</p>
 <p>PIDvalue = (Kp<em>P) + (Ki</em>I) + (Kd*D)</p>
 <p>Where:</p>
@@ -313,7 +311,7 @@ Kd is the constant used to vary the stability of the system.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -327,29 +325,13 @@ Kd is the constant used to vary the stability of the system.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
