@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -91,7 +91,9 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item expanded "><a href="CS684_Assignment-3.html" class="active">Assignment 3</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -195,11 +197,11 @@ tel
 <ul>
 <li>updown =  0 0 1 1 1 0 1 0 0  1 1 1</li>
 </ul>
-<p><strong>Answer format:</strong> Create <code>q1</code> text file. List the output values of &quot;o&quot; in first line and q in second line in comma-separated format. </p>
+<p><strong>Answer format:</strong> Create <code>q1</code> text file. List the output values of "o" in first line and q in second line in comma-separated format.</p>
 <hr />
-<p><strong><code>Q2.</code></strong> </p>
-<p>Consider the following node which is a variant of the node discussed  in the class. The change is that the transitions are of then type here instead of the continue type as shown in class. Hence the behaviour of the automaton differs. </p>
-<p>Complete the table below giving the output of this node for the first  11 cycles in a table. Also give the start state (ST) and then next state (NS) for each of these cycles. </p>
+<p><strong><code>Q2.</code></strong></p>
+<p>Consider the following node which is a variant of the node discussed  in the class. The change is that the transitions are of then type here instead of the continue type as shown in class. Hence the behaviour of the automaton differs.</p>
+<p>Complete the table below giving the output of this node for the first  11 cycles in a table. Also give the start state (ST) and then next state (NS) for each of these cycles.</p>
 <pre><code class="language-code">node myautomaton() returns (y:int; stup:bool; v:int)
 var last x:int = 2;
 let
@@ -254,7 +256,7 @@ tel
 </div>
 <p><strong>Answer format:</strong> Create <code>q3</code> text file. Without using a space, list the values for 10 cycles in comma-separated format. Make sure to write each expression's value for 10 cycles on a separate line.</p>
 <hr />
-<p><strong><code>Q4.</code></strong> </p>
+<p><strong><code>Q4.</code></strong></p>
 <p>Consider the node myautomaton given below. Try to understand its structure. How many
 distinct modes does it have? Explain how you came up with this number.</p>
 <pre><code class="language-code">node myautomaton(i1: bool; i2: bool; i3: bool; i4: bool)
@@ -305,7 +307,7 @@ tel
 </code></pre>
 <p><strong>Answer format:</strong> Create <code>q4</code> text file. Mention number of modes in first line and explanation in second line.</p>
 <hr />
-<p><strong><code>Q5.</code></strong> </p>
+<p><strong><code>Q5.</code></strong></p>
 <p>Consider the following controller for farm road crossing. Try to understand its working. Try to simulate it using Heptagon simulator.</p>
 <p><em>A farm road (or side road) crosses a main road. Traffic light controller must turn on or off the lights maingreen, mainred, sidegreen, sidered. An input “carwait” is true if a car is waiting on the farm road.  Input “second” is the timer input which becomes true for one clock cycle every one second. Thus the count of “second” gives how much time has elapsed.</em></p>
 <pre><code class="language-code">node traffic(carwait,second:bool) 
@@ -333,25 +335,25 @@ tel
 </code></pre>
 <ol>
 <li>
-<p>Modify the above controller by  adding  outputs “mainyellow and sideyellow. The aim is that traffic light must remain yellow for 10 seconds before turning red. </p>
+<p>Modify the above controller by  adding  outputs “mainyellow and sideyellow. The aim is that traffic light must remain yellow for 10 seconds before turning red.</p>
 </li>
 <li>
-<p>What are some of the requirements  over the traffic node? For example, one simple requirement is that at most one of maingreen and sidegreen can be true in any clock cycle. List as many requirements (written in English)  as you think are appropriate for the modified controller you have designed in part (1). </p>
+<p>What are some of the requirements  over the traffic node? For example, one simple requirement is that at most one of maingreen and sidegreen can be true in any clock cycle. List as many requirements (written in English)  as you think are appropriate for the modified controller you have designed in part (1).</p>
 </li>
 </ol>
-<p><strong>Answer format:</strong> For question 5.1, submit <code>q51.ept</code> file. And for question 5.2, create <code>q52</code> text file and mention different requirements in separate lines. </p>
+<p><strong>Answer format:</strong> For question 5.1, submit <code>q51.ept</code> file. And for question 5.2, create <code>q52</code> text file and mention different requirements in separate lines.</p>
 <hr />
-<p><strong><code>Q6.</code></strong> </p>
+<p><strong><code>Q6.</code></strong></p>
 <p>Model a Gas Burner Controller as a Heptagon node     <code>(Code required)</code></p>
 <p><code>node controller(flame: bool; sec: bool) returns (gas: bool; spark: bool)</code></p>
-<p>to meet the following requirements. Preferably Use the automaton construct. </p>
+<p>to meet the following requirements. Preferably Use the automaton construct.</p>
 <p><em>“Controller keeps gas on/off using the output gas and strikes a flame using the output spark. It can detect whether flame is on/off using input flame. Flow sec is a second beacon. It is true at each clock cycle where one second has elapsed since the previous such value. Flame will not occur unless the gas has accumulated for at least 15 seconds. Not every spark results in flame. Flame also occasionally goes off due to wind. Making a spark after Gas has leaked for more than 60 seconds causes an explosion.  Hence, after a leakage longer than 60 seconds, the Gas must be turned off and allowed to dissipate for 120 seconds to reach a safe state.  The controller should try to keep the flame on as much as possible.”</em></p>
 <p>Please explain your design. Simulate your code using the Heptagon simulator for various sample inputs and submit the output produced.</p>
 <p><strong>Answer format:</strong> Submit <code>q6.ept</code>. Explain your design in comments in code file.</p>
 <h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
 <ul>
 <li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment3</code></strong>.</li>
-<li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below: </li>
+<li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below:</li>
 </ul>
 <pre><code>&lt;RollNo&gt;_assignment3
 │  
@@ -407,6 +409,22 @@ tel
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
