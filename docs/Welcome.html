@@ -1,150 +1,100 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en">
     <head>
-        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Welcome - CS684 Spring 2023</title>
-
-
-        <!-- Custom HTML head -->
-        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
         <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
-        <!-- Custom theme stylesheets -->
+        <!-- Custom theme -->
+        
 
+        
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
     </head>
-    <body>
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
+    <body class="light">
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
-            html.classList.remove('light')
-            html.classList.add(theme);
-            html.classList.add('js');
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html" class="active">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./Welcome.html" class="active"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html"><strong>4.2.</strong> Lab 2</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
+        </div>
 
         <div id="page-wrapper" class="page-wrapper">
 
-            <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+            <div class="page" tabindex="-1">
+                
+                <div id="menu-bar" class="menu-bar">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                        </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
+                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>
                     </div>
 
                     <h1 class="menu-title">CS684 Spring 2023</h1>
 
                     <div class="right-buttons">
-
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
                     </div>
                 </div>
-
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
 
                 <div id="content" class="content">
-                    <main>
-                        <center>
-    <h1 id="welcome-to-cs684-embedded-systems-labs"><a class="header" href="#welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
-    <h2 id="instructors-prof-kavi-arya-and-prof-paritosh-pandya"><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
-</center>
+                    <p><center>
+<a class="header" href="./Welcome.html#welcome-to-cs684-embedded-systems-labs" id="welcome-to-cs684-embedded-systems-labs"><h1>Welcome to CS684: Embedded Systems Labs!</h1></a>
+<a class="header" href="./Welcome.html#instructors-prof-kavi-arya-and-prof-paritosh-pandya" id="instructors-prof-kavi-arya-and-prof-paritosh-pandya"><h2>Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</h2></a>
+</center></p>
 <hr />
-<h2 id="course-details"><a class="header" href="#course-details">Course Details:</a></h2>
+<a class="header" href="./Welcome.html#course-details" id="course-details"><h2>Course Details:</h2></a>
 <table>
 <tr>
 <td>
@@ -174,10 +124,10 @@ to fix up a time</li>
 </td>
 </tr>
 </table>
-<br>
+<p><br></p>
 <hr />
-<h2 id="course-outline"><a class="header" href="#course-outline">Course Outline:</a></h2>
-<br>
+<a class="header" href="./Welcome.html#course-outline" id="course-outline"><h2>Course Outline:</h2></a>
+<p><br></p>
 <table>
 <tr>
 <th> Theory: </th>
@@ -200,8 +150,8 @@ to fix up a time</li>
 <ul>
 <li>Synchronous Dataflow Programming</li>
 <li>Higher Order Functions</li>
-<li>Uni-Mode Controllers </li>
-<li>Multi-Mode Controllers </li>
+<li>Uni-Mode Controllers</li>
+<li>Multi-Mode Controllers</li>
 <li>Finite State Automaton</li>
 <li>Concurrent Automata</li>
 </ul>
@@ -227,13 +177,13 @@ to fix up a time</li>
 <ul>
 <li>Software
 <ul>
-<li>Lustre/Heptagon </li>
+<li>Lustre/Heptagon</li>
 </ul>
 </li>
 <li>Model Based Design
 <ul>
 <li>Finite State Machine</li>
-<li>Statechart </li>
+<li>Statechart</li>
 <li>Lustre/Heptagon</li>
 </ul>
 </li>
@@ -245,12 +195,12 @@ to fix up a time</li>
 </li>
 <li>Adaptive Cruise Control - case study
 <ul>
-<li>using Embedded C programming </li>
+<li>using Embedded C programming</li>
 <li>using Lustre/Heptagon</li>
 <li>using Statechart</li>
 </ul>
 </li>
-<li>RTOS<!-- - Basics of Real-time operating systems
+<li>RTOS  <!-- - Basics of Real-time operating systems
   - Practical example showing the effectiveness of RTOS -->
 </li>
 </ul>
@@ -262,9 +212,9 @@ to fix up a time</li>
 </td>
 </tr>
 </table>
-<br>
+<p><br></p>
 <hr />
-<h2 id="grading-policytentative"><a class="header" href="#grading-policytentative">Grading Policy:[Tentative]</a></h2>
+<a class="header" href="./Welcome.html#grading-policytentative" id="grading-policytentative"><h2>Grading Policy:[Tentative]</h2></a>
 <ul>
 <li>Quizzes    : 5%</li>
 <li>Assignments: 20%</li>
@@ -274,97 +224,98 @@ to fix up a time</li>
 <li>Endsem     : 10%</li>
 </ul>
 <hr />
-<h2 id="lecture-scheduletentative"><a class="header" href="#lecture-scheduletentative">Lecture Schedule:[Tentative]</a></h2>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Date</th><th style="text-align: center">Lecture Topic</th><th style="text-align: center">Quiz</th><th style="text-align: center">Lecture Slides</th></tr></thead><tbody>
-<tr><td style="text-align: center">Jan 05</td><td style="text-align: center">Course Prelude, Introduction</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_01_05_ES01_intro.pdf">Intro</a></td></tr>
-<tr><td style="text-align: center">Jan 09</td><td style="text-align: center">NRE Cost and Software Engineering Issues</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_01_09_ES02_intro_diversity_&amp;_costs.pdf">Diversity &amp; Cost</a></td></tr>
-<tr><td style="text-align: center">Jan 12</td><td style="text-align: center">Embedded Systems Applications (Digital Camera)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_01_12_cs684_ES03_appn.pdf">Applications of ES</a></td></tr>
-<tr><td style="text-align: center">Jan 16</td><td style="text-align: center">Embedded Systems Applications (Digital Camera)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_01_16_ES04_model1.pdf">FSM</a></td></tr>
-<tr><td style="text-align: center">Jan 19</td><td style="text-align: center">Model Based Design (Intro + FSM)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_01_19_ES05_model2.pdf">Statecharts</a></td></tr>
-<tr><td style="text-align: center">Jan 23</td><td style="text-align: center">Reactive Kernel</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect1Ann.pdf">Cyber Physical Systems</a></td></tr>
-<tr><td style="text-align: center">Jan 30</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect2and3Ann1.pdf">Synchronous Dataflow Programming</a></td></tr>
-<tr><td style="text-align: center">Feb 02</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect4aAnnotated.pdf">Array, Map, Fold</a></td></tr>
-<tr><td style="text-align: center">Feb 06</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect4bAnnotated.pdf">Uni-Mode &amp; Multi-Mode Controllers</a></td></tr>
-<tr><td style="text-align: center">Feb 09</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">Quiz 2</td><td style="text-align: center">No Slides</td></tr>
-<tr><td style="text-align: center">Feb 13</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect5b.pdf">Multi-Mode Controllers</a></td></tr>
-<tr><td style="text-align: center">Feb 16</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"><a href="./resources/Slides/2024_Lect6.pdf">Finite-State Automata</a></td></tr>
-<tr><td style="text-align: center">Feb 20</td><td style="text-align: center">Model-Based Design (LUSTRE)</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">Feb 23 - March2nd</td><td style="text-align: center">midsem</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">March 05</td><td style="text-align: center">White Line Following - PID Control</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">March 12 - 15</td><td style="text-align: center">Project presentation</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">March 19</td><td style="text-align: center">Introduction to Realtime Systems</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">March 22</td><td style="text-align: center">Scheduling Theory</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">March 26</td><td style="text-align: center">Scheduling Theory</td><td style="text-align: center">Quiz 3</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">April 02 - 5</td><td style="text-align: center">Project Presentations (mid)</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">April 12</td><td style="text-align: center">Project Doubt clearing</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">April 16 - 19</td><td style="text-align: center">Project Presentations (end)</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">April 22 - May 2</td><td style="text-align: center">Endsem</td><td style="text-align: center">-</td><td style="text-align: center"></td></tr>
+<a class="header" href="./Welcome.html#lecture-scheduletentative" id="lecture-scheduletentative"><h2>Lecture Schedule:[Tentative]</h2></a>
+<table><thead><tr><th align="center">   Date    </th><th align="center"> Lecture Topic </th><th align="center"> Quiz </th><th align="center">  Lecture Slides  </th></tr></thead><tbody>
+<tr><td align="center">   Jan 05  </td><td align="center">   Course Prelude, Introduction </td><td align="center">  -  </td><td align="center">  <a href="./resources/Slides/2024_01_05_ES01_intro.pdf">Intro</a>  </td></tr>
+<tr><td align="center">   Jan 09  </td><td align="center">   NRE Cost and Software Engineering Issues </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_01_09_ES02_intro_diversity_&amp;_costs.pdf">Diversity &amp; Cost</a>  </td></tr>
+<tr><td align="center">   Jan 12  </td><td align="center">   Embedded Systems Applications (Digital Camera) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_01_12_cs684_ES03_appn.pdf">Applications of ES</a>  </td></tr>
+<tr><td align="center">   Jan 16  </td><td align="center">   Embedded Systems Applications (Digital Camera) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_01_16_ES04_model1.pdf">FSM</a>  </td></tr>
+<tr><td align="center">   Jan 19  </td><td align="center">   Model Based Design (Intro + FSM) </td><td align="center"> - </td><td align="center"> <a href="./resources/Slides/2024_01_19_ES05_model2.pdf">Statecharts</a> </td></tr>
+<tr><td align="center">   Jan 23  </td><td align="center">   Reactive Kernel </td><td align="center">  -  </td><td align="center">  <a href="./resources/Slides/2024_Lect1Ann.pdf">Cyber Physical Systems</a>  </td></tr>
+<tr><td align="center">   Jan 30  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_Lect2and3Ann1.pdf">Synchronous Dataflow Programming</a> </td></tr>
+<tr><td align="center">   Feb 02  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_Lect4aAnnotated.pdf">Array, Map, Fold</a> </td></tr>
+<tr><td align="center">   Feb 06  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_Lect4bAnnotated.pdf">Uni-Mode &amp; Multi-Mode Controllers</a> </td></tr>
+<tr><td align="center">   Feb 09  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  Quiz 2  </td><td align="center"> No Slides </td></tr>
+<tr><td align="center">   Feb 13  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_Lect5b.pdf">Multi-Mode Controllers</a> </td></tr>
+<tr><td align="center">   Feb 16  </td><td align="center">   Model-Based Design (LUSTRE)  </td><td align="center">  -  </td><td align="center"> <a href="./resources/Slides/2024_Lect6.pdf">Finite-State Automata</a> </td></tr>
+<tr><td align="center">   Feb 20  </td><td align="center">   Model-Based Design (LUSTRE) </td><td align="center">  -  </td><td align="center">   </td></tr>
+<tr><td align="center">   Feb 23 - March2nd  </td><td align="center">   midsem </td><td align="center">  -  </td><td align="center">  </td></tr>
+<tr><td align="center">   March 05  </td><td align="center">  White Line Following - PID Control   </td><td align="center">  -  </td><td align="center">  </td></tr>
+<tr><td align="center">   March 12 - 15  </td><td align="center">   Project presentation </td><td align="center">  -  </td><td align="center">  </td></tr>
+<tr><td align="center">   March 19  </td><td align="center">   Introduction to Realtime Systems </td><td align="center">  -  </td><td align="center">  </td></tr>
+<tr><td align="center">   March 22  </td><td align="center">   Scheduling Theory </td><td align="center">  -  </td><td align="center">        </td></tr>
+<tr><td align="center">   March 26  </td><td align="center">   Scheduling Theory </td><td align="center">  Quiz 3  </td><td align="center">    </td></tr>
+<tr><td align="center">   April 02 - 5  </td><td align="center">   Project Presentations (mid) </td><td align="center">  -  </td><td align="center">   </td></tr>
+<tr><td align="center">   April 12  </td><td align="center">   Project Doubt clearing </td><td align="center">  -  </td><td align="center">        </td></tr>
+<tr><td align="center">   April 16 - 19 </td><td align="center">   Project Presentations (end) </td><td align="center">  -  </td><td align="center">   </td></tr>
+<tr><td align="center">   April 22 - May 2  </td><td align="center">   Endsem   </td><td align="center">  -  </td><td align="center">  </td></tr>
 </tbody></table>
-</div><br>
+<p><br></p>
 <hr />
 <!-- 
-<h2 id="lab-scheduletentative"><a class="header" href="#lab-scheduletentative">Lab Schedule:[Tentative]</a></h2>
+<a class="header" href="./Welcome.html#lab-scheduletentative" id="lab-scheduletentative"><h2>Lab Schedule:[Tentative]</h2></a>
+<table><thead><tr><th>   Sr. No    </th><th> Lab </th><th> Release Date </th><th>  End Date  </th></tr></thead><tbody>
+<tr><td align="center">   0    </td><td align="center">   Installation of Software  </td><td align="center">  Thursday, January 05, 2023 </td><td align="center"> Thursday, January 12, 2023 </td><td>                              </td></tr>
+<tr><td align="center">   1    </td><td align="center">   Draw FSM for the Line Following Robot [Individual]        </td><td align="center">  Monday, January 16, 2023 </td><td align="center">  Monday, January 23, 2023 </td></tr>
+<tr><td align="center">   2    </td><td align="center">   Draw Statechart for the Problem Statement defined in project [Group]             </td><td align="center">   Monday, January 23, 2023 </td><td align="center">  Sunday, February 05, 2023  </td></tr>
+<tr><td align="center">   3    </td><td align="center">   Lustre/Heptagon implementation of Problem Statement [Group]     </td><td align="center">  Thursday, February 09, 2023 </td><td align="center">   Thursday, March 2, 2023  </td></tr>
+<tr><td align="center">   4    </td><td align="center">   Device Drivers for IO, Motor and PWM [Group]       </td><td align="center">    Thursday, March 2, 2023 </td><td align="center">  Thursday, March 09, 2023 </td></tr>
+<tr><td align="center">   5    </td><td align="center">   Line Follower Robot/ Color or ACC[Group]          </td><td align="center">   Thursday, March 09, 2023  </td><td align="center">  Thursday, March 16, 2023 </td></tr>
+<tr><td align="center">   6    </td><td align="center">   Implementation of Statechart/Heptagon on Robot [Group]           </td><td align="center">  Thursday, March 16, 2023 </td><td align="center">  Thursday, March 27, 2023  </td></tr>
+</tbody></table>
+<a class="header" href="./Welcome.html#assignment-scheduletentative" id="assignment-scheduletentative"><h2>Assignment Schedule:[Tentative]</h2></a>
+<table><thead><tr><th>   Sr. No    </th><th> Lab </th><th> Release Date </th><th>  End Date  </th></tr></thead><tbody>
+<tr><td align="center">   1    </td><td align="center">   Handwritten Kernel in C [Individual]        </td><td align="center"> Thursday, January 12, 2023 </td><td align="center">  Thursday January 19, 2023  </td></tr>
+<tr><td align="center">   2    </td><td align="center">   Lustre/Heptagon [Individual]             </td><td align="center">  Thursday, February 02, 2023 </td><td align="center"> Thursday, February 09, 2023 </td></tr>
+<tr><td align="center">   3    </td><td align="center">   Lustre/Heptagon [Individual]     </td><td align="center">  Thursday, February 09, 2023 </td><td align="center">  Thursday, February 16, 2023 </td></tr>
+<tr><td align="center">   4    </td><td align="center">   FreeRTOS/scheduling theory [Individual]       </td><td align="center">  Thursday, March 16, 2023 </td><td align="center">  Thursday, March 30, 2023  </td><td>        --&gt;</td></tr>
+</tbody></table>
 
-|   Sr. No    | Lab | Release Date |  End Date  |
-| :-------------: | :---------------------------: | :---------------------------: |  :---------------------------: | 
-|   0    |   Installation of Software  |  Thursday, January 05, 2023 | Thursday, January 12, 2023 |                              |   
-|   1    |   Draw FSM for the Line Following Robot [Individual]        |  Monday, January 16, 2023 |  Monday, January 23, 2023 |   
-|   2    |   Draw Statechart for the Problem Statement defined in project [Group]             |   Monday, January 23, 2023 |  Sunday, February 05, 2023  |    
-|   3    |   Lustre/Heptagon implementation of Problem Statement [Group]     |  Thursday, February 09, 2023 |   Thursday, March 2, 2023  |      
-|   4    |   Device Drivers for IO, Motor and PWM [Group]       |    Thursday, March 2, 2023 |  Thursday, March 09, 2023 |      
-|   5    |   Line Follower Robot/ Color or ACC[Group]          |   Thursday, March 09, 2023  |  Thursday, March 16, 2023 |       
-|   6    |   Implementation of Statechart/Heptagon on Robot [Group]           |  Thursday, March 16, 2023 |  Thursday, March 27, 2023  |
-
-<h2 id="assignment-scheduletentative"><a class="header" href="#assignment-scheduletentative">Assignment Schedule:[Tentative]</a></h2>
-
-|   Sr. No    | Lab | Release Date |  End Date  |
-| :-------------: | :---------------------------: | :---------------------------: |  :---------------------------: | 
-|   1    |   Handwritten Kernel in C [Individual]        | Thursday, January 12, 2023 |  Thursday January 19, 2023  |     
-|   2    |   Lustre/Heptagon [Individual]             |  Thursday, February 02, 2023 | Thursday, February 09, 2023 |      
-|   3    |   Lustre/Heptagon [Individual]     |  Thursday, February 09, 2023 |  Thursday, February 16, 2023 |       
-|   4    |   FreeRTOS/scheduling theory [Individual]       |  Thursday, March 16, 2023 |  Thursday, March 30, 2023  |        -->
-
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-
-                            <a rel="next" href="Resources.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-
-                        <div style="clear: both"></div>
-                    </nav>
                 </div>
-            </div>
 
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <!-- Mobile navigation buttons -->
+                
 
-                    <a rel="next" href="Resources.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                
+                    <a rel="next" href="./Resources.html" class="mobile-nav-chapters next" title="Next chapter">
                         <i class="fa fa-angle-right"></i>
                     </a>
-            </nav>
+                
+
+            </div>
+
+            
+
+            
+                <a href="./Resources.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
 
         </div>
 
 
-
-
+        <!-- Local fallback for Font Awesome -->
         <script>
-            window.playground_copyable = true;
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
         </script>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        
 
-        <script src="clipboard.min.js"></script>
+        
+
+        
+
         <script src="highlight.js"></script>
         <script src="book.js"></script>
 
-        <!-- Custom JS scripts -->
-
+        <!-- Custom JS script -->
+        
 
     </body>
 </html>

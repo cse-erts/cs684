@@ -1,151 +1,99 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en">
     <head>
-        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Installation Instructions - CS684 Spring 2023</title>
-
-
-        <!-- Custom HTML head -->
-        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
         <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
-        <!-- Custom theme stylesheets -->
+        <!-- Custom theme -->
+        
 
+        
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
     </head>
-    <body>
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
+    <body class="light">
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
-            html.classList.remove('light')
-            html.classList.add(theme);
-            html.classList.add('js');
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="Installation_instructions.html" class="active">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./Welcome.html"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html" class="active"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html"><strong>4.2.</strong> Lab 2</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
+        </div>
 
         <div id="page-wrapper" class="page-wrapper">
 
-            <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+            <div class="page" tabindex="-1">
+                
+                <div id="menu-bar" class="menu-bar">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                        </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
+                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>
                     </div>
 
                     <h1 class="menu-title">CS684 Spring 2023</h1>
 
                     <div class="right-buttons">
-
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
                     </div>
                 </div>
-
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
 
                 <div id="content" class="content">
-                    <main>
-                        <center><h1 id="installation-guide"><a class="header" href="#installation-guide"> Installation Guide</a></h1></center>
+                    <p><center><a class="header" href="./Installation_instructions.html#installation-guide" id="installation-guide"><h1> Installation Guide</h1></a></center></p>
 <p>This document contains instructions to install following software/libraries on <strong>Ubuntu OS</strong>:</p>
 <!-- - **QFSM** -->
-<ul>
-<li><strong>QFSM A Graphical Finite State Machine (FSM) Designer</strong></li>
-<li><strong>Lustre/Heptagon</strong></li>
-</ul>
+- **QFSM A Graphical Finite State Machine (FSM) Designer**
+- **Lustre/Heptagon**
 <blockquote>
 <p>The installation of all software/libraries has been tested on <strong>Ubuntu 16.04</strong>, <strong>18.04</strong> and <strong>22.04</strong>. We recommend you to use one of these versions of <strong>Ubuntu OS</strong>. These software have to be installed <strong>ONLY ON 64-bit OS</strong>.</p>
 </blockquote>
@@ -153,7 +101,7 @@
 <p>Refer the <a href="https://youtu.be/V_LXk6eNUkg" target="_blank">Video</a> for installing Ubuntu on Virtual Machine</p>
 </blockquote>
 <hr>
-<h3 id="qfsm"><a class="header" href="#qfsm"><div align="justify" class="main"><b>QFSM:</b></div></a></h3>
+<a class="header" href="./Installation_instructions.html#div-alignjustify-classmainbqfsmbdiv" id="div-alignjustify-classmainbqfsmbdiv"><h3><div align="justify" class="main"><b>QFSM:</b></div></h3></a>
 <hr>
 <ul>
 <li>
@@ -175,19 +123,21 @@
 </li>
 </ul>
 <blockquote>
-<p>If you are unable to open the App Image, Install the FUSE dependencies from <a href="https://github.com/AppImage/AppImageKit/wiki/FUSE" target="_blank">here</a> </p>
+<p>If you are unable to open the App Image, Install the FUSE dependencies from <a href="https://github.com/AppImage/AppImageKit/wiki/FUSE" target="_blank">here</a></p>
 </blockquote>
-<!-- <h3 id="installation-qfsm-graphical-editor-for-finite-state-machines"><a class="header" href="#installation-qfsm-graphical-editor-for-finite-state-machines"><div align="justify" class="main"><b>Installation: QFSM (Graphical Editor for Finite State Machines)</b></div></a></h3>
+<!-- <a class="header" href="./Installation_instructions.html#div-alignjustify-classmainbinstallation-qfsm-graphical-editor-for-finite-state-machinesbdiv" id="div-alignjustify-classmainbinstallation-qfsm-graphical-editor-for-finite-state-machinesbdiv"><h3><div align="justify" class="main"><b>Installation: QFSM (Graphical Editor for Finite State Machines)</b></div></h3></a>
 <hr>
+<ul>
+<li>Download the RPM package for QFSM from <a href="https://sourceforge.net/projects/qfsm/">here</a></li>
+<li>Go to the directory in which the file has been downloaded and execute the following commands
+<pre><code>sudo apt-get install alien
+sudo alien -c --to-tgz qfsm-0.54.0-1.i586.rpm
+sudo alien -c qfsm-0.54.0-1.i586.tgz
 
-- Download the RPM package for QFSM from [here](https://sourceforge.net/projects/qfsm/)
-- Go to the directory in which the file has been downloaded and execute the following commands
-    ```
-    sudo apt-get install alien
-    sudo alien -c --to-tgz qfsm-0.54.0-1.i586.rpm
-    sudo alien -c qfsm-0.54.0-1.i586.tgz
-
-    ``` -->
+``` --&gt;
+</code></pre>
+</li>
+</ul>
 <!-- OLD Below -->
 <!-- - Download Yakindu Statechart Tools from [here](https://www.itemis.com/en/products/itemis-create/download-options/).
 - Unpack the downloaded archive.
@@ -195,9 +145,9 @@
 - Upon the first start you will be asked to select a workspace. This is the folder where your project data will be located. Choose a folder as you like. You can still change the workspace later via File → Switch Workspace in the main menu.
 - Apply for [Academic License](https://info.itemis.com/products/itemis-create/academic/order/?hsCtaTracking=b9f55f7d-330b-467c-bd34-dd499b15884f%7Cd0e30b63-7a2f-44f8-9544-761461c5442c). -->
 <hr>
-<h3 id="lustreheptagon"><a class="header" href="#lustreheptagon"><div align="justify" class="main"><b>Lustre/Heptagon:</b></div></a></h3>
+<a class="header" href="./Installation_instructions.html#div-alignjustify-classmainblustreheptagonbdiv" id="div-alignjustify-classmainblustreheptagonbdiv"><h3><div align="justify" class="main"><b>Lustre/Heptagon:</b></div></h3></a>
 <hr>
-<h3 id="lustre-v4-installation"><a class="header" href="#lustre-v4-installation">Lustre v4 Installation</a></h3>
+<a class="header" href="./Installation_instructions.html#lustre-v4-installation" id="lustre-v4-installation"><h3>Lustre v4 Installation</h3></a>
 <ul>
 <li>Please download the appropriate distribution of Lustre V4 from <a href="https://www-verimag.imag.fr/DIST-TOOLS/SYNCHRONE/lustre-v4/distrib/index.html">here</a>.</li>
 </ul>
@@ -211,7 +161,7 @@
 </code></pre>
 </li>
 <li>
-<p>Now after unzipping and copying the tarball file, installation will be completed  by setting up two environment variables. </p>
+<p>Now after unzipping and copying the tarball file, installation will be completed  by setting up two environment variables.</p>
 <ul>
 <li>
 <p>You can go through the instructions provided in this <a href="https://www-verimag.imag.fr/DIST-TOOLS/SYNCHRONE/lustre-v4/distrib/linux64/README">README</a>.</p>
@@ -226,18 +176,18 @@
 <pre><code>export LUSTRE_INSTALL=/usr/local/lustre-v4-IV.2023.293-linux64
 source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
-<br>
+<p><br></p>
 <ul>
-<li>After configuring Lustre in your shell, run the following command to source the configuration. </li>
+<li>After configuring Lustre in your shell, run the following command to source the configuration.</li>
 </ul>
 <pre><code>source ~/.bashrc
 </code></pre>
 </li>
 <li>
-<p>That was alll for <strong><code>Lustre V4</code></strong> installation. </p>
+<p>That was alll for <strong><code>Lustre V4</code></strong> installation.</p>
 </li>
 </ul>
-<h3 id="heptagon-installation"><a class="header" href="#heptagon-installation">Heptagon Installation</a></h3>
+<a class="header" href="./Installation_instructions.html#heptagon-installation" id="heptagon-installation"><h3>Heptagon Installation</h3></a>
 <ul>
 <li>
 <p>First step is to install opam which is a source-based package manager for OCaml. It supports multiple simultaneous compiler installations, flexible package constraints, and a Git-friendly development workflow.</p>
@@ -261,27 +211,40 @@ source $LUSTRE_INSTALL/setenv.sh
 <blockquote>
 <p>NOTE: You have to execute all these commands in the same terminal session.</p>
 </blockquote>
-<pre><code>opam init
-</code></pre>
-<ul>
-<li>After running the above command it should automatically source <code>~/.bash_profile</code> or <code>~/.profile</code> by defualt. If it doesn't you need to source either of the file manually. It will be specified in the text you get after running opam init. </li>
-</ul>
-<pre><code>eval $(opam env)
-</code></pre>
-<pre><code>opam switch create 4.03.0
-</code></pre>
-<pre><code>eval $(opam env)
-</code></pre>
-<ul>
-<li>Install few more libraries using following commands:</li>
-</ul>
-<pre><code>sudo apt-get install libgtk2.0-dev
-</code></pre>
-<pre><code>opam install menhir lablgtk ocamlgraph ocamlbuild camlp4
-</code></pre>
 </li>
+</ul>
+<pre><code>```
+opam init
+````
+
+- After running the above command it should automatically source `~/.bash_profile` or `~/.profile` by defualt. If it doesn't you need to source either of the file manually. It will be specified in the text you get after running opam init. 
+
+
+```
+eval $(opam env)
+```
+
+```
+opam switch create 4.03.0
+```
+
+```
+eval $(opam env)
+```
+
+- Install few more libraries using following commands:
+
+```
+sudo apt-get install libgtk2.0-dev
+```
+
+```
+opam install menhir lablgtk ocamlgraph ocamlbuild camlp4
+```
+</code></pre>
+<ul>
 <li>
-<p>Next we need to download <a href="https://drive.google.com/file/d/1Ru1kdpqEAKQ-BJX_QyQpbGsxy7fqpWaI/view"><strong><code>Hetpagon</code></strong></a> and unzip it. </p>
+<p>Next we need to download <a href="https://drive.google.com/file/d/1Ru1kdpqEAKQ-BJX_QyQpbGsxy7fqpWaI/view"><strong><code>Hetpagon</code></strong></a> and unzip it.</p>
 </li>
 <li>
 <p>After unzipping the folder, run the following commands in your terminal:</p>
@@ -299,7 +262,7 @@ source $LUSTRE_INSTALL/setenv.sh
 <blockquote>
 <p>Note: The simulator “hepts” depends on “sim2chro” so you must have Lustre v4 installed to be able to use it.</p>
 </blockquote>
-<h3 id="testing"><a class="header" href="#testing">Testing</a></h3>
+<a class="header" href="./Installation_instructions.html#testing" id="testing"><h3>Testing</h3></a>
 <ul>
 <li>
 <p>Now to test installation follow the steps given below.</p>
@@ -338,7 +301,7 @@ source $LUSTRE_INSTALL/setenv.sh
 <p>where simulate.sh is contained in /home/erts/Course/Test directory</p>
 </li>
 <li>
-<p>Finally run the following command to simulate our heptagon node. </p>
+<p>Finally run the following command to simulate our heptagon node.</p>
 </li>
 </ul>
 <p>Example:</p>
@@ -346,7 +309,7 @@ source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
 </li>
 </ul>
-<h3 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h3>
+<a class="header" href="./Installation_instructions.html#troubleshooting" id="troubleshooting"><h3>Troubleshooting</h3></a>
 <ul>
 <li>If you are facing issues with executing heptagon node, first check whether the below two lines are present inside the bashrc, if not then manually add the lines to bashrc.
 <pre><code> export LUSTRE_INSTALL=/usr/local/lustre-v4-IV.2023.293-linux64
@@ -354,7 +317,7 @@ source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
 </li>
 </ul>
-<h3 id="heptagon-patch-for-reset"><a class="header" href="#heptagon-patch-for-reset">Heptagon Patch for Reset</a></h3>
+<a class="header" href="./Installation_instructions.html#heptagon-patch-for-reset" id="heptagon-patch-for-reset"><h3>Heptagon Patch for Reset</h3></a>
 <ul>
 <li>
 <p>There were two initialization related bugs in the reset phase after state machine.</p>
@@ -370,7 +333,7 @@ source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
 </li>
 </ul>
-<h3 id="type-conversion-in-heptagon"><a class="header" href="#type-conversion-in-heptagon">Type Conversion in Heptagon</a></h3>
+<a class="header" href="./Installation_instructions.html#type-conversion-in-heptagon" id="type-conversion-in-heptagon"><h3>Type Conversion in Heptagon</h3></a>
 <p>To use type conversion in heptagon, follow the following steps:</p>
 <ul>
 <li>
@@ -400,53 +363,59 @@ Download the file. Extract it and run the following command:</p>
 </code></pre>
 <hr>
 
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="Resources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-
-                            <a rel="next" href="CS684_Labs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-
-                        <div style="clear: both"></div>
-                    </nav>
                 </div>
-            </div>
 
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="Resources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="./Resources.html" class="mobile-nav-chapters previous" title="Previous chapter">
                         <i class="fa fa-angle-left"></i>
                     </a>
+                
 
-                    <a rel="next" href="CS684_Labs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                
+                    <a rel="next" href="./CS684_Labs.html" class="mobile-nav-chapters next" title="Next chapter">
                         <i class="fa fa-angle-right"></i>
                     </a>
-            </nav>
+                
+
+            </div>
+
+            
+                <a href="./Resources.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./CS684_Labs.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
 
         </div>
 
 
-
-
+        <!-- Local fallback for Font Awesome -->
         <script>
-            window.playground_copyable = true;
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
         </script>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        
 
-        <script src="clipboard.min.js"></script>
+        
+
+        
+
         <script src="highlight.js"></script>
         <script src="book.js"></script>
 
-        <!-- Custom JS scripts -->
-
+        <!-- Custom JS script -->
+        
 
     </body>
 </html>
