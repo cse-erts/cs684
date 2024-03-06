@@ -66,7 +66,7 @@
         </script>
 
         <div id="sidebar" class="sidebar">
-            <ul class="chapter"><li><a href="./Welcome.html"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html"><strong>4.2.</strong> Lab 2</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
+            <ul class="chapter"><li><a href="./Welcome.html"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html"><strong>4.2.</strong> Lab 2</a></li><li><a href="./CS684_Lab-3.html"><strong>4.3.</strong> Lab 3</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
         </div>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -929,6 +929,62 @@ Kd is the constant used to vary the stability of the system.</p>
 <li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 <p><center><a class="header" href="print.html#cs684-embedded-system-course-4" id="cs684-embedded-system-course-4"><h3>CS684: Embedded System Course</h3></a></center>
+<center><a class="header" href="print.html#lab-3-lustreheptagon-implementation-of-line-followercenter" id="lab-3-lustreheptagon-implementation-of-line-followercenter"><h4>Lab 3: Lustre/Heptagon implementation of Line Follower</center></h4></a></p>
+<hr />
+<a class="header" href="print.html#aim-2" id="aim-2"><h3>Aim:</h3></a>
+<p>In this lab, the robot should start from start position and reach to destination by using <code>Line Following</code>. In Lab 2 you have already implemented Line Following algorithm using Heptagon. In this lab you will implement the algrithm on the Hardware and see the results.</p>
+<hr />
+<a class="header" href="print.html#description" id="description"><h3>Description:</h3></a>
+<div align='center'>
+<p><img src="./resources/project/line_follower.png" alt="img" /></p>
+</div>
+<p>Robot has to travel from rectangle block (point A) to end of zig-zag path (point B) using white line following. Make sure that robot doesnot leave the line.</p>
+<p><strong>Line following:</strong> The arena provided to you is made up of curved and straight paths for the robot. To traverse the arena, the robot has to do line following depending on its position. Hence an algorithm has to be developed for Line following in Heptagon.</p>
+<a class="header" href="print.html#resources-1" id="resources-1"><h2>Resources:</h2></a>
+<ol>
+<li>
+<p>AlphaBot Drivers:
+Go through the <a href="./resources/Slides/Introduction__Alphabot_CS684_2023.pdf">slides</a> which were presented in the class to know more about AlphaBot. All the APIs which will be required for the project implementation are added in <a href="./resources/project/Alphabot_Drivers.zip">this folder</a> along with example .ino file. Go through the various components and check the results.</p>
+</li>
+<li>
+<p>Heptagon-Embedded Integration:
+Go through the <a href="./resources/Slides/White_Line_Follower_CS684_2023.pdf">slides</a> which were presented in the class to know more about Integration.
+Refer the <a href="./resources/project/class_line_follower.zip">folder</a> given. It consist of following files and folders:</p>
+</li>
+</ol>
+<ul>
+<li><code>heptagon</code> Folder: <code>line_follower.ept</code> containing the logic of the code (Discrete Controller).</li>
+<li><code>supervisor</code> Folder: <code>supervisor.ino</code>, <code>alphabot_drivers.cpp</code> and <code>alphabot_drivers.h</code> to work with the Robot.</li>
+<li><code>integrate.sh</code> file: to simulate and do the book keeping work.</li>
+</ul>
+<a class="header" href="print.html#submission-instructions-2" id="submission-instructions-2"><h2>Submission Instructions:</h2></a>
+<ul>
+<li>You have to upload <code>tar.gz</code> file.
+<ol>
+<li>
+<p><code>Heptagon Project</code> folder: It should contain following</p>
+<ul>
+<li><code>Heptagon</code> Folder: Containing the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
+</ul>
+</li>
+<li>
+<p><code>Readme.txt</code> file:</p>
+<ul>
+<li>Youtube link of the video - shoot the working of the robot moving from Point A to Point B.</li>
+</ul>
+</li>
+<li>
+<p><code>Contribution.txt</code> file: stating detailed contribution of each member</p>
+</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_3.tar.gz</code></li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
+</ul>
+<p><center><a class="header" href="print.html#cs684-embedded-system-course-5" id="cs684-embedded-system-course-5"><h3>CS684: Embedded System Course</h3></a></center>
 <center><a class="header" href="print.html#assignments" id="assignments"><h4>Assignments </h4></a></center></p>
 <hr />
 <a class="header" href="print.html#assignments-deatils" id="assignments-deatils"><h2>Assignments Deatils:</h2></a>
@@ -941,7 +997,7 @@ Kd is the constant used to vary the stability of the system.</p>
 </li>
 <li>Upcoming...</li>
 </ul>
-<p><center><a class="header" href="print.html#cs684-embedded-system-course-5" id="cs684-embedded-system-course-5"><h3>CS684: Embedded System Course</h3></a></center>
+<p><center><a class="header" href="print.html#cs684-embedded-system-course-6" id="cs684-embedded-system-course-6"><h3>CS684: Embedded System Course</h3></a></center>
 <center><a class="header" href="print.html#assignment-1a-statechart-implementation" id="assignment-1a-statechart-implementation"><h4>Assignment 1A: Statechart Implementation </h4></a></center></p>
 <a class="header" href="print.html#exercise" id="exercise"><h4>Exercise:</h4></a>
 <ul>
@@ -971,7 +1027,7 @@ Documentation: <a href="https://www.itemis.com/en/yakindu/state-machine/document
 <li>Getting started guide:
 <a href="https://www.youtube.com/watch?v=qn2cCRzz8pc" target="_blank">Yakindu Statechart</a></li>
 </ul>
-<a class="header" href="print.html#submission-instructions-2" id="submission-instructions-2"><h4>Submission Instructions:</h4></a>
+<a class="header" href="print.html#submission-instructions-3" id="submission-instructions-3"><h4>Submission Instructions:</h4></a>
 <p>Create a folder named <code>Assignment-1A</code>.</p>
 <p>Folder should contain following:</p>
 <ul>
@@ -984,7 +1040,7 @@ Documentation: <a href="https://www.itemis.com/en/yakindu/state-machine/document
 </ul>
 </li>
 </ul>
-<p><center><a class="header" href="print.html#cs684-embedded-system-course-6" id="cs684-embedded-system-course-6"><h3>CS684: Embedded System Course</h3></a></center>
+<p><center><a class="header" href="print.html#cs684-embedded-system-course-7" id="cs684-embedded-system-course-7"><h3>CS684: Embedded System Course</h3></a></center>
 <center><a class="header" href="print.html#assignment-1b-reactive-kernel" id="assignment-1b-reactive-kernel"><h4>Assignment 1B: Reactive Kernel </h4></a></center></p>
 <a class="header" href="print.html#prerequisite" id="prerequisite"><h4>Prerequisite:</h4></a>
 <ul>
@@ -1048,7 +1104,7 @@ At each step, input is a single integer x. Moving average has to be found for a 
 <blockquote>
 <p>Note: Your output should be exactly same as expected output including variables name as it will be autoevaluated.</p>
 </blockquote>
-<a class="header" href="print.html#submission-instructions-3" id="submission-instructions-3"><h4>Submission Instructions:</h4></a>
+<a class="header" href="print.html#submission-instructions-4" id="submission-instructions-4"><h4>Submission Instructions:</h4></a>
 <ul>
 <li>Complete the necessary files given in the folder.</li>
 <li>Compress both the folders (<code>Assignment-1A and Assignment-1B</code>) in a <strong><code>.tar.gz</code></strong> file and provide the name as <strong><code>&lt;Roll_NO&gt;_Assignment_1.tar.gz</code></strong>.</li>
@@ -1057,7 +1113,7 @@ At each step, input is a single integer x. Moving average has to be found for a 
 <blockquote>
 <p>Note: Make sure you have removed all the print statements from the file except the lines wihich prints mean and variance. Else your submission will not be evaluated.</p>
 </blockquote>
-<p><center><a class="header" href="print.html#cs684-embedded-system-course-7" id="cs684-embedded-system-course-7"><h3>CS684: Embedded System Course</h3></a></center>
+<p><center><a class="header" href="print.html#cs684-embedded-system-course-8" id="cs684-embedded-system-course-8"><h3>CS684: Embedded System Course</h3></a></center>
 <center><a class="header" href="print.html#assignment-2-lustreheptagon" id="assignment-2-lustreheptagon"><h4>Assignment 2: Lustre/Heptagon </h4></a></center></p>
 <hr />
 <p><strong>Note :</strong> Assignment 2 contains theory questions as well as coding questions. For theory questions, submit your answer in the text file and for coding questions, submit code files (.lus or .ept). Before submitting, refer to the Submission Instructions.</p>
@@ -1251,7 +1307,7 @@ tel
 </ul>
 <hr />
 <!--__Note :__ <u><a href="https://drive.google.com/file/d/1D4lEZg6LteCDtP0zCtM9_v2_VyerZadh/view?usp=share_link" target="_blank">Download this </a></u> Python file for checking the folder structure. The instructions for running the file are given in comments. --!>
-<p><center><a class="header" href="print.html#cs684-embedded-system-course-8" id="cs684-embedded-system-course-8"><h3>CS684: Embedded System Course</h3></a></center>
+<p><center><a class="header" href="print.html#cs684-embedded-system-course-9" id="cs684-embedded-system-course-9"><h3>CS684: Embedded System Course</h3></a></center>
 <center><a class="header" href="print.html#assignment-3-lustreheptagon" id="assignment-3-lustreheptagon"><h4>Assignment 3: Lustre/Heptagon </h4></a></center></p>
 <hr />
 <a class="header" href="print.html#problem-statements-1" id="problem-statements-1"><h4>PROBLEM STATEMENTS</h4></a>
@@ -1428,7 +1484,7 @@ tel
 <p><em>“Controller keeps gas on/off using the output gas and strikes a flame using the output spark. It can detect whether flame is on/off using input flame. Flow sec is a second beacon. It is true at each clock cycle where one second has elapsed since the previous such value. Flame will not occur unless the gas has accumulated for at least 15 seconds. Not every spark results in flame. Flame also occasionally goes off due to wind. Making a spark after Gas has leaked for more than 60 seconds causes an explosion.  Hence, after a leakage longer than 60 seconds, the Gas must be turned off and allowed to dissipate for 120 seconds to reach a safe state.  The controller should try to keep the flame on as much as possible.”</em></p>
 <p>Please explain your design. Simulate your code using the Heptagon simulator for various sample inputs and submit the output produced.</p>
 <p><strong>Answer format:</strong> Submit <code>q6.ept</code>. Explain your design in comments in code file.</p>
-<a class="header" href="print.html#submission-instructions-4" id="submission-instructions-4"><h4>Submission Instructions</h4></a>
+<a class="header" href="print.html#submission-instructions-5" id="submission-instructions-5"><h4>Submission Instructions</h4></a>
 <ul>
 <li>Create a folder named <strong><code>&lt;RollNo&gt;_assignment3</code></strong>.</li>
 <li>Copy and paste  all the files which has to be submitted inside the newly created folder according to the structure as shown below:</li>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab 3 - CS684 Spring 2023</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./Welcome.html"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html"><strong>4.2.</strong> Lab 2</a></li><li><a href="./CS684_Lab-3.html" class="active"><strong>4.3.</strong> Lab 3</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2023</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <p><center><a class="header" href="./CS684_Lab-3.html#cs684-embedded-system-course" id="cs684-embedded-system-course"><h3>CS684: Embedded System Course</h3></a></center>
+<center><a class="header" href="./CS684_Lab-3.html#lab-3-lustreheptagon-implementation-of-line-followercenter" id="lab-3-lustreheptagon-implementation-of-line-followercenter"><h4>Lab 3: Lustre/Heptagon implementation of Line Follower</center></h4></a></p>
+<hr />
+<a class="header" href="./CS684_Lab-3.html#aim" id="aim"><h3>Aim:</h3></a>
+<p>In this lab, the robot should start from start position and reach to destination by using <code>Line Following</code>. In Lab 2 you have already implemented Line Following algorithm using Heptagon. In this lab you will implement the algrithm on the Hardware and see the results.</p>
+<hr />
+<a class="header" href="./CS684_Lab-3.html#description" id="description"><h3>Description:</h3></a>
+<div align='center'>
+<p><img src="./resources/project/line_follower.png" alt="img" /></p>
+</div>
+<p>Robot has to travel from rectangle block (point A) to end of zig-zag path (point B) using white line following. Make sure that robot doesnot leave the line.</p>
+<p><strong>Line following:</strong> The arena provided to you is made up of curved and straight paths for the robot. To traverse the arena, the robot has to do line following depending on its position. Hence an algorithm has to be developed for Line following in Heptagon.</p>
+<a class="header" href="./CS684_Lab-3.html#resources" id="resources"><h2>Resources:</h2></a>
+<ol>
+<li>
+<p>AlphaBot Drivers:
+Go through the <a href="./resources/Slides/Introduction__Alphabot_CS684_2023.pdf">slides</a> which were presented in the class to know more about AlphaBot. All the APIs which will be required for the project implementation are added in <a href="./resources/project/Alphabot_Drivers.zip">this folder</a> along with example .ino file. Go through the various components and check the results.</p>
+</li>
+<li>
+<p>Heptagon-Embedded Integration:
+Go through the <a href="./resources/Slides/White_Line_Follower_CS684_2023.pdf">slides</a> which were presented in the class to know more about Integration.
+Refer the <a href="./resources/project/class_line_follower.zip">folder</a> given. It consist of following files and folders:</p>
+</li>
+</ol>
+<ul>
+<li><code>heptagon</code> Folder: <code>line_follower.ept</code> containing the logic of the code (Discrete Controller).</li>
+<li><code>supervisor</code> Folder: <code>supervisor.ino</code>, <code>alphabot_drivers.cpp</code> and <code>alphabot_drivers.h</code> to work with the Robot.</li>
+<li><code>integrate.sh</code> file: to simulate and do the book keeping work.</li>
+</ul>
+<a class="header" href="./CS684_Lab-3.html#submission-instructions" id="submission-instructions"><h2>Submission Instructions:</h2></a>
+<ul>
+<li>You have to upload <code>tar.gz</code> file.
+<ol>
+<li>
+<p><code>Heptagon Project</code> folder: It should contain following</p>
+<ul>
+<li><code>Heptagon</code> Folder: Containing the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
+</ul>
+</li>
+<li>
+<p><code>Readme.txt</code> file:</p>
+<ul>
+<li>Youtube link of the video - shoot the working of the robot moving from Point A to Point B.</li>
+</ul>
+</li>
+<li>
+<p><code>Contribution.txt</code> file: stating detailed contribution of each member</p>
+</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_3.tar.gz</code></li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
+</ul>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="./CS684_Lab-2.html" class="mobile-nav-chapters previous" title="Previous chapter">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="./CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="./CS684_Lab-2.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./CS684_Assignments.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </body>
+</html>
