@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Assignments - CS684 Spring 2023</title>
+        <title>Lab 4 - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html" class="active">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item expanded "><a href="CS684_Lab-4.html" class="active">Lab 4</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,28 +140,80 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="assignments"><a class="header" href="#assignments">Assignments </a></h4></center>
+<center><h4 id="lab-4-heptagon-implementation-for-line-switching-and-obstacle-avoidance"><a class="header" href="#lab-4-heptagon-implementation-for-line-switching-and-obstacle-avoidance">Lab 4: Heptagon implementation for Line Switching and Obstacle Avoidance</a></h4></center>
 <hr />
-<h2 id="assignments-deatils"><a class="header" href="#assignments-deatils">Assignments Deatils:</a></h2>
+<h3 id="aim"><a class="header" href="#aim">Aim</a></h3>
+<p>In this lab, the robot should park itself from any of the start point to an empty parking location using <code>Line Following</code> and <code>Obstacle Avoidance</code> algorithm. </p>
+<div align='center'>
+<img src="./resources/project/lab-4-parking.png" alt="parking-arena" width="400" height="400"> 
+</div>
+<p>a. <strong>Line following:</strong> The arena provided to you consists of curved and straight paths for the robot. You have already developed the line following algorithm for the black part of the arena above. However, in the current arena setup, the robot needs to switch lines. Therefore, you also need to incorporate the logic for line switching into your line following algorithm. <br></p>
+<p>b. <strong>Obstacle Avoidance:</strong> While the robot is trying to park itself, it has to use obstacle avoidance algorithm. The obstacles will be placed at certain parking locations, and there will be robots from other teams that have already parked, in that case, they will also be considered obstacles. Considering both scenarios, your robot will have to park itself in an empty parking location..</p>
+<hr />
+<h3 id="interfacing"><a class="header" href="#interfacing">Interfacing:</a></h3>
+<ol>
+<li>
+<p>Motors: On AlphBot, motors are already connected.</p>
+</li>
+<li>
+<p>IR Proximity Sensors: You need to connect sensors to the AlphaBot. You can connect the sensors to the shield pins provided on top PCB of the AlphaBot.
+Total 5 + 2 IR proximity sensors are provided in the kit. You can decide on the number of sensors and position of the sensors accoriding to your algorithm.
+You can use the sensor either in anlog or in digital mode.</p>
+</li>
+</ol>
+<hr />
+<h3 id="programming-instructions"><a class="header" href="#programming-instructions">Programming Instructions:</a></h3>
+<ol>
+<li>Motor interfacing and PWM initialisation code should be in Embedded C.</li>
+<li>IR Proximity sensors Interfacing code should be in Embedded C.</li>
+<li>Write the logic about <code>line following</code> and <code>obstacle avoidance</code> in Heptagon.</li>
+<li>Values received from sensors should be given to Heptagon.</li>
+<li>Velocity values and direction are output or Heptagon</li>
+</ol>
+<blockquote>
+<p>Note: For debugging, you can use serial functions of arduino library.</p>
+</blockquote>
+<hr />
+<h3 id="video-instructions"><a class="header" href="#video-instructions">Video Instructions:</a></h3>
 <ul>
-<li><strong>Assignment 1</strong>:
+<li>Keep the robot at the start loaction. Turn on the robot. Initially robot should follow the white line.</li>
+<li>Keep obstacle (alphabot box can be used) in 4 random parking locations.</li>
+<li>Show that the robot has avoided the obstacles and parked itself in an empty parking location..</li>
+</ul>
+<hr />
+<h3 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h3>
 <ul>
-<li><strong>1A:</strong> Statechart Implementation</li>
-<li><strong>1B:</strong> Reactive Kernel</li>
+<li>For Lab-4 submission you have to upload a <strong><code>.tar.gz</code></strong> file.
+<ol>
+<li><code>Heptagon Project</code> folder: It should contain following
+<ul>
+<li><code>Heptagon</code> Folder: Containing the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
 </ul>
 </li>
-<li>Upcoming...</li>
+<li><code>Readme.txt</code> file: 
+<ul>
+<li>Youtube link of the video - shoot the working of the robot moving from Point A to Point B.</li>
+</ul>
+</li>
+<li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_4.tar.gz</code> (check your file, it shouldn't be empty)</li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignment-1A.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -171,11 +223,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignment-1A.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

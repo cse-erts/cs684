@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,8 +32,7 @@
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+    <body>
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -62,71 +61,40 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
+            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add('js');
         </script>
-
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
-            } else {
-                sidebar = 'hidden';
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="Installation_instructions.html" class="active">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item expanded "><a href="Installation_instructions.html" class="active">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </label>
+                        </button>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -207,7 +175,7 @@
 </li>
 </ul>
 <blockquote>
-<p>If you are unable to open the App Image, Install the FUSE dependencies from <a href="https://github.com/AppImage/AppImageKit/wiki/FUSE" target="_blank">here</a></p>
+<p>If you are unable to open the App Image, Install the FUSE dependencies from <a href="https://github.com/AppImage/AppImageKit/wiki/FUSE" target="_blank">here</a> </p>
 </blockquote>
 <!-- <h3 id="installation-qfsm-graphical-editor-for-finite-state-machines"><a class="header" href="#installation-qfsm-graphical-editor-for-finite-state-machines"><div align="justify" class="main"><b>Installation: QFSM (Graphical Editor for Finite State Machines)</b></div></a></h3>
 <hr>
@@ -243,7 +211,7 @@
 </code></pre>
 </li>
 <li>
-<p>Now after unzipping and copying the tarball file, installation will be completed  by setting up two environment variables.</p>
+<p>Now after unzipping and copying the tarball file, installation will be completed  by setting up two environment variables. </p>
 <ul>
 <li>
 <p>You can go through the instructions provided in this <a href="https://www-verimag.imag.fr/DIST-TOOLS/SYNCHRONE/lustre-v4/distrib/linux64/README">README</a>.</p>
@@ -258,15 +226,15 @@
 <pre><code>export LUSTRE_INSTALL=/usr/local/lustre-v4-IV.2023.293-linux64
 source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
-  <br>
+<br>
 <ul>
-<li>After configuring Lustre in your shell, run the following command to source the configuration.</li>
+<li>After configuring Lustre in your shell, run the following command to source the configuration. </li>
 </ul>
 <pre><code>source ~/.bashrc
 </code></pre>
 </li>
 <li>
-<p>That was alll for <strong><code>Lustre V4</code></strong> installation.</p>
+<p>That was alll for <strong><code>Lustre V4</code></strong> installation. </p>
 </li>
 </ul>
 <h3 id="heptagon-installation"><a class="header" href="#heptagon-installation">Heptagon Installation</a></h3>
@@ -296,7 +264,7 @@ source $LUSTRE_INSTALL/setenv.sh
 <pre><code>opam init
 </code></pre>
 <ul>
-<li>After running the above command it should automatically source <code>~/.bash_profile</code> or <code>~/.profile</code> by defualt. If it doesn't you need to source either of the file manually. It will be specified in the text you get after running opam init.</li>
+<li>After running the above command it should automatically source <code>~/.bash_profile</code> or <code>~/.profile</code> by defualt. If it doesn't you need to source either of the file manually. It will be specified in the text you get after running opam init. </li>
 </ul>
 <pre><code>eval $(opam env)
 </code></pre>
@@ -313,7 +281,7 @@ source $LUSTRE_INSTALL/setenv.sh
 </code></pre>
 </li>
 <li>
-<p>Next we need to download <a href="https://drive.google.com/file/d/1Ru1kdpqEAKQ-BJX_QyQpbGsxy7fqpWaI/view"><strong><code>Hetpagon</code></strong></a> and unzip it.</p>
+<p>Next we need to download <a href="https://drive.google.com/file/d/1Ru1kdpqEAKQ-BJX_QyQpbGsxy7fqpWaI/view"><strong><code>Hetpagon</code></strong></a> and unzip it. </p>
 </li>
 <li>
 <p>After unzipping the folder, run the following commands in your terminal:</p>
@@ -363,14 +331,14 @@ source $LUSTRE_INSTALL/setenv.sh
 <ul>
 <li>Optionally you can put this script in your path and use it from anywhere. At the end of your ~/.bashrc or ~/.bash_profile, add following.</li>
 </ul>
-<pre><code>export PATH="$PATH:/home/erts/Course/Test/"
+<pre><code>export PATH=&quot;$PATH:/home/erts/Course/Test/&quot;
 </code></pre>
 <ul>
 <li>
 <p>where simulate.sh is contained in /home/erts/Course/Test directory</p>
 </li>
 <li>
-<p>Finally run the following command to simulate our heptagon node.</p>
+<p>Finally run the following command to simulate our heptagon node. </p>
 </li>
 </ul>
 <p>Example:</p>
@@ -440,7 +408,7 @@ Download the file. Extract it and run the following command:</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="CS684_Labs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Labs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -454,29 +422,13 @@ Download the file. Extract it and run the following command:</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="CS684_Labs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Labs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
@@ -496,6 +448,5 @@ Download the file. Extract it and run the following command:</p>
         <!-- Custom JS scripts -->
 
 
-    </div>
     </body>
 </html>
