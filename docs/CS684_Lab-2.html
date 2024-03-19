@@ -1,98 +1,180 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" class="light" dir="ltr">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Lab 2 - CS684 Spring 2023</title>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+
+        <!-- Custom HTML head -->
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
 
-        <base href="">
-
-        <link rel="stylesheet" href="book.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
 
+        <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
-        <!-- Custom theme -->
-        
+        <!-- Custom theme stylesheets -->
 
-        
         <!-- MathJax -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-
-        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
-        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
-        <script>
-            if (typeof Clipboard == 'undefined') {
-                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
-            }
-        </script>
-
-        <!-- Fetch JQuery from CDN but have a local fallback -->
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script>
-            if (typeof jQuery == 'undefined') {
-                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
-            }
-        </script>
-
-        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
-        <script src="store.js"></script>
-
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body class="light">
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme = store.get('mdbook-theme');
-            if (theme === null || theme === undefined) { theme = 'light'; }
-            $('body').removeClass().addClass(theme);
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var sidebar = store.get('mdbook-sidebar');
-            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
-            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
-        <div id="sidebar" class="sidebar">
-            <ul class="chapter"><li><a href="./Welcome.html"><strong>1.</strong> Welcome</a></li><li><a href="./Resources.html"><strong>2.</strong> Resources</a></li><li><a href="./Installation_instructions.html"><strong>3.</strong> Installation Instructions</a></li><li><a href="./CS684_Labs.html"><strong>4.</strong> Labs</a></li><li><ul class="section"><li><a href="./CS684_Lab-1.html"><strong>4.1.</strong> Lab 1</a></li><li><a href="./CS684_Lab-2.html" class="active"><strong>4.2.</strong> Lab 2</a></li><li><a href="./CS684_Lab-3.html"><strong>4.3.</strong> Lab 3</a></li></ul></li><li><a href="./CS684_Assignments.html"><strong>5.</strong> Assignments</a></li><li><ul class="section"><li><a href="./CS684_Assignment-1A.html"><strong>5.1.</strong> Assignment 1A</a></li><li><a href="./CS684_Assignment-1B.html"><strong>5.2.</strong> Assignment 1B</a></li><li><a href="./CS684_Assignment-2.html"><strong>5.3.</strong> Assignment 2</a></li><li><a href="./CS684_Assignment-3.html"><strong>5.4.</strong> Assignment 3</a></li></ul></li></ul>
-        </div>
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item expanded "><a href="CS684_Lab-2.html" class="active">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
-            <div class="page" tabindex="-1">
-                
-                <div id="menu-bar" class="menu-bar">
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
-                        <i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">CS684 Spring 2023</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html">
-                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
-                        </a>
+
                     </div>
                 </div>
 
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
                 <div id="content" class="content">
-                    <p><center><a class="header" href="./CS684_Lab-2.html#cs684-embedded-system-course" id="cs684-embedded-system-course"><h3>CS684: Embedded System Course</h3></a></center>
-<center><a class="header" href="./CS684_Lab-2.html#lab-2-heptagon-code-for-line-following" id="lab-2-heptagon-code-for-line-following"><h4>Lab 2: Heptagon code for Line following</h4></a></center></p>
+                    <main>
+                        <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4 id="lab-2-heptagon-code-for-line-following"><a class="header" href="#lab-2-heptagon-code-for-line-following">Lab 2: Heptagon code for Line following</a></h4></center>
 <hr />
-<a class="header" href="./CS684_Lab-2.html#aim" id="aim"><h4>AIM</h4></a>
+<h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
 <ul>
 <li>
 <p>You have to write a heptagon code for Line Following.</p>
@@ -117,13 +199,14 @@
 </ul>
 </li>
 </ul>
-<table><thead><tr><th align="center"> Direction </th><th align="center"> Representation </th></tr></thead><tbody>
-<tr><td align="center">   Stop    </td><td align="center">       0        </td></tr>
-<tr><td align="center">  Forward  </td><td align="center">       1        </td></tr>
-<tr><td align="center">   Left    </td><td align="center">       2        </td></tr>
-<tr><td align="center">   Right   </td><td align="center">       3        </td></tr>
-<tr><td align="center"> Backward  </td><td align="center">       4        </td></tr>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Direction</th><th style="text-align: center">Representation</th></tr></thead><tbody>
+<tr><td style="text-align: center">Stop</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">Forward</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">Left</td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center">Right</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center">Backward</td><td style="text-align: center">4</td></tr>
 </tbody></table>
+</div>
 <ul>
 <li>
 <p>Motor velocity ranges between 0 to 100. It should not be negative or greater than 100.</p>
@@ -135,7 +218,7 @@
 <pre><code>node main(sen0, sen1, sen2, sen3, sen4: int) returns (v_l, v_r, dir: int)
 var sen: int^5;
 let
-     sen = [sen0, sen1, sen2, sen3, sen4];
+	 sen = [sen0, sen1, sen2, sen3, sen4];
 tel
 </code></pre>
 <ul>
@@ -145,7 +228,7 @@ tel
 <blockquote>
 <p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step etc.</p>
 </blockquote>
-<a class="header" href="./CS684_Lab-2.html#algorithm" id="algorithm"><h4>Algorithm</h4></a>
+<h4 id="algorithm"><a class="header" href="#algorithm">Algorithm</a></h4>
 <ul>
 <li>White Line following has to be done using the 5 white line sensors provided.</li>
 <li>Each sensor value ranges between: 0 to 1023.</li>
@@ -156,16 +239,16 @@ tel
 <li>You are free to make assumptions regarding readings of sensors at different instances.</li>
 </ul>
 <hr />
-<a class="header" href="./CS684_Lab-2.html#algorithms-for-line-following" id="algorithms-for-line-following"><h4>Algorithms for Line Following</h4></a>
-<a class="header" href="./CS684_Lab-2.html#1-bang-bang-controller" id="1-bang-bang-controller"><h5>1. Bang-bang Controller</h5></a>
+<h4 id="algorithms-for-line-following"><a class="header" href="#algorithms-for-line-following">Algorithms for Line Following</a></h4>
+<h5 id="1-bang-bang-controller"><a class="header" href="#1-bang-bang-controller">1. Bang-bang Controller</a></h5>
 <p>Here all the sensor values are converted to binary using thresholding and will be directly used to control the speed and direction of the motors. It uses an if-else ladder structure for logic implementation. The controller that was developed in Lab 1 uses the same logic.
 This method is not reliable as numerous cases must be defined for a set of sensor values which will be difficult to implement.</p>
-<a class="header" href="./CS684_Lab-2.html#2-pid-controller-with-binary-sensor-values" id="2-pid-controller-with-binary-sensor-values"><h5>2. PID Controller with binary sensor values</h5></a>
+<h5 id="2-pid-controller-with-binary-sensor-values"><a class="header" href="#2-pid-controller-with-binary-sensor-values">2. PID Controller with binary sensor values</a></h5>
 <p>PID controller is a feedback loop that utilises the error in the sensor values to correct the position of the robot. Here all the sensor values are converted to binary using thresholding and error value is calculated. This error value is used for controlling the spees and direction of the motor.</p>
-<a class="header" href="./CS684_Lab-2.html#3-pid-controller-with-direct-sensor-values" id="3-pid-controller-with-direct-sensor-values"><h5>3. PID Controller with direct sensor values</h5></a>
+<h5 id="3-pid-controller-with-direct-sensor-values"><a class="header" href="#3-pid-controller-with-direct-sensor-values">3. PID Controller with direct sensor values</a></h5>
 <p>This is similar to method 2 but here no thresholding is used for sensor values while calculating error. The error calculation can be done using various methods like weighted average or using the sensor values as such.</p>
 <hr />
-<a class="header" href="./CS684_Lab-2.html#how-does-pid-work" id="how-does-pid-work"><h4>How does PID work?</h4></a>
+<h4 id="how-does-pid-work"><a class="header" href="#how-does-pid-work">How does PID work?</a></h4>
 <p>The system calculates the ‘error’, or ‘deviation’ of the physical quantity from the set point, by measuring the current value of that physical quantity using a sensor(s). To get back to the set point, this ‘error’ should be minimized, and should ideally be made equal to zero. Also, this process should happen as quickly as possible. Ideally, there should be zero lag in the response of the system to the change in its set point.</p>
 <p>More information can be found in many books and websites, including here:</p>
 <p>http://en.wikipedia.org/wiki/PID_controller</p>
@@ -180,11 +263,11 @@ This method is not reliable as numerous cases must be defined for a set of senso
 <p>(iii) Integral Term (I):</p>
 <p>This term is the sum of all the previous error values.</p>
 <p>I = I + error</p>
-<p>This value is responsible for the quickness of response of the system to the change from the set point. The integral term is used the eliminate the steady state error required by the proportional term. Usually, small Robots doesn't use the integral term because we are not concerned about steady state error and it can complicate the &quot;loop tuning&quot;.</p>
+<p>This value is responsible for the quickness of response of the system to the change from the set point. The integral term is used the eliminate the steady state error required by the proportional term. Usually, small Robots doesn't use the integral term because we are not concerned about steady state error and it can complicate the "loop tuning".</p>
 <p>(iv) Differential or Derivative Term (D):</p>
 <p>This term is the difference between the instantaneous error from the set point, and the error from the previous instant.</p>
 <p>D = error - previousError</p>
-<p>This value is responsible to slow down the rate of change of the physical quantity when it comes close to the set point. The derivative term is used to reduce the overshoot or how much the system should &quot;over correct&quot;.</p>
+<p>This value is responsible to slow down the rate of change of the physical quantity when it comes close to the set point. The derivative term is used to reduce the overshoot or how much the system should "over correct".</p>
 <p>Equation:</p>
 <p>PIDvalue = (Kp<em>P) + (Ki</em>I) + (Kd*D)</p>
 <p>Where:</p>
@@ -202,7 +285,7 @@ Kd is the constant used to vary the stability of the system.</p>
 }
 </code></pre>
 <hr />
-<a class="header" href="./CS684_Lab-2.html#submission-instructions" id="submission-instructions"><h4>Submission Instructions</h4></a>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
 <ul>
 <li>For Lab-2 submission you have to upload a <strong><code>.tar.gz</code></strong> file.</li>
 <li>Folder should contain following:
@@ -222,59 +305,70 @@ Kd is the constant used to vary the stability of the system.</p>
 <li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="CS684_Lab-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="CS684_Lab-3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
                 </div>
-
-                <!-- Mobile navigation buttons -->
-                
-                    <a rel="prev" href="./CS684_Lab-1.html" class="mobile-nav-chapters previous" title="Previous chapter">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
-
-                
-                    <a rel="next" href="./CS684_Lab-3.html" class="mobile-nav-chapters next" title="Next chapter">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                
-
             </div>
 
-            
-                <a href="./CS684_Lab-1.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="CS684_Lab-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-            
-                <a href="./CS684_Lab-3.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            
+                    <a rel="next prefetch" href="CS684_Lab-3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
 
         </div>
 
-
-        <!-- Local fallback for Font Awesome -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script>
-            if ($(".fa").css("font-family") !== "FontAwesome") {
-                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        
 
-        
 
-        
+        <script>
+            window.playground_copyable = true;
+        </script>
 
-        
 
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
         <script src="highlight.js"></script>
         <script src="book.js"></script>
 
-        <!-- Custom JS script -->
-        
+        <!-- Custom JS scripts -->
 
+
+    </div>
     </body>
 </html>
