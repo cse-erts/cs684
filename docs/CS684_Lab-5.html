@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 4 - CS684 Spring 2023</title>
+        <title>Lab 5 - CS684 Spring 2023</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item expanded "><a href="CS684_Lab-4.html" class="active">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="CS684_Lab-5.html" class="active">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1A.html">Assignment 1A</a></li><li class="chapter-item "><a href="CS684_Assignment-1B.html">Assignment 1B</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,39 +140,56 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-4-heptagon-implementation-for-line-switching-and-obstacle-avoidance"><a class="header" href="#lab-4-heptagon-implementation-for-line-switching-and-obstacle-avoidance">Lab 4: Heptagon implementation for Line Switching and Obstacle Avoidance</a></h4></center>
+<center><h4 id="lab-5-final-project-implementation"><a class="header" href="#lab-5-final-project-implementation">Lab 5: Final Project Implementation</a></h4></center>
 <hr />
 <h3 id="aim"><a class="header" href="#aim">Aim</a></h3>
-<p>In this lab, the robot should park itself from any of the start point to an empty parking location using <code>Line Following</code> and <code>Obstacle Avoidance</code> algorithm. </p>
+<p>This lab builds upon your Lab 4, enhancing the robot's capabilities with a hybrid control system: autonomous and manual. Problem Statement of Lab 4 remains same, The robot should park itself from any of the start point to an empty parking location using <code>Line Following</code> and <code>Obstacle Avoidance</code> algorithm.
+However, you'll now introduce a joystick-based remote control for manual control along with Autonomous Navigation. </p>
+<h3 id="testing"><a class="header" href="#testing">Testing:</a></h3>
+<p>In Lab 5 first we will design the Joystick based remote and do the initial Testing:</p>
+<ol>
+<li>Joystick-Based Remote Design:</li>
+</ol>
+<p>All the components for designing the Remote is already provided to you. You will be designing the remote controller. (You have to do the soldering and mounting. During lab slot, we will provide access to the soldering station.)</p>
+<div align='center'>
+<img src="./images/remote.jpg" alt="Joystick-based Remote" width="300" height="150"> 
+</div>
+<ol start="2">
+<li>Remote-Robot Communication:</li>
+</ol>
+<p>For remote, one Joystick and two Limit switches are provided. These will be interfaced with the Arduino nano. Based on the values received from the joystick write a code to control the robot. (Note: For communication use Zigbee)
+Note: For zigbee configuration you will require XCTU: <a href="https://www.digi.com/resources/documentation/digidocs/90001526/tasks/t_download_and_install_xctu.htm">XCTU Install</a></p>
+<p>Also configure the zigbee to communicate with each other.</p>
+<p>Following is the control of the robot: </p>
+<div class="table-wrapper"><table><thead><tr><th>Input</th><th>Robot Action</th></tr></thead><tbody>
+<tr><td>Joystic Middle Button</td><td>Stop</td></tr>
+<tr><td>Joystick Left</td><td>Left</td></tr>
+<tr><td>Joystick Right</td><td>Right</td></tr>
+<tr><td>Joystick Front</td><td>Forward</td></tr>
+<tr><td>Joystick Back</td><td>Backward</td></tr>
+<tr><td>Limit Switch 1</td><td>Buzzer On</td></tr>
+<tr><td>Limit Switch 2</td><td>buzzer Off</td></tr>
+</tbody></table>
+</div>
+<h3 id="integrating-remote-control-with-lab-4-implementation"><a class="header" href="#integrating-remote-control-with-lab-4-implementation">Integrating Remote Control with Lab 4 implementation:</a></h3>
+<p>Following arena will be used for the finals.</p>
 <div align='center'>
 <img src="./resources/project/lab-4-parking.png" alt="parking-arena" width="400" height="400"> 
 </div>
-<p>a. <strong>Line following:</strong> The arena provided to you consists of curved and straight paths for the robot. You have already developed the line following algorithm for the black part of the arena above. However, in the current arena setup, the robot needs to switch lines. Therefore, you also need to incorporate the logic for line switching into your line following algorithm. <br></p>
-<p>b. <strong>Obstacle Avoidance:</strong> While the robot is trying to park itself, it has to use obstacle avoidance algorithm. The obstacles will be placed at certain parking locations, and there will be robots from other teams that have already parked, in that case, they will also be considered obstacles. Considering both scenarios, your robot will have to park itself in an empty parking location..</p>
-<hr />
-<h3 id="interfacing"><a class="header" href="#interfacing">Interfacing:</a></h3>
 <ol>
-<li>
-<p>Motors: On AlphBot, motors are already connected.</p>
-</li>
-<li>
-<p>IR Proximity Sensors: You need to connect sensors to the AlphaBot. You can connect the sensors to the shield pins provided on top PCB of the AlphaBot.
-Total 5 + 2 IR proximity sensors are provided in the kit. You can decide on the number of sensors and position of the sensors accoriding to your algorithm.
-You can use the sensor either in anlog or in digital mode.</p>
-</li>
+<li>The robot can be started from any Start position. Once you start the robot, wait for the input from the remote. Two limit switches can be used to indicate the position of the robot, wether it started from the right or left.</li>
+<li>Once robot receives input from the remote, it should start following the line.</li>
+<li>If the robot deviates from the line, team members can use the remote to guide it back on track. (You can implement additional communication functionalities as needed.)</li>
+<li>Once the robot enters in the parking area, it should search for the empty parking slot and park itself.</li>
 </ol>
-<hr />
-<h3 id="programming-instructions"><a class="header" href="#programming-instructions">Programming Instructions:</a></h3>
-<ol>
-<li>Motor interfacing and PWM initialisation code should be in Embedded C.</li>
-<li>IR Proximity sensors Interfacing code should be in Embedded C.</li>
-<li>Write the logic about <code>line following</code> and <code>obstacle avoidance</code> in Heptagon.</li>
-<li>Values received from sensors should be given to Heptagon.</li>
-<li>Velocity values and direction are output or Heptagon</li>
-</ol>
-<blockquote>
-<p>Note: For debugging, you can use serial functions of arduino library.</p>
-</blockquote>
+<h3 id="important-notes"><a class="header" href="#important-notes">Important Notes:</a></h3>
+<ul>
+<li>Remote control serves as a backup due to potential robot inconsistencies.</li>
+<li>Excessive reliance on remote control will result in point deductions. A perfectly autonomous run earns the highest marks.</li>
+<li>The final competition will involve four robots navigating the arena simultaneously. Consider dynamic obstacle avoidance (other robots) while enhancing your line following implementation.</li>
+<li>If robots collide, we will instruct one to stop using the remote control.</li>
+<li>Final project demo will be in person, so make sure that you test the robot in different lighting conditions.</li>
+</ul>
 <hr />
 <h3 id="video-instructions"><a class="header" href="#video-instructions">Video Instructions:</a></h3>
 <ul>
@@ -180,10 +197,13 @@ You can use the sensor either in anlog or in digital mode.</p>
 <li>Keep obstacle (alphabot box can be used) in 4 random parking locations.</li>
 <li>Show that the robot has avoided the obstacles and parked itself in an empty parking location..</li>
 </ul>
+<p>Follow the same instructions as outlined in Lab 4.
+If you've made improvements to the robot's speed or overall implementation, feel free to reshoot the video for submission and submit it.</p>
+<p>Finals of the project will be done on 16th April. During 16th we will have run in person. This video will just be a backup. Evaluation will be done based on the final run.</p>
 <hr />
 <h3 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h3>
 <ul>
-<li>For Lab-4 submission you have to upload a <strong><code>.tar.gz</code></strong> file.
+<li>For Lab-5 submission you have to upload a <strong><code>.tar.gz</code></strong> file.
 <ol>
 <li><code>Heptagon Project</code> folder: It should contain following
 <ul>
@@ -200,7 +220,7 @@ You can use the sensor either in anlog or in digital mode.</p>
 <li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
 </ol>
 </li>
-<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_4.tar.gz</code> (check your file, it shouldn't be empty)</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_5.tar.gz</code> (check your file, it shouldn't be empty)</li>
 <li>Upload the file on Moodle</li>
 <li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
@@ -209,11 +229,11 @@ You can use the sensor either in anlog or in digital mode.</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Lab-5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -223,11 +243,11 @@ You can use the sensor either in anlog or in digital mode.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Lab-5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
