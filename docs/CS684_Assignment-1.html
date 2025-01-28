@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2024-25</title>
+        <title>Assignment 1 - CS684 Spring 2024-25</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Assignment-1.html" class="active">Assignment 1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,108 +140,75 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-1-draw-statechart-for-line-following"><a class="header" href="#lab-1-draw-statechart-for-line-following">Lab 1: Draw Statechart for Line following </a></h4></center>
-<h4 id="software-used"><a class="header" href="#software-used">Software used</a></h4>
+<center><h4 id="assignment-1-reactive-kernel"><a class="header" href="#assignment-1-reactive-kernel">Assignment 1: Reactive Kernel </a></h4></center>
+<h3 id="prerequisite"><a class="header" href="#prerequisite">Prerequisite:</a></h3>
 <ul>
-<li>You can use online statechart editor for the implementation: <a href="https://stately.ai/">Stately</a></li>
-<li>Resources:
-<ul>
-<li><a href="https://www.youtube.com/watch?v=Aixi0e53qAE">Video Tutorials</a></li>
-<li><a href="https://www.itemis.com/en/products/itemis-create/documentation/user-guide/overview_what_are_state_machines">What are state machines?</a></li>
-<li><a href="https://stately.ai/docs">Stately User Guide</a></li>
-</ul>
-</li>
+<li>Before starting this assignment, go through the resources provided on Reactive Kernel <a href="./Resources.html">Resources</a></li>
+<li>Inspect and analyze the C codes, both written by hand and synthesized.</li>
 </ul>
 <hr />
-<h4 id="aim"><a class="header" href="#aim">Aim</a></h4>
+<h3 id="resources"><a class="header" href="#resources">Resources:</a></h3>
 <ul>
-<li>Draw a statechart for line following of a robot on a black line printed on a white surface. </li>
-<li>Objective is to move the robot from Start (<strong>S</strong>) to End (<strong>E</strong>) location. [Refer following diagram]</li>
+<li>Download the <a href="./skeleton_files/Assignment-1.tar.gz"><code>Assignment-1.tar.gz</code></a> file. Extract the file using command <code>tar -xzvf Assignment-1.tar.gz</code></li>
+<li>You will find following directory structure:
+<img src="./images/folder.png" alt="" /></li>
 </ul>
-<center><img title="a title" alt="Alt text" src="./images/lab1_fsm_path.png" width=250 height=250></center>
+<hr />
+<h3 id="problem-statement"><a class="header" href="#problem-statement">Problem Statement:</a></h3>
 <blockquote>
-<p>Note: The above image only gives an abstraction of some random path. It is just for reference. It will help you to build different states accurately.</p>
+<p><strong>Write reactive kernel for finding</strong><br>
+<strong>1. Mean of cubes</strong> <br>
+<strong>2. Frequency of first element in a series</strong></p>
 </blockquote>
+<h4 id="i-mean-of-cubes"><a class="header" href="#i-mean-of-cubes"><strong>I. Mean of cubes:</strong></a></h4>
+<p>At each step, input is a single integer x. Mean of cubes has to be found for a sequence of x’s seen so far.
+Following is the expected output:<br></p>
+<p><img src="./images/cube_avg.png" alt="" /> </p>
+<ul>
+<li>For compiling and running the program follow these steps:</li>
+</ul>
+<pre><code class="language-code">cd &lt;/path/to/cube_avg&gt;
+gcc -c cube_avg.c
+gcc -c main.c
+gcc -o cube_avg main.o cube_avg.o
+./cube_avg
+</code></pre>
+<h4 id="ii-frequency-of-first-element-in-a-series"><a class="header" href="#ii-frequency-of-first-element-in-a-series"><strong>II. Frequency of first element in a series:</strong></a></h4>
+<p>At each step, input is a single integer x. You have to calculate the number of times the first element of the series is occurring in a series of inputs
+Following is the expected output:<br></p>
+<p><img src="./images/frequency_output.png" alt="" /></p>
+<ul>
+<li>For compiling and running the program follow these steps:</li>
+</ul>
+<pre><code class="language-code">cd &lt;/path/to/freq&gt;
+gcc -c freq.c
+gcc -c main.c
+gcc -o freq main.o freq.o
+./freq
+</code></pre>
 <blockquote>
-<p>Hint: According to given path, whenever robot encounters an intersection, it should take a respective turn which will lead the robot to End location.</p>
-</blockquote>
-<ul>
-<li>Inputs: 
-<ul>
-<li>
-<p><strong>5</strong> White Line Sensors</p>
-</li>
-<li>
-<p>Each Sensor value ranges between: 0 to 1023</p>
-</li>
-<li>
-<p>On white surface, sensor values are low and for black surface, sensor values are high</p>
-</li>
-<li>
-<p>There can be N number of WLF Readings combinations that one can get. </p>
-</li>
-</ul>
-</li>
-<li>The following table shows few such cases:</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>Position of robot</th><th>Images</th></tr></thead><tbody>
-<tr><td>All sensors on black line</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_start_pos.png" width=200 height=160></td></tr>
-<tr><td>Centre sensor on line</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_center_pos.png" width=200 height=160></td></tr>
-<tr><td>Drifting towards left</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>Drifting towards right</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_right_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>At intersection</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_turn_pos.png" width=200 height=160></td></tr>
-</tbody></table>
-</div>
-<ul>
-<li>
-<p>Outputs: </p>
-<ul>
-<li><strong>3</strong> for controlling the motion of the Robot (1 for the direction and 2 for the velocities of the two motors)</li>
-<li>Direction output is binary: 0 means backward and 1 means forward</li>
-<li>Motor velocity ranges between 0 to 100</li>
-</ul>
-</li>
-<li>
-<p>Using the above information, draw statechart for Line following of the robot</p>
-</li>
-<li>
-<p>You are free to use any control algorithm for line following</p>
-</li>
-</ul>
-<blockquote>
-<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step etc (mention the assumptions clearly in the document being submitted)</p>
+<p>Note: Your output should be exactly same as expected output including variables name as it will be autoevaluated.</p>
 </blockquote>
 <hr />
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
+<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h4>
 <ul>
-<li>
-<p>For Lab-1 submission, you have to upload a text file named <strong><code>&lt;group_name&gt;.txt</code></strong> containing:</p>
-<ul>
-<li>Link of the statechart (from Stately)</li>
-<li>Youtube link of the video - shoot the screen recording of the simulation of statechart in Stately for atleast 20 steps with different input combinations</li>
-<li>Information about the startergy used, assumptions made and description about the statechart; inputs used for simulation and outputs obtained in a tabular form</li>
-<li>Contribution of each team member</li>
+<li>This assignment is an individual task</li>
+<li>Complete the necessary files given in the folder</li>
+<li>Compress the folder <code>Assignment-1</code> in a <code>.tar.gz</code> file and provide the name as <code>&lt;rollno&gt;_Assignment_1.tar.gz</code></li>
+<li>Submit it on moodle</li>
 </ul>
-</li>
-<li>
-<p>Upload the file on Moodle</p>
-</li>
-<li>
-<p>Single submission must be done by each group. Member having highest roll no should do the submission.</p>
-</li>
-</ul>
+<blockquote>
+<p>Note: Make sure you have removed all the print statements from the file except the lines wihich prints sum of squares and frequency. Else your submission will not be evaluated.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Labs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Assignments.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -249,13 +216,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Labs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Assignments.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
