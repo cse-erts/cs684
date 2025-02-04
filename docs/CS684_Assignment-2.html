@@ -186,22 +186,6 @@ let
     B = A*A;
 tel
 </code></pre>
-<pre><code class="language-code">node foo(P: int) returns (Q, R: int)
-var W, Y, Z: int;
-let
-    Q =  W* Z;
-    W = 0 -&gt; (pre(Z)+1);
-    Z = W + Y;
-    Y =  multi(W,R);
-    R = Q + W;
-tel
-
-node multi(A, B:int) returns (C, D: int)
-let
-    C = A*A;
-    D = B*B*B;
-tel
-</code></pre>
 <p>Is this program causally correct? What is the order in which values of variables Q,R,W,Y,Z are calculated in each cycle?</p>
 <p><strong>Answer format:</strong> Create <code>q2.txt</code> text file. Write answers of both questions in comma separated format. 
 For ex.</p>
