@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Assignments - CS684 Spring 2024-25</title>
+        <title>Lab 3 - CS684 Spring 2024-25</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li></ol></li><li class="chapter-item expanded "><a href="CS684_Assignments.html" class="active">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,24 +140,80 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="assignments"><a class="header" href="#assignments">Assignments </a></h4></center>
+<center><h4 id="lab-3-lustreheptagon-implementation-of-line-follower"><a class="header" href="#lab-3-lustreheptagon-implementation-of-line-follower">Lab 3: Lustre/Heptagon implementation of Line Follower</center></a></h4>
 <hr />
-<h2 id="assignments-details"><a class="header" href="#assignments-details">Assignments Details:</a></h2>
+<h3 id="aim"><a class="header" href="#aim">Aim:</a></h3>
+<p>In this lab, the robot should start from start position and reach to destination by using <code>Line Following</code>. In Lab 2 you have already implemented Line Following algorithm using Heptagon. In this lab you will implement the algrithm on the Hardware and see the results.</p>
+<blockquote>
+<p><b>The deadine for completing Lab 3 is 23:59:59 20th March, 2025.</b></p>
+</blockquote>
+<hr />
+<h3 id="description"><a class="header" href="#description">Description:</a></h3>
+<div align='center'>
+<p><img src="./resources/project/line_follower.png" alt="img" /></p>
+</div>
+<p>Robot has to travel from rectangle block (point A) to end of zig-zag path (point B) using white line following. Make sure that robot doesnot leave the line. </p>
+<p><strong>Line following:</strong> The arena provided to you is made up of curved and straight paths for the robot. To traverse the arena, the robot has to do line following depending on its position. Hence an algorithm has to be developed for Line following in Heptagon.</p>
+<h2 id="resources"><a class="header" href="#resources">Resources:</a></h2>
+<ol>
+<li>
+<p>AlphaBot Drivers:
+Go through the <a href="./resources/Slides/Introduction__Alphabot_CS684_2024.pdf">slides</a> which were presented in the class to know more about AlphaBot. All the APIs which will be required for the project implementation are added in <a href="./resources/project/Alphabot_Drivers.zip">this folder</a> along with example .ino file. Go through the various components and check the results. </p>
+</li>
+<li>
+<p>Robot Assembly:
+You can refer to this <a href="https://www.youtube.com/watch?v=ONg0qpxYWQo">video</a> for completing the robot assembly (0:35 to 3:28)</p>
+</li>
+<li>
+<p>Heptagon-Embedded Integration:
+Go through the <a href="./resources/Slides/White_Line_Follower_CS684_2023.pdf">slides</a> to know more about Integration.
+Refer the <a href="./resources/project/class_line_follower.zip">folder</a> given. It consist of following files and folders:</p>
 <ul>
-<li><strong>Assignment 1</strong>: Reactive Kernel</li>
-<li><strong>Assignment 2</strong>: Lustre/Heptagon</li>
-<li><strong>Assignment 3</strong>: Heptagon </li>
+<li><code>heptagon</code> Folder: <code>line_follower.ept</code> containing the logic of the code (Discrete Controller).</li>
+<li><code>supervisor</code> Folder: <code>supervisor.ino</code>, <code>alphabot_drivers.cpp</code> and <code>alphabot_drivers.h</code> to work with the Robot.</li>
+<li><code>integrate.sh</code> file: to simulate and do the book keeping work.</li>
+</ul>
+</li>
+<li>
+<p>Arena: The arena for completing the implementation of Lab 3 will be printed and provided to all teams by next week. You may complete the robot assembly by then.</p>
+</li>
+<li>
+<p>Expected Output <a href="https://drive.google.com/file/d/1J8cf4VbbWLkoShsWhw2Wp501lW2ratjh/view?usp=sharing">Video</a></p>
+</li>
+</ol>
+<h2 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions:</a></h2>
+<ul>
+<li>You have to upload <code>tar.gz</code> file.
+<ol>
+<li><code>Heptagon Project</code> folder: It should contain following
+<ul>
+<li><code>Heptagon</code> Folder: Containing the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
+</ul>
+</li>
+<li><code>Readme.txt</code> file: 
+<ul>
+<li>Youtube link of the video - shoot the working of the robot moving from Point A to Point B.</li>
+</ul>
+</li>
+<li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_3.tar.gz</code></li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Lab-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Assignment-1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -167,11 +223,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Lab-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Assignment-1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
