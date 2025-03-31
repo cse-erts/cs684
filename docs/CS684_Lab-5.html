@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2024-25</title>
+        <title>Lab 5 - CS684 Spring 2024-25</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-5.html">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Resources.html">Resources</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Labs.html">Labs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="CS684_Lab-5.html" class="active">Lab 5</a></li></ol></li><li class="chapter-item "><a href="CS684_Assignments.html">Assignments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="CS684_Assignment-1.html">Assignment 1</a></li><li class="chapter-item "><a href="CS684_Assignment-2.html">Assignment 2</a></li><li class="chapter-item "><a href="CS684_Assignment-3.html">Assignment 3</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,106 +140,92 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-1-draw-statechart-for-line-following"><a class="header" href="#lab-1-draw-statechart-for-line-following">Lab 1: Draw Statechart for Line following </a></h4></center>
-<h4 id="software-used"><a class="header" href="#software-used">Software used</a></h4>
-<ul>
-<li>You can use online statechart editor for the implementation: <a href="https://stately.ai/">Stately</a></li>
-<li>Resources:
-<ul>
-<li><a href="https://www.youtube.com/watch?v=Aixi0e53qAE">Video Tutorials</a></li>
-<li><a href="https://www.itemis.com/en/products/itemis-create/documentation/user-guide/overview_what_are_state_machines">What are state machines?</a></li>
-<li><a href="https://stately.ai/docs">Stately User Guide</a></li>
-</ul>
-</li>
-</ul>
+<center><h4 id="lab-5-final-project-implementation"><a class="header" href="#lab-5-final-project-implementation">Lab 5: Final Project Implementation</a></h4></center>
 <hr />
-<h4 id="aim"><a class="header" href="#aim">Aim</a></h4>
-<ul>
-<li>Draw a statechart for line following of a robot on a black line printed on a white surface. </li>
-<li>Objective is to move the robot from Start (<strong>S</strong>) to End (<strong>E</strong>) location. [Refer following diagram]</li>
-</ul>
-<center><img title="a title" alt="Alt text" src="./images/lab1_fsm_path.png" width=250 height=250></center>
-<blockquote>
-<p>Note: The above image only gives an abstraction of some random path. It is just for reference. It will help you to build different states accurately.</p>
-</blockquote>
-<blockquote>
-<p>Hint: According to given path, whenever robot encounters an intersection, it should take a respective turn which will lead the robot to End location.</p>
-</blockquote>
-<ul>
-<li>Inputs: 
-<ul>
-<li>
-<p><strong>5</strong> White Line Sensors</p>
-</li>
-<li>
-<p>Each Sensor value ranges between: 0 to 1023</p>
-</li>
-<li>
-<p>On white surface, sensor values are low and for black surface, sensor values are high</p>
-</li>
-<li>
-<p>There can be N number of WLF Readings combinations that one can get. </p>
-</li>
-</ul>
-</li>
-<li>The following table shows few such cases:</li>
-</ul>
-<div class="table-wrapper"><table><thead><tr><th>Position of robot</th><th>Images</th></tr></thead><tbody>
-<tr><td>All sensors on black line</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_start_pos.png" width=200 height=160></td></tr>
-<tr><td>Centre sensor on line</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_center_pos.png" width=200 height=160></td></tr>
-<tr><td>Drifting towards left</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>Drifting towards right</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_right_adj_pos.png" width=200 height=160></td></tr>
-<tr><td>At intersection</td><td><img title="a title" alt="Alt text" src="./images/lab1_wlf_left_turn_pos.png" width=200 height=160></td></tr>
-</tbody></table>
+<h3 id="aim"><a class="header" href="#aim">Aim</a></h3>
+<p>This lab builds upon your Lab 4, the <strong>robot should park</strong> itself from the start point to an empty parking location using <code>Line Following</code>, <code>Obstacle Navigation</code> as well as <code>Obstacle Avoidance</code> algorithm.</p>
+<div align='center'>
+<img src="./resources/project/lab-5-final.png" alt="final-arena" width="400" height="600"> 
 </div>
+<ol>
+<li>
+<p><code>Line Following</code> and <code>Obstacle Navigation</code> : You have already developed the line following algorithm along with line switching and obstacle navigation.</p>
+</li>
+<li>
+<p><code>Obstacle Avoidance</code> : While the robot is trying to park itself, it has to find empty parking slot. The obstacles will be placed at certain parking locations which will be considerd as reserved parking slots.</p>
+</li>
+</ol>
+<hr />
+<h3 id="placement-of-obstacle-for-reserved-parking-slot"><a class="header" href="#placement-of-obstacle-for-reserved-parking-slot">Placement of obstacle for reserved parking slot:</a></h3>
+<p>We will be giving each team 6 thermacol blocks of dimensions 5x5x5 which will be acting as osbtacles for 2 parking slots. For one parking slot you are allowed to place max 3 blocks, how to place, is as per your strategy.</p>
+<p>For reserved slot refer above arena image. </p>
+<hr />
+<h3 id="video-instructions"><a class="header" href="#video-instructions">Video Instructions:</a></h3>
 <ul>
-<li>
-<p>Outputs: </p>
-<ul>
-<li><strong>3</strong> for controlling the motion of the Robot (1 for the direction and 2 for the velocities of the two motors)</li>
-<li>Direction output is binary: 0 means backward and 1 means forward</li>
-<li>Motor velocity ranges between 0 to 100</li>
-</ul>
+<li>Setup the arena accoridng to given image. </li>
+<li>Show the code while explaining following parts:
+<ol>
+<li>White Line Following</li>
+<li>Line Switching </li>
+<li>Black Line Following </li>
+<li>Obstacle Navigation</li>
+<li>Parking </li>
+</ol>
 </li>
-<li>
-<p>Using the above information, draw statechart for Line following of the robot</p>
-</li>
-<li>
-<p>You are free to use any control algorithm for line following</p>
-</li>
+<li>Run the <code>integrate.sh</code> script and upload the same code in the robot. </li>
+<li>Keep the robot at the start loaction. Turn on the robot. Robot should properly navigate through the arena. </li>
+<li>Once the robot parks itself in an empty parking slot it will be considered as end of the run.</li>
 </ul>
 <blockquote>
-<p>You are free to make assumptions regarding readings of white line sensors at different instances, distance covered by robot for different motions in single step etc (mention the assumptions clearly in the document being submitted)</p>
+<p>Note: Video should be continous, without any cuts and should not be fast forwarded. Make sure the code at the start is visible properly othwerise respective marks would be deducted.</p>
 </blockquote>
 <hr />
-<h4 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h4>
+<h3 id="scoring-criteria"><a class="header" href="#scoring-criteria">Scoring Criteria</a></h3>
+<p>The team’s score is calculated based on the following formula:</p>
+<p>TotalScore = (300 − T) + (WLF x 50) + (BLF x 50) +  (LS x 60) + (OBS_N x 40) + (CP  x 50) + (CM x 150) - (P x 20)</p>
+<p>where, Parameter and Definition for same are given in image below:</p>
+<div align='center'>
+<img src="./resources/project/lab-5-formula.png" alt="final-score" > 
+</div>
+<hr />
+<h3 id="submission-instructions"><a class="header" href="#submission-instructions">Submission Instructions</a></h3>
 <ul>
-<li>
-<p>For Lab-1 submission, you have to upload a text file named <strong><code>&lt;group_name&gt;.txt</code></strong> containing:</p>
+<li>For Lab-5 submission you have to upload a <strong><code>.tar.gz</code></strong> file.
+<ol>
+<li><code>Heptagon Project</code> folder: It should contain following
 <ul>
-<li>Link of the statechart (from Stately)</li>
-<li>Youtube link of the video - shoot the screen recording of the simulation of statechart in Stately for atleast 20 steps with different input combinations</li>
-<li>Information about the startergy used, assumptions made and description about the statechart; inputs used for simulation and outputs obtained in a tabular form</li>
-<li>Contribution of each team member</li>
+<li><code>Heptagon</code> Folder: Containing the heptagon implementation of the logic.</li>
+<li><code>Integrate.sh</code> file: to generate the c files from heptagon.</li>
+<li><code>Supervisor</code> Folder: it contains <code>supervisor.ino</code> file and auto generated c files from the heptagon.</li>
 </ul>
 </li>
+<li><code>Readme.txt</code> file: 
+<ul>
+<li>Youtube link of the video - as per the instructions given in Video Instructions. </li>
 <li>
-<p>Upload the file on Moodle</p>
+<blockquote>
+<p><strong>Note: If your video is not as per the Video Instructions given above, your submission will not be evaluted.</strong> </p>
+</blockquote>
 </li>
-<li>
-<p>Single submission must be done by each group. Member having highest roll no should do the submission.</p>
+</ul>
 </li>
+<li><code>Contribution.txt</code> file: stating detailed contribution of each member</li>
+</ol>
+</li>
+<li>Compress the folder and rename it as <code>&lt;GroupName&gt;_Lab_5.tar.gz</code> (check your file, it shouldn't be empty)</li>
+<li>Upload the file on Moodle</li>
+<li>There should be only one submission per group. Member having highest roll no should do the submission.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="CS684_Labs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="CS684_Lab-2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="CS684_Assignments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -249,11 +235,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="CS684_Labs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="CS684_Lab-2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="CS684_Assignments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
